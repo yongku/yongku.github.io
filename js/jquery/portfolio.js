@@ -129,7 +129,7 @@ $(document).ready(function(){
             railColor:'#fff',
             wheelStep: 8,
             railOpacity:0.3,
-            height: 'auto',
+            height: '100%',
             railVisible: true,
             alwaysVisible: true
         });
