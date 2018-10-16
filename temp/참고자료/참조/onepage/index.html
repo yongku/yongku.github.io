@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<style>
+
+*{list-style:none; margin:0; padding:0;}
+
+	
+#section01{
+width:100%; height:1000px; background:#FFF url(img/home-banner.jpg) top center no-repeat;}
+
+#section02{
+width:100%; height:1500px; background:#6FF;}
+
+#section03{
+width:100%; height:1500px; background:#9F0;}
+
+#section04{
+width:100%; height:1500px; background:#F33;}
+
+#section05{
+width:100%; height:1500px; background:#FC0;}
+
+.menu_box{
+width:100%; height:90px; color:#FFF; position:fixed; transition:all 0.5s ease-in-out; -webkit-transition:all 0.5s ease-in-out;}
+
+.fixed{
+background:rgba(0,0,0,0.5); transition:all 0.5s ease-in-out; -webkit-transition:all 0.5s ease-in-out;}
+
+.logo a{
+font-size:46px; padding:15px 0 0 35px; float:left; color:#FFF; font-family: 'Open Sans',Arial,Helvetica,sans-serif; text-decoration:none;}
+
+.menu_box > ul{
+float:right; padding:0 35px 0 0;}
+
+.menu_box li{
+float:left; text-align:center; width:100px; }
+
+.menu_box li a{
+text-decoration:none; color:#FFF; line-height:100px; font-family: 'Open Sans',Arial,Helvetica,sans-serif; font-size:14px;}
+
+/**메뉴부분 마우스 오버시 색상 **/
+.menu_box li a:hover{
+border-top:2px solid #FFF; padding-top:40px; color:#FFF;}
+
+.menu_box li:nth-child(2) a:hover{
+border-top:2px solid #6FF; padding-top:40px; color:#6FF;}
+
+.menu_box li:nth-child(3) a:hover{
+border-top:2px solid #9F0; padding-top:40px; color:#9F0;}
+
+.menu_box li:nth-child(4) a:hover{
+border-top:2px solid #F33; padding-top:40px; color:#F33;}
+
+.menu_box li:nth-child(5) a:hover{
+border-top:2px solid #FC0; padding-top:40px; color:#FC0;}
+
+</style>
+
+</head>
+
+<body>
+<div id="section01">
+    <div class="menu_box">
+        <div class="logo"><a href="#section01">RALRARI</a></div>
+        <ul>
+            <li><a href="#section01">Home</a></li>
+            <li><a href="#section02">Company</a></li>
+            <li><a href="#section03">Portfolio</a></li>
+            <li><a href="#section04">News</a></li>
+            <li><a href="#section05">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="section02"></div>
+<div id="section03"></div>
+<div id="section04"></div>
+<div id="section05"></div>
+<script>
+	/**스크롤이 설정한 높이 이상 내려갔을때 스타일추가하기**/
+	if (jQuery(window).width() > 0) {
+    jQuery(window).on("scroll",function(ev){
+        if(jQuery(window).scrollTop() > 150 ) { /**높이 픽셀 조정**/
+            jQuery('.menu_box').addClass('fixed');  /**위의 높이에서 .fixed 클래스를 추가합니다. 스타일에서 자유롭게 수치 조절 가능합니다.**/
+        }
+        else{
+			jQuery('.menu_box').removeClass('fixed');
+        }
+        return false;
+    });
+	}
+	
+	/**마우스 부드럽게 해당위치로 이동**/
+	$(function(){
+	   $('a[href^=#]').click(function() {
+		  var speed = 800;
+		  var href= $(this).attr("href");
+		  var target = $(href == "#" || href == "" ? 'html' : href);
+		  var position = target.offset().top;
+		  $('body,html').animate({scrollTop:position}, speed, 'swing');
+		  return false;
+	   });
+	});
+</script>
+</body>
+</html>

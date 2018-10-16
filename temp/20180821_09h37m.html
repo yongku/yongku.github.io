@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+    body{
+        margin:0;
+        padding:0;
+        width:650px;
+    }
+    li{
+        width:200px;
+        height:200px;
+        border:1px solid #000;
+        display:inline-block;
+        float:left;
+        position:relative;
+    }
+    li input[type="checkbox"]{
+        position:absolute;
+        top:-9999em;
+    }
+    li label{
+        position:absolute;
+        width:100%;
+        height:100%;
+        background-color:#0f0;
+    }
+    span{
+        position:absolute;
+        width:100%;
+        height:100%;
+    }
+    ul:hover li:nth-child(1) label{
+        background:url(images/movie2.jpg) no-repeat 0 0;
+    }
+    ul:hover li:nth-child(2) label{
+        background:url(images/movie2.jpg) no-repeat -200px 0;
+    }
+    ul:hover li:nth-child(3) label{
+        background:url(images/movie2.jpg) no-repeat -400px 0;
+    }
+    ul:hover li:nth-child(4) label{
+        background:url(images/movie2.jpg) no-repeat 0 -200px;
+    }
+    ul:hover li:nth-child(5) label{
+        background:url(images/movie2.jpg) no-repeat -200px -200px;
+    }
+    ul:hover li:nth-child(6) label{
+        background:url(images/movie2.jpg) no-repeat -400px -200px;
+    }
+    ul:hover li:nth-child(7) label{
+        background:url(images/movie2.jpg) no-repeat 0 -400px;
+    }
+    ul:hover li:nth-child(8) label{
+        background:url(images/movie2.jpg) no-repeat -200px -400px;
+    }
+    ul:hover li:nth-child(9) label{
+        background:url(images/movie2.jpg) no-repeat -400px -400px;
+    }
+    input:checked + span{
+        background:url(images/movie1.jpg) no-repeat 0 0;
+    }
+    /* li:nth-child(1) input:checked + span{
+        z-index:2;
+    } */
+    li:nth-child(2) input:checked + span{
+        background-position:-200px 0;
+    }
+    li:nth-child(3) input:checked + span{
+        background-position:-400px 0;
+    }
+    li:nth-child(4) input:checked + span{
+        background-position:-0px -200px;
+    }
+    li:nth-child(5) input:checked + span{
+        background-position:-200px -200px;
+    }
+    li:nth-child(6) input:checked + span{
+        background-position:-400px -200px;
+    }
+    li:nth-child(7) input:checked + span{
+        background-position:-0px -400px;
+    }
+    li:nth-child(8) input:checked + span{
+        background-position:-200px -400px;
+    }
+    li:nth-child(9) input:checked + span{
+        background-position:-400px -400px;
+    }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <label>
+            <input type="checkbox">
+            <span></span>
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox">
+                <span></span>
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox">
+                <span></span>
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox">
+                <span></span>
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox">
+                <span></span>
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox">
+                <span></span>
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox">
+                <span></span>
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox">
+                <span></span>
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox">
+                <span></span>
+            </label>
+        </li>
+    </ul>
+</body>
+</html>

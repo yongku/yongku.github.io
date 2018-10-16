@@ -1,0 +1,390 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>http://www.blueb.co.kr</title>
+<style>
+/*CLEARFIX*/
+.clearfix:after {content: ".";	display: block;	clear: both; visibility: hidden; line-height: 0; height: 0;} 
+.clearfix {	display: inline-block;} 
+html[xmlns] .clearfix {display: block;} 
+* html .clearfix {height: 1%;}
+
+/*CSS RESET*/
+html,body,div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,
+del,dfn,em,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,tt,var,
+b,u,i,center,
+dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,canvas,details,embed,
+figure,figcaption,footer,header,hgroup,
+menu,nav,output,ruby,section,summary,
+time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section{display:block;}
+body{line-height:1;}
+ol,ul{list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,
+q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+
+/*GLOBALS*/
+a{text-decoration:none;	}
+body, hmtl{background: #444; font-family: 'Exo', sans-serif;}
+
+
+/*NAV*/
+#nav-wrap{
+	background-color:#555;
+	box-shadow:0px 1px 5px rgba(0,0,0,0.4);
+	height:60px;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	z-index:100;
+}
+
+#nav{
+	height:60px;
+	width:600px;
+	margin: 0 auto;
+}
+
+#nav ul{position:relative;}
+#nav-indicator{
+	position:absolute;
+	width:100px;
+	top:55px;
+	left:0;
+	height:5px;
+	background:#f36666;	
+	
+	-webkit-transition: all 0.2s ease;
+	-moz-transition:    all 0.2s ease;
+	-o-transition:      all 0.2s ease;
+	-ms-transition:     all 0.2s ease;
+	transition:         all 0.2s ease;
+}
+
+.nav-btn{
+	width:99px;
+	float:left;
+	padding:24px 0;
+	list-style:none;
+	color:#fff;
+	text-align:center;
+	cursor:pointer;
+	text-transform:uppercase;
+	font-size:12px;
+	color:#ccc;
+	
+	border-left:1px solid rgba(255,255,255,0.2);
+	box-shadow: inset 1px 1px 0 rgba(0,0,0,0.5) ;
+	
+	text-shadow:rgba(0,0,0,0.8) 1px 1px 0px;
+}
+
+
+.nav-btn:first-child{
+	border:none;
+	box-shadow: none;
+}
+
+.nav-btn:hover, .nav-btn.active {
+	color:#FFF;
+	background:#444;
+	box-shadow: inset 0px 1px 3px rgba(0,0,0,0.5) ;
+}
+
+
+
+
+/*CONTENT*/
+#content-wrap{
+	width:600px;
+	margin:100px auto 180px;
+}
+h1, h2{
+	color:#ccc;
+	text-shadow:rgba(0,0,0,0.8) 1px 1px 1px;
+	text-align:center;	
+	
+	-webkit-transition: all 0.5s ease;
+	-moz-transition:    all 0.5s ease;
+	-o-transition:      all 0.5s ease;
+	-ms-transition:     all 0.5s ease;
+	transition:         all 0.5s ease;	
+}
+
+h1{	font-size:36px;}
+h2{font-size:16px;	margin:15px 0 40px;	}
+
+
+
+.row{
+	width:94%;
+	padding:30px 3%;
+	font-size:18px;
+	color:#999;
+	border-bottom:1px solid rgba(255,255,255,0.2);
+	box-shadow: inset 0 1px 0 rgba(0,0,0,0.5) ;
+	background:#333;
+	position:relative;
+	text-shadow:rgba(0,0,0,0.8) 1px 1px 1px;
+}
+
+.row.active, h2 span{color:#f36666;}
+.row.active{background:#3c3c3c;}
+.row span{text-decoration:line-through;}
+
+.row-btn{
+	position:absolute;
+	top:25px;
+	right:20px;
+	background:#2b2b2b;
+	border-bottom:1px solid rgba(255,255,255,0.2);
+	box-shadow: inset 0 1px 0 rgba(0,0,0,0.5) ;
+	width:40px;
+	height:20px;
+	border-radius:20px;
+}
+
+.circle{
+	border-radius:50%;
+	background:#555;
+	border-top:1px solid rgba(255,255,255,0.2);
+	box-shadow: 0 1px 0 rgba(0,0,0,0.5) ;
+	width:20px;
+	height:20px;
+	
+	
+}
+
+.row.active .row-btn{	background:#f36666;}
+.row.active .circle{	margin-left:20px;}
+
+
+#top{
+	width:40px;
+	height:20px;
+	background:#555;
+	border-top:1px solid rgba(255,255,255,0.2);
+	box-shadow: 0 1px 0 rgba(0,0,0,0.5) ;
+	margin:30px auto;
+	cursor:pointer;	
+	color:#ccc;
+	text-shadow:rgba(0,0,0,0.8) 1px 1px 1px;
+	text-align:center;
+	padding:15px;
+}
+
+#top:active{
+	background:#333;
+	border-bottom:1px solid rgba(255,255,255,0.2);
+	box-shadow: inset 0 1px 0 rgba(0,0,0,0.5) ;	
+	border-top:none;
+}
+
+
+
+
+
+/*ANIMATION*/
+.row-btn, .circle, .row{
+	-webkit-transition: all 0.1s ease;
+	-moz-transition:    all 0.1s ease;
+	-o-transition:      all 0.1s ease;
+	-ms-transition:     all 0.1s ease;
+	transition:         all 0.1s ease;	
+}
+
+/*hide left*/
+h1{
+	-moz-transform: translateX(-200px);
+	-webkit-transform: translateX(-200px);
+	-o-transform: translateX(-200px);
+	-ms-transform: translateX(-200px);
+	transform: translateX(-200px);
+	opacity:0;
+}
+
+/*hide right*/
+h2{
+	-moz-transform: translateX(200px);
+	-webkit-transform: translateX(200px);
+	-o-transform: translateX(200px);
+	-ms-transform: translateX(200px);
+	transform: translateX(200px);	
+	opacity:0;
+}
+
+/*Slide left > right || right > left*/
+h1.animationActive, h2.animationActive {
+	-moz-transform: translateX(0px);
+	-webkit-transform: translateX(0px);
+	-o-transform: translateX(0px);
+	-ms-transform: translateX(0px);
+	transform: translateX(0px);	
+	opacity:1;
+}
+</style>
+</head>
+
+<body>
+ <link href='http://fonts.googleapis.com/css?family=Exo:700' rel='stylesheet' type='text/css'>
+   
+ <div id="nav-wrap">
+       <div id="scroller-anchor"></div> 
+       <div id="nav">
+            <ul class="clearfix">
+                <li class="nav-btn active" data-row-id="row1">Link#1</li>
+                <li class="nav-btn" data-row-id="row2">Link#2</li>
+                <li class="nav-btn" data-row-id="row3">Link#3</li>
+                <li class="nav-btn" data-row-id="row4">Link#4</li>
+                <li class="nav-btn" data-row-id="row5">Link#5</li>
+                <li class="nav-btn" data-row-id="row6">Link#6</li>
+                <div id="nav-indicator"></div>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="content-wrap">    
+    	<h1>Easy One Page Scroll</h1>
+        <h2>A Pen by <a href="http://www.andrecortellini.com" target="_blank"><span>André Cortellini</span></a></h2>
+        
+    	<div class="row row-nav" data-height="100" id="row1">Row#1 <div class="row-btn"><div class="circle"></div></div></div>
+        <div class="row row-nav" data-height="200" id="row2">Row#2 <div class="row-btn"><div class="circle"></div></div></div>
+        <div class="row row-nav" data-height="280" id="row3">Row#3 <div class="row-btn"><div class="circle"></div></div></div>
+        <div class="row" data-height="180"><span>*Row Skip</span> <div class="row-btn"><div class="circle"></div></div></div>
+        <div class="row row-nav" data-height="400" id="row4">Row#4 <div class="row-btn"><div class="circle"></div></div></div>
+        <div class="row row-nav" data-height="50" id="row5">Row#5 <div class="row-btn"><div class="circle"></div></div></div>
+        <div class="row row-nav" data-height="300" id="row6">Row#6 <div class="row-btn"><div class="circle"></div></div></div>
+        
+        <div id="top">Top</div>
+    </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script>
+/******************************
+	 ADD ANIMATION TO THE TEXT 
+	******************************/
+	var count = 0;
+	var number = 10;
+	
+	var interval = setInterval(function(){
+       count++;
+	   if (count === number) { 
+	   		clearInterval(interval);
+			$('h1 ,h2').addClass('animationActive');		
+		}
+	}, 50);
+	
+	
+	
+	/*********************
+	 SET ROW'S HEIGHT
+	*********************/
+	$.each($('.row'), function() { 
+	   var h = $(this).attr("data-height");
+	   $(this).css("height",h);
+	});
+	
+	
+	
+	/*************************
+	 ON WINDOW SCROLL FUNCTION
+	*************************/
+	var sectionIds = {};		
+
+	$(".row-nav").each(function(){	
+		var $this = $(this);			
+		sectionIds[$this.attr("id")] = $this.first().offset().top -120;	
+	});			
+	
+	
+	var count2 = 0;
+	$(window).scroll(function(event){		
+
+		var scrolled = $(this).scrollTop();		
+
+		//If it reaches the top of the row, add an active class to it
+		$(".row-nav").each(function(){
+			
+			var $this = $(this);
+			
+			if(scrolled >= $this.first().offset().top -120){
+				$(".row-nav").removeClass("active");
+				$this.addClass("active");	
+				
+				$(".animation").removeClass('animationActive');
+				$this.find(".animation").addClass('animationActive');
+						
+			}
+		});
+		
+		//when reaches the row, also add a class to the navigation
+		for (key in sectionIds){
+			if (scrolled >= sectionIds[key]){
+				$(".nav-btn").removeClass("active");
+				var c = $("[data-row-id="+key+"]");
+				c.addClass("active");
+				
+				var i = c.index();
+				$('#nav-indicator').css('left', i*100 + 'px');							
+			}
+		}	
+		
+		
+		//Check if we've reached the top
+	    if (scrolled > count2){  count2++;  } 
+		else { count2--; }
+	    
+		count2 = scrolled;		
+		
+		if(count2 == 0){
+			$('h1 ,h2').addClass('animationActive');
+		}else{
+			$('h1 ,h2').removeClass('animationActive');
+		}
+	
+	});
+	
+	
+	
+	/**************
+	 IN-NAVIGATION
+	**************/
+	$(".nav-btn").click(function(){		
+		$(this).addClass("active");
+		$(this).siblings().removeClass("active");
+		
+		var i = $(this).index();
+		$('#nav-indicator').css('left', i*100 + 'px');			
+		
+		var name = $(this).attr("data-row-id");
+		var id = "#" + name;
+		var top = $(id).first().offset().top -60;			
+		$('html, body').animate({scrollTop: top+'px'}, 300);
+		
+	});
+	
+	
+	
+	/*****
+	 TOP
+	******/
+	$('#top').click(function(){
+		$('html, body').animate({scrollTop: '0px'}, 300);
+    });
+</script>
+
+</body>
+</html>

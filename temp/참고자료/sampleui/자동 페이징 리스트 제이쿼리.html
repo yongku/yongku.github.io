@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>자동 페이징 리스트 제이쿼리</title>
+<link rel="stylesheet" type="text/css" href="css/sjReset.css" />
+<script type="text/javascript" src="js/plugin/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+.list_example > li {display:none;}
+.list_example > li.on {display:list-item; line-height:30px; border-bottom:1px solid #ccc;}
+.list_example + div {margin-top:20px; text-align:center;}
+.list_example + div p {display:inline-block;}
+</style>
+</head>
+<body>
+<ul class="list_example">
+	<li>Genesis</li>
+	<li>Exodus</li>
+	<li>Leviticus</li>
+	<li>Numbers</li>
+	<li>Deuteronomy</li>
+	<li>Joshua</li>
+	<li>Judges</li>
+	<li>Ruth</li>
+	<li>Samuel</li>
+	<li>Kings</li>
+	<li>Chronicles</li>
+	<li>Ezra</li>
+	<li>Nehemiah</li>
+</ul>
+<div>
+	<button type="button">Prev</button>
+	<p>
+		<span>1</span>/<span></span>
+	</p>
+	<button type="button">Next</button>
+</div>
+<script>
+$( ".list_example" ).ready(function() {
+	$(".list_example + div > p > span:last-child").text(Math.ceil($(".list_example").children("li").size()/5));
+	$(".list_example > li").slice(0,5).addClass("on");
+	$(".list_example > li:nth-of-type(5n)").addClass("5n");
+	$(".list_example + div > button").click(function() {
+		var nav_list = $(this).parent("div").prev(".list_example");
+		if($(this).is(":last-child")) {
+			if(!$(nav_list).children("li:last").hasClass("on")) {
+				$(nav_list).children("li.on:last").nextUntil(".5n").addClass("on").next(".5n").addClass("on");
+				setTimeout(function() {
+					$(nav_list).children("li.on:first").removeClass("on").nextUntil(".5n").removeClass("on").next(".5n").removeClass("on");
+				});
+				var paging = ($(nav_list).children("li.on:last").index()+1)/5;
+				$(this).siblings("p").children("span:first-child").text(Math.ceil(paging));
+			}
+		}
+		else {
+			if(!$(nav_list).children("li:first").hasClass("on")) {
+				$(nav_list).children("li.on:first").prev(".5n").addClass("on").prevUntil(".5n").addClass("on");
+				setTimeout(function() {
+					$(nav_list).children("li.on:last").removeClass("on").prevUntil(".5n").removeClass("on");
+				});
+				var paging = ($(nav_list).children("li.on:first").index()+1)/5;
+				$(this).siblings("p").children("span:first-child").text(Math.ceil(paging));
+			}
+		}
+	});
+});
+</script>
+</body>
+</html>

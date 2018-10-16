@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>제이쿼리 슬라이드 갤러리</title>
+<link rel="stylesheet" type="text/css" href="css/sjReset.css" />
+<script type="text/javascript" src="js/plugin/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+.slide_gallery_test {overflow:hidden; position:relative; margin:0 auto;}
+.slide_gallery_test > ul {overflow:hidden;}
+.slide_gallery_test > ul li {float:left;}
+.slide_gallery_test > ul li img {display:block; margin:0 auto; max-width:100%;}
+.slide_gallery_test > p {position:absolute; width:100%; height:100%; top:0; left:0;}
+.slide_gallery_test > p button {border:0; background:transparent; cursor:pointer; width:50%; height:100%; padding:0 20px; box-sizing:border-box; outline:0;}
+.slide_gallery_test button.prev {float:left; text-align:left;}
+.slide_gallery_test button.next {float:right; text-align:right;}
+.slide_gallery_test > p button span {display:inline-block; padding:10px 15px; border-radius:10px; background:#000; border:2px solid #fff; color:#fff; opacity:.5; transition:opacity .3s linear;}
+.slide_gallery_test > p button:hover span {opacity:.8;}
+</style>
+</head>
+<body>
+<div class="slide_gallery_test" style="width: 600px;">
+	<ul style="width: 2400px;">
+		<li style="width: 600px;"><img src="http://cfile25.uf.tistory.com/image/220E4534516620D3242100" alt=""></li>
+		<li style="width: 600px;"><img src="http://cfile2.uf.tistory.com/image/11729434516620D23156EB" alt=""></li>
+		<li style="width: 600px;"><img src="http://cfile23.uf.tistory.com/image/277D9334516620D32DC098" alt=""></li>
+		<li style="width: 600px;"><img src="http://cfile6.uf.tistory.com/image/2377DF425359B4DA1012F5" alt=""></li>
+	</ul>
+	<p>
+		<button type="button" class="prev" style="display:none;"><span>&lt;</span></button>
+		<button type="button" class="next"><span>&gt;</span></button>
+	</p>
+</div>
+<script type="text/javascript">
+$( document ).ready(function() {
+	$(".slide_gallery_test").each(function(){
+		var $this = $(this);
+		var slideWidth = 600;
+		var $container = $this.children("ul");
+		var slideNumber = $container.children("li").size();
+		var containerWidth = slideNumber*slideWidth;
+		var $firstImg = $container.find("li:first").children("img");
+		var $nextBtn = $this.find("p > button.next");
+		var $prevBtn = $this.find("p > button.prev");
+
+		$this.width(slideWidth);
+		$($firstImg).load(function(){
+			$container.height($firstImg.height());
+		});
+		$container.width(containerWidth);
+		$container.children("li").width(slideWidth);
+		
+		var slideFlag = true;
+		$this.find("p > button").click(function(){
+			if(!slideFlag) return false;
+			slideFlag = false;
+			if($(this).hasClass("next")){
+				var nextIndex = -($container.css("margin-left").replace(/[^-\d\.]/g, '') / slideWidth - 1);
+				var nextHeight = $container.children("li:eq("+nextIndex+")").children("img").height();
+				$prevBtn.fadeIn();
+				if($container.css("margin-left") != "-"+(containerWidth-slideWidth)+"px"){
+					$container.animate({"margin-left":"-="+slideWidth+"px"},function(){
+						slideFlag = true;
+					});
+					if($container.css("margin-left") == "-"+(containerWidth-slideWidth*2)+"px"){
+						$nextBtn.fadeOut();
+					}
+					$container.height(nextHeight);
+				}
+				else {slideFlag = true;}
+			}
+			else {
+				var prevIndex = -($container.css("margin-left").replace(/[^-\d\.]/g, '') / slideWidth + 1);
+				var prevHeight = $container.children("li:eq("+prevIndex+")").children("img").height();
+				$nextBtn.fadeIn();
+				if($container.css("margin-left") != "0px"){
+					$container.animate({"margin-left":"+="+slideWidth+"px"},function(){
+						slideFlag = true;
+					});
+					if($container.css("margin-left") == "-"+slideWidth+"px"){
+						$prevBtn.fadeOut();
+					}
+					$container.height(prevHeight);
+				}
+				else {slideFlag = true;}
+			}
+		});
+	});
+});
+</script>
+</body>
+</html>

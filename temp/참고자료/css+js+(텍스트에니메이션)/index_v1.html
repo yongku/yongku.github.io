@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>css animate test</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<style>
+*, html, body, ul, li, a, p, span, i {margin:0; padding:0; border:0; list-style:none; vertical-align:top; text-decoration:none; font-family:'맑은 고딕', 'Dotum',  sans-serif;}
+i {font-style:normal;}
+
+html, body {height:100%;}
+.wrap {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	height:100%; background:#eee;
+}
+.text_box .txt {position:relative;}
+/*.text_box .txt li {position:absolute; left:0; top:0;}*/
+.text_box .txt i {font-size:30px;}
+.text_box .txt .out {color:red;}
+.text_box .txt .reset {color:green;}
+.text_box .txt .in {color:blue;}
+
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+
+	<div class="text_box">
+		<ul class="txt">
+			<li>fresh</li>
+			<li>exertion</li>
+			<li>fervor</li>
+			<li>persistence</li>
+			<li>purpose</li>
+			<li>confidence</li>
+		</ul>
+	</div>
+
+
+</div>
+</body>
+<script>
+$(function(){
+	var $each_txt = $('.text_box li');
+	var each_t_length = $each_txt.length;
+	var e_txt_Arr = [];
+	var tag_name = 'i';
+	var txt_time = 3000; //로테이트 시간
+	var each_time = 100; //각각의 텍스트 애니 시간
+	var classIn = 'in';
+	var classOut = 'out';
+	var classReset = 'reset';
+
+	//각각 li의 텍스트를 e_txt_Arr에 담고 li는 비우기
+	$each_txt.each(function(i, e){
+		e_txt_Arr.push( $(e).text() );
+		$(e).text('');
+	});
+
+	//e_txt_Arr에 담은 텍스트를 변수 'tag_name'으로 감싸며 각각의 li에 담기
+	for( i=0; i<each_t_length; i++ ){
+		for( j=0; j<e_txt_Arr[i].length; j++ ){
+			$each_txt.eq(i).append('<'+tag_name+'>'+ e_txt_Arr[i][j] +'</'+tag_name+'>');
+		}
+	}
+
+
+	var interval_idx = 0;
+	each_text_class(interval_idx);
+	function each_text_class(interval_idx){
+		var idx = interval_idx;
+
+		//나타나는 텍스트
+		$each_txt.eq(idx).children().each(function(i, e){
+			$(e).addClass(classReset);
+			var addTime = (each_time * i) + each_time;
+			var inInterval = setInterval(function(){
+				$(e).removeClass('out reset').addClass(classIn);
+				clearInterval(inInterval);
+			}, addTime);
+		});
+
+		//사라지는 텍스트
+		idx == 0 ? outClass(each_t_length-1) : outClass(idx-1);
+		function outClass(out_class){
+			$each_txt.eq(out_class).children().each(function(i, e){
+				var addTime = (each_time * i) + each_time;
+				var outInterval = setInterval(function(){
+					$(e).removeClass(classIn).addClass(classOut);
+					clearInterval(outInterval);
+				}, addTime);
+			});
+		}
+	}
+
+	//일정시간 동안 애니메이션 작동 및 idx증가값 계산
+	setInterval(function(){
+		interval_idx++;
+		each_text_class(interval_idx);
+		if( interval_idx == each_t_length ){
+			interval_idx = 0;
+			each_text_class(interval_idx);
+		}
+		//console.log(interval_idx); //idx 흐름 확인
+	}, txt_time);
+
+});
+</script>
+</html>

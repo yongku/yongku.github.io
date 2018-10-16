@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>PORTFOLIO</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+	<script>	
+	$(document).ready(function(){ 
+		$(window).scroll(function() { 
+			if ($(document).scrollTop()>300) { 
+				$("#scrollAni img").each(function(eq){
+					var icons=$(this);
+					setTimeout(function(){
+						icons.addClass("ani"); 
+					}, eq*200);					
+				});
+			}
+		}); 
+	});
+	</script>
+	<style>	
+	#scrollAni { width:700px; margin:100px auto 2000px auto; border:1px solid red;}
+	#scrollAni div {width:700px; padding-top:700px; display:flex; justify-content:space-between; }
+	#scrollAni img {position:relative; transform:scale(0);opacity:0; transition:0.5s; }
+	#scrollAni img.ani {opacity:1; transform:scale(1);}
+	#scrollAni img:hover {filter:grayscale(100%) blur(5px); }
+	</style>
+	</head>
+	<body>
+	<section id="scrollAni">
+		<h1>스크롤을 내리면 차례로 실행되는 애니메이션 아이콘(아래로 스크롤 하세요)</h1>
+		<div>
+			<img src="images/ico_1.png" alt="facebook">
+			<img src="images/ico_2.png" alt="google+">
+			<img src="images/ico_3.png" alt="instagram">
+		</div>
+		<p>이미지에 마우스를 갖다대어 보세요 (마우스Hover(롤오버) 효과)</p>
+	</section>	
+</body>
+</html>

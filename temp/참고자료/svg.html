@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+
+<title>Basic Style List</title>
+
+<!-- <link rel="stylesheet" type="text/css" href="css/sjFont.css" /> 나눔폰트를 이용 할 경우만 사용 -->
+<link rel="stylesheet" type="text/css" href="css/sjReset.css" />
+<link rel="stylesheet" type="text/css" href="css/sjLayout.css" />
+<link rel="stylesheet" type="text/css" href="css/sjTemp.css" />
+<link rel="stylesheet" type="text/css" href="css/sjPopup.css" />
+<link rel="stylesheet" type="text/css" href="css/sjMedia.css" />
+
+<script type="text/javascript" src="js/common/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/common/gnb.js"></script>
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/plugin/html5.js"></script>
+<script type="text/javascript" src="js/plugin/css3-mediaqueries.js"></script>
+<![endif]-->
+<!--[if IE]>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" type="text/css" href="css/ie.css" />
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="css/ie7.css" />
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="css/ie8.css" />
+<![endif]-->
+<!--[if IE 9]>
+<link rel="stylesheet" type="text/css" href="css/ie9.css" />
+<![endif]-->
+</head>
+<body>
+<pre>
+SVG는 무엇입니까?
+SVG는 확장 가능한 벡터 그래픽을 의미합니다
+SVG는 웹 벡터 기반 그래픽을 정의하는 데 사용됩니다
+SVG는 XML 형식의 그래픽 문서입니다.
+SVG 그래픽은 품질은 확대되어도 그대로 유지합니다.
+SVG 파일의 모든 속성을 애니메이션 할 수 있습니다
+SVG 이미지는 텍스트 편집기로 작성하지만,드로잉(벡터) 프로그램 을통해 생성가능합니다
+
+참고 xml의 형식을 따라야합니다
+모든 태그는 열림이 없어야한다.
+모든요소는 대소문자을 구분합니다 
+이름은 -보다는 _을 사용추천
+firstname lastname 은 피하여야하며
+이름에 공백은 사용하지 마십시요
+부호사용시 미리정의된 엔티티을 사용하십시요
+&lt; < less than
+&gt; > greater than
+&amp; & ampersand 
+&apos; ' apostrophe
+&quot; " quotation mark
+속성은 따움표" " 혹은 '  ' 을 사용하여 지정하여주십시요
+충돌이 우려되는 태그의 이름은 앞에 글자하나을 붙여사용한다
+
+아래예제 설명(원그리기)
+svg 태그의선언부입니다 
+width height 은 svg의 속성을나타냅니다
+circle 는 원을 그리는 element입니다.(svg의자식입니다)
+cs cy는 원의중심좌표이며 circle의의속성입니다(생략은 0,0입니다)
+R 속성은 반지름입니다.
+stroke stroke-width는 외곽선을 나타냅니다
+fill은 속성 명령입니다
+/svg을 사용하여 태그을 닫습니다
+</pre>
+
+<svg width="100" height="100">
+   <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+</svg>
+​
+<pre>
+SVG Shapes(미리 지정된 모양형식)
+rect     사각형  circle   원  ellipse  타원  line     선  polyline 폴리  polygon  다각형  path 패스라인
+</pre>
+
+<br>사각형예제 css속성사용<br>
+<svg width="400" height="110">
+  <rect width="300" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+</svg>
+​
+<br>다른방식 투명도사용(opacity)<br>
+<svg width="400" height="110">
+  <rect x="50" y="1" width="300" height="100"
+  style="fill:blue;stroke:blue;stroke-width:5;fill-opacity:0.4;stroke-opacity:1" />
+</svg>
+
+<br>사각형의 모서리 다듬기(rx)<br>
+<svg width="400" height="110">
+  <rect x=50" y="1" rx="20" ry="20" width="300" height="100"
+  style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+</svg>
+
+<br>타원형 만들기<br>
+<svg height="150" width="500">
+  <ellipse cx="240" cy="100" rx="220" ry="30" style="fill:purple" />
+  <ellipse cx="220" cy="70" rx="190" ry="20" style="fill:lime" />
+  <ellipse cx="210" cy="45" rx="170" ry="15" style="fill:yellow" />
+</svg>
+
+<br>두개의 타원 결합<br>
+<svg height="100" width="500">
+  <ellipse cx="240" cy="50" rx="220" ry="30" style="fill:yellow" />
+  <ellipse cx="220" cy="50" rx="190" ry="20" style="fill:white" />
+</svg>
+​
+<br>라인그리기<br>
+<svg height="210" width="500">
+  <line x1="0" y1="0" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2" />
+</svg>
+
+<br>다각형<br>
+<svg height="210" width="500">
+  <polygon points="200,10 250,190 160,210" style="fill:lime;stroke:purple;stroke-width:1" />
+</svg>
+<svg height="250" width="500">
+  <polygon points="220,10 300,210 170,250 123,234" style="fill:lime;stroke:purple;stroke-
+width:1" />
+</svg>
+<svg height="210" width="500">
+  <polygon points="100,10 40,198 190,78 10,78 160,198"
+  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:nonzero;" />
+</svg>
+​
+<br>evenodd 채우기 속성의 변경<br>
+<svg height="210" width="500">
+  <polygon points="100,10 40,198 190,78 10,78 160,198"
+  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+</svg>
+​
+<br>꺽인 직선그리기<br>
+<svg height="200" width="500">
+  <polyline points="20,20 40,25 60,40 80,120 120,140 200,180"
+  style="fill:none;stroke:black;stroke-width:3" />
+</svg>
+​
+<svg height="180" width="500">
+  <polyline points="0,40 40,40 40,80 80,80 80,120 120,120 120,160"
+  style="fill:white;stroke:red;stroke-width:4" />
+</svg>
+
+path 을 사용
+<svg height="210" width="400">
+  <path d="M150 0 L75 200 L225 200 Z" />
+</svg>
+<pre>
+​
+path 엘리먼트 설명
+M = moveto
+L = lineto
+H = horizontal lineto
+V = vertical lineto
+C = curveto
+S = smooth curveto
+Q = quadratic Bezier curve
+T = smooth quadratic Bezier curveto
+A = elliptical Arc
+Z = closepath
+​
+베이지 곡선 만들기
+(공을 던지면 올라갔다 다시떨어지는듯한 곡선을 말한다.)
+두개의 엔드포인트와 하나의제어점이 필요하다</pre>
+
+<svg height="110" width="310">
+<path d="M 100 100 q 100 -200 200 0" stroke="blue" stroke-width="5" fill="none" />
+</svg>
+​
+<br>x텍스트 text 쓰기<br>
+<svg height="30" width="200">
+  <text x="0" y="15" fill="red">I love SVG!</text>
+</svg>
+​
+<br>텍스트 회전<br>
+<svg height="60" width="200">
+  <text x="0" y="15" fill="red" transform="rotate(30 20,40)">I love SVG</text>
+</svg>
+
+<svg height="90" width="200">
+  <text x="20" y="20" style="fill:red;">Several lines:
+    <tspan x="30" y="45">First line.</tspan>
+    <tspan x="10" y="90">Second line.</tspan>
+  </text>
+</svg>
+
+<svg height="30" width="200" >
+  <a xlink:href="01.jpg" target="_blank">
+    <text x="0" y="15" fill="red">I love SVG!        링크만들기</text>
+  </a>
+​
+</svg>
+<br>라인그리기</br>
+<svg><path stroke="red" d="M5 20 l215 0" /></svg>
+<svg > <path stroke-width="5" d="M5 20 l215 0" stroke="black" /></svg>
+​
+<br>라인마무리</br>
+<svg >
+  <g fill="none" stroke="red" stroke-width="15">
+    <path stroke-linecap="butt" d="M5 20 l215 0" />
+    <path stroke-linecap="round" d="M5 50 l215 0" />
+    <path stroke-linecap="square" d="M5 80 l215 0" />
+  </g>
+</svg>
+​
+<br>대쉬라인의 속성</br>
+<svg height="80" width="300">
+  <g fill="none" stroke="red" stroke-width="4">
+    <path stroke-dasharray="5,5" d="M5 20 l215 0" />
+    <path stroke-dasharray="10,10" d="M5 40 l215 0" />
+    <path stroke-dasharray="20,10,5,5,5,10" d="M5 60 l215 0" />
+  </g>
+</svg>
+
+필터
+<pre>
+feBlend - 이미지를 합성 필터링
+feColorMatrix - 색 변환 용 필터
+feComponentTransfer
+feComposite
+feConvolveMatrix
+feDiffuseLighting
+feDisplacementMap
+feFlood
+feGaussianBlur
+feImage
+feMerge
+feMorphology
+feOffset - 그림자에 대한 필터
+feSpecularLighting
+OVER
+feTurbulence
+feDistantLight - 조명 필터
+fePointLight - 조명 필터
+feSpotLight - 조명 필
+</pre>
+
+가우시안 블루
+필터에 id을 만들고 사각형만들고 아이디을 사용해 적용한다<br>
+setDeviation은 조절량을 결정
+<svg >
+  <defs>
+    <filter id="f1" x="0" y="0" >
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+    </filter>
+  </defs>
+  <rect width="120" height="120" stroke="red" stroke-width="20"
+  fill="yellow" filter="url(#f1)" />
+</svg>
+
+<br>그림자 만들기 feOffset사용하여 겹침만든후 이동<br>
+가우시안블러 효과 사용<br>
+<svg height="140" width="140">
+  <defs>
+    <filter id="f4" x="0" y="0" width="200%" height="200%">
+      <feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
+      <feColorMatrix result="matrixOut" in="offOut" type="matrix"
+      values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" />
+      <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="10" />
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    </filter>
+  </defs>
+  <rect width="90" height="90" stroke="green" stroke-width="3"
+  fill="yellow" filter="url(#f4)" />
+</svg>
+​
+<br>그라데이션주기<br>
+<svg height="150" width="400">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="200" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+</svg>
+
+<svg height="150" width="400">
+  <defs>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="200" cy="70" rx="85" ry="55" fill="url(#grad2)" />
+</svg>
+
+<svg height="150" width="400">
+  <defs>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="200" cy="70" rx="85" ry="55" fill="url(#grad3)" />
+  <text fill="#ffffff" font-size="45" font-family="Verdana" x="150" y="86">
+  SVG</text>
+</svg>
+
+<br>라운드 그라데이션 주기<br>
+<svg height="150" width="500">
+  <defs>
+    <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:rgb(255,255,255);
+      stop-opacity:0" />
+      <stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  <ellipse cx="200" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+</svg>
+
+
+
+<div style ="width:1;height:500;border:0px solid"></div>
+</body>
+</html>

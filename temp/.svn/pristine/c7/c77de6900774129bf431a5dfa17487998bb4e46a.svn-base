@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no, address=no, email=no, date=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>06 jvascript - 배열(Array))</title>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<script type="text/javascript" src="js/jquery/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery.easing.min.js"></script>
+	<style>
+		*{margin:0;padding:0;list-style:none;border:0;box-sizing:border-box;text-decoration: none;}
+		h1{padding:10px;border-bottom:1px solid #000;font-size:18px;text-align:center;}
+		h2{font-size:14px;text-align:center;}
+		.box{float:left;width:50%;margin:10px auto;padding:10px;border:1px solid #00f;text-align:center;}
+		.sldbtn a{display:inline-block; padding:10px; border:1px solid gray; text-decoration:none;}
+		.sldlst li{display:inline-block;}
+		.testbtn a{display:inline-block; padding:10px; border:1px solid gray; text-decoration:none;}
+		.testlst li{display:inline-block;}
+		.uxbtn a{display:inline-block; padding:10px; border:1px solid gray; text-decoration:none;}
+		.uxlst li{display:inline-block;}
+		.uxeach li{margin:0 10px;}
+		.uxeach li:first-letter{font-weight:600;}
+		.uxeach li span{color:blue;}
+	</style>
+</head>
+<body>
+
+<div class="box uxeach">
+	<div class="uxpaging">
+		<i class="uxcur"></i> / <b class="uxtotal"></b>
+	</div>
+	<div class="uxbtn">
+		<a href="#" class="btn uxprev">&lt;</a>
+		<a href="#" class="btn uxnext">&gt;</a>
+	</div>
+	<ul class="uxlst">
+	</ul>
+</div>
+<script>
+console.log(document.body);//console.log는 요소를 HTML과 같은 트리 구조로 출력합니다.
+console.dir(document.body);//console.dir은 요소를 JSON과 같은 트리 구조로 출력합니다.
+//console.table(document.body);//console.table 은 요소를 table과 같은 구조로 출력합니다.
+
+//함수는 일반객체와는 달리 함수만의 표준 프로퍼티를 가지고 있음
+function area(w, h){
+	return w * h;
+}
+console.dir(area);
+	
+obj = {}
+console.dir(obj);
+
+area.a = 100;
+area.b = 200;
+console.log(area.a);
+console.log(area.b);
+
+
+/*
+arguments 객체는 함수 호출 시 전달된 인자의 정보를 담고 있는 유사 배열 객체입니다. 
+이 arguments는 함수 내부에서 지역변수처럼 사용되며, 함수 외부(전역변수)에서는 사용할 수 없습니다.
+여기서 자바스크립트는 함수 호출 시 함수에서 정의한 매개변수 개수에 맞춰서 인자를 전달하지 않아도 에러가 발생하지 않습니다.
+*/
+function area1(width, height) { 
+	console.log(arguments); 
+	console.table(arguments); 
+	return width * height; 
+} 
+area1(); // {} 출력 
+area1(10); // { '0': 1 } 출력  
+area1(10, 20); // { '0': 1, '1': 2 } 출력  
+area1(10, 20, 30); // { '0': 1, '1': 2, '2': 3 } 출력
+
+
+/*
+매개변수( parameter )는 인자( argument )로 초기화됩니다. 
+매개변수의 개수보다 인자를 적게 전달하면 전달되지 않은 매개변수는 undefined로 초기화됩니다.
+이러한 자바스크립트의 특성때문에 런타임 시에 호출된 함수의 인자 개수를 확인하고 이에 따라 동작을 달리 정의할 필요가 있을 수 있습니다. 
+이때 유용하게 사용되는 것이 arguments 객체입니다.
+arguments 객체는 매개변수 개수가 확정되지 않은 가변 인자 함수를 구현할 때 유용하게 사용됩니다.
+*/
+function sum() { 
+	var res = 0; 
+	for (var i = 0; i < arguments.length; i++) { 
+		res += arguments[i]; 
+	} 
+	return res; 
+}
+console.log(sum()); // 0 출력 
+console.log(sum(1, 2)); // 3 출려 
+console.log(sum(1, 2, 3)); // 6 출력
+
+/*
+자바스크립트는 함수를 호출할 때 인자들과 함께 암묵적으로 arguments 객체가 함수 내부로 전달됩니다. 
+arguments 객체는 배열의 형태로 인자값 정보를 담고 있지만 실제 배열이 아닌 유사 배열 객체입니다
+유사 배열 객체란 length 프로퍼티를 갖고 있는 객체를 말합니다. 
+유사 배열 객체는 배열이 아니므로 배열 메서드를 사용하는 경우 에러가 발생하게 됩니다. 
+따라서 배열 메서드를 사용하려면 Function.prototype.call, Function.prototype.apply를 사용해야 하는 번거로움이 있습니다.
+*/
+function sum1() { 
+	if (!arguments.length) return 0; // arguments 객체를 배열로 변환 
+	var array = Array.prototype.slice.call(arguments); 
+	return array.reduce(function (pre, cur) { 
+		return pre + cur; 
+	}); 
+}
+console.log(sum1(1, 2, 3, 4, 5)); // 15 출력
+
+// ES6 
+function sum2(...args) { 
+	if (!args.length) { return 0; } 
+	return args.reduce((pre, cur) => pre + cur); 
+} 
+console.log(sum2(1, 2, 3, 4, 5)); // 15 출력
+
+
+$(function() {
+	//테스트 배열
+	var sty = function ScriptStudy(){};
+	console.log(sty.name); // "ScriptStudy" 로 출력됨
+	
+	var testarr = [
+		[1,2], 
+		[true, false], 
+		['자바스크립트','스터디']
+	]; 
+	for (var j = 0; j < testarr.length; j++) { 
+		for (var k = 0; k < testarr[j].length; k++) { 
+			console.log('testarr2[' + j + ']' + '[' + k + '] = ' + testarr[j][k] ); 
+		} 
+	}
+	console.log(testarr);
+	console.table(testarr);
+	/* 출력결과
+	testarr2[0][0] = 1
+	testarr2[0][1] = 2
+	testarr2[1][0] = true
+	testarr2[1][1] = false
+	testarr2[2][0] = 자바스크립트
+	testarr2[2][1] = 스터디
+	*/
+	
+	values = [];
+	for (var x = 0; x < 10; x++){
+		values.push([
+			2 ** x,
+			2 * x ** 2
+		])
+	};
+	console.log(values);
+	console.dir(values);
+	console.table(values);
+	
+	//배열과 함수로 슬라이드 연습
+	function append(){
+		var fruits=[
+			["수박"], 
+			["멜론"],
+			["바나나"]
+		];
+		var vegetable=[
+			["오이"], 
+			["배추"],
+			["상추"]
+		];
+		
+		
+		/*for (var j=0; j<fruits.length; j++) { 
+			$(".uxeach .uxlst").append($("<li>"+fruits[j][0]+fruits[j][1]+"</li>"));
+			for (var k=0; k<vegetable.length; k++) { 
+				$(".uxeach .uxlst li").append($("<span>"+vegetable[k][0]+"</span>"));
+				console.log( vegetable[k] );
+			}
+		}
+		console.log(fruits);
+		console.dir(fruits);
+		console.table(fruits);
+		console.log(vegetable);
+		console.dir(vegetable);
+		console.table(vegetable);*/
+
+		/*
+		var fruits=["수박", "멜론", "바나나"];
+		$.each(fruits, function(j, k){
+			$(".uxeach .uxlst").append($("<li>"+k+"</li>"));
+		});
+		*/
+	}
+	function appendTo(){
+		var cars=["소나타", "아우디", "벤츠"];
+
+		$.each(cars, function(j, k){
+			$("<li>" + k +"</li>").appendTo(".uxeach .uxlst");
+		});
+	}
+	$('.uxeach').each(function(i, e){
+		append();
+		appendTo();
+		
+		var uxcur = 0;
+		var uxlen = 2;
+
+		//var $uxSld = $('.uxsld');
+		var $uxPaging = $(e).find('.uxpaging');
+		var $uxCur = $(e).find('.uxcur');
+		var $uxTotal = $(e).find('.uxtotal');
+		var $uxBtn = $(e).find('.btn');
+		var $uxBtnNext = $(e).find('.uxnext');
+		var $uxBtnPrev = $(e).find('.uxprev');
+		var $uxLst = $(e).find('.uxlst');
+		var $uxLstItem = $(e).find('.uxlst li');
+
+		var uxpage = Math.ceil($uxLstItem.length / uxlen);
+
+		//$uxCur.text(uxcur + 1);
+		$uxTotal.text(uxpage);
+		//console.log(uxpage);
+
+		uxTextCur();
+		uxSlice(uxcur);
+		uxBtnNext();
+		uxBtnPrev();
+		function uxTextCur(){
+			$uxCur.text(uxcur+1);
+		}
+		function uxSlice(num){
+			uxidx = num * uxlen;
+			$uxLstItem.hide().slice(uxidx, uxidx+uxlen).show();
+			console.log(uxidx, uxidx+1);// 0 1 로 출력됨
+		}
+		function uxBtnNext(){
+			$uxBtnNext.on('click', function(){
+				//uxcur ++;
+				uxcur += 1;
+				uxTextCur();
+				if(uxcur >= uxpage){
+					uxcur = 0;
+					uxTextCur();
+					uxSlice(uxcur);
+				} else {
+					uxSlice(uxcur);
+				}
+				//console.log(uxcur);
+				return false;
+			});
+		}
+		function uxBtnPrev(){
+			$uxBtnPrev.on('click', function(){
+				//uxcur --;
+				uxcur -= 1;
+				uxTextCur();
+				if(uxcur < 0){
+					uxcur = uxpage-1;
+					uxTextCur();
+					uxSlice(uxcur);
+				} else {
+					uxSlice(uxcur);
+				}
+				//console.log(uxcur);
+				return false;
+			});
+		}
+	});
+
+	
+});    
+</script>
+
+</body>
+</html>

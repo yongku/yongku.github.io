@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>자바스크립트를 활용한 클릭을 통한 이미지 교체</title>
+</head>
+<SCRIPT language="javascript">
+
+function image_onclick(){
+	var arrImage=new Array("num1.png", "num2.png", "num3.png", "num4.png", "num5.png");
+	var imgSource=document.targetImg;
+	var intRandom=Math.round(Math.random()*4);
+
+	while(imgSource.src.indexOf(arrImage[intRandom]) != -1){
+		intRandom=Math.round(Math.random()*4);
+	}
+	
+	imgSource.src=arrImage[intRandom];
+}
+</SCRIPT>
+<body>
+<image name="targetImg" src='num1.png' onclick="image_onclick()">
+</body>
+</html>

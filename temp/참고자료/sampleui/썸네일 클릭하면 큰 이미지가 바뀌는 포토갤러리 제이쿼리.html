@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>자동 페이징 리스트 제이쿼리</title>
+<link rel="stylesheet" type="text/css" href="css/sjReset.css" />
+<script type="text/javascript" src="js/plugin/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+#zoom_img {text-align:center; margin-bottom:15px;}
+.thumb {overflow:hidden;}
+.thumb li {width:25%; float:left; text-align:center;}
+.thumb li a {border:1px solid #555; overflow:hidden;}
+.thumb li a,
+.thumb li a img {width:150px; height:100px; display:block;}
+.thumb li.on a {border:2px solid #a52323; width:148px; height:98px;}
+.thumb li.on a img {margin:-1px 0 0 -1px;}
+</style>
+</head>
+<body>
+<div id="zoom_img"><img src="http://cfile25.uf.tistory.com/image/220E4534516620D3242100" alt="image 1"></div>
+<ul class="thumb">
+	<li class="on">
+		<a href="#"><img src="http://cfile25.uf.tistory.com/image/220E4534516620D3242100" alt="image 1"></a>
+	</li>
+	<li>
+		<a href="#"><img src="http://cfile2.uf.tistory.com/image/11729434516620D23156EB" alt="image 2"></a>
+	</li>
+	<li>
+		<a href="#"><img src="http://cfile23.uf.tistory.com/image/277D9334516620D32DC098" alt="image 3"></a>
+	</li>
+	<li>
+		<a href="#"><img src="http://cfile6.uf.tistory.com/image/2377DF425359B4DA1012F5" alt="image 4"></a>
+	</li>
+</ul>
+<script>
+$( document ).ready(function() {
+	$( ".thumb li a" ).click(function() {
+		var address = $(this).children("img");
+		$("#zoom_img img").attr("src",address.attr("src")).attr("alt",address.attr("alt"));
+		$(this).parent().addClass("on").siblings().removeClass("on");
+		return false;
+	});
+});
+</script>
+</body>
+</html>

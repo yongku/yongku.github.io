@@ -1,0 +1,182 @@
+/* Layout */
+html{background: rgb(245,245,245);}
+body{font-family:'Source Sans Pro';}
+h1{font-size:16px;display:inline-block;}
+header{width:100%;margin-bottom:30px;background:#fff;z-index:10;}
+.wrapper{width:90%;max-width:800px;margin:0 auto;}
+.body-wrapper{margin-top:100px;margin-bottom:100px;}
+.topwrap{position:relative;width:90%;margin:0 auto;max-width:800px;padding:20px;}
+.topwrap a{position:absolute;top:20px;right:0;padding-right:20px;}
+.topwrap a i{position:absolute;top:7px;right:0;line-height:0;font-size:30px;}
+
+.demo{width:500px;margin:40px auto;font-size:13px;font-family:"맑은 고딕";}
+.demo.demo2{width:700px;}
+.btn-close i{display:inline-block;margin-top:-17px;line-height:0;font-size:40px;vertical-align:middle;}
+
+/* demo1 - tabmenu */
+.tabmenu{position:relative;width:100%;height:210px;border:1px solid #ddd;}
+.tabmenu:after{content:"메뉴를 클릭해주세요.";display:inline-block;position:absolute;top:100px;left:0;width:100%;text-align:center;font-size:14px;font-weight:600;}
+.tabmenu > li{display:inline-block;width:50%;float:left;}
+.tabmenu > li > a{display:inline-block;width:100%;height:100%;min-height:35px;padding:10px;background:#f5f5f5;color:#666;font-size:14px;text-align:center;}
+.tabmenu > li:target > a{background:blue;color:#fff;font-weight:600;}
+.tabmenu > li ul{position:absolute;top:35px;left:0;width:100%;border-top:1px solid #ddd;background:#fff;}
+.tabmenu > li ul li{position:relative;padding:0 5px;border-bottom:1px solid #ddd;}
+.tabmenu > li ul li:last-child{border-bottom:0;}
+.tabmenu > li ul li a{overflow:hidden;display:block;max-width:calc(100% - 100px);padding:8px 0;text-overflow:ellipsis;white-space:nowrap;}
+.tabmenu > li ul li span{position:absolute;top:8px;right:5px;}
+.tabmenu > li:target ul{z-index:2;}
+.tabmenu > li:not(:target) ul{display:none;}
+
+/* demo2 - qnamenu */
+.qnamenu{width:100%;}
+.qnamenu > li{}
+.qnamenu > li > a{display:block;padding:10px 5px;background:#000;color:#fff;font-weight:600;}
+.qnamenu > li .answer{padding:10px;border-top:1px solid #fff;border-bottom:1px solid #fff;}
+.qnamenu > li:not(:target) > a{background:#ddd;color:#000;}
+.qnamenu > li:not(:target) .answer{display:none;}
+
+/* demo3 - nav */
+nav ul{margin:30px 0;}
+nav ul li{line-height:50px;}
+#nav{position:fixed;top:0;width:80%;max-width:400px;height:100%;padding:20px;box-shadow:-3px 0 10px rgba(0,0,0,0.2);background:rgb(255, 219, 58);text-align:center;z-index:10;}
+#nav:not(:target){right:-100%;transition:right 1.5s;}
+#nav:target{right:0;transition:right 1s;}
+
+
+/* modal layer */
+#modalWrap{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);}
+#modalWrap:not(:target){opacity:0;visibility:hidden;transition:opacity 1s, visibility 1s;}
+#modalWrap:target{opacity:1;visibility:visible;transition:opacity 1s, visibility 1s;z-index:10;}
+.modal{position:fixed;top:50%;left:50%;padding:20px;background:#fff;text-align:center;transform:translate(-50%,-50%);}
+.modal h2{padding:5px 0;border-bottom:1px solid #ddd;}
+
+/* button design */
+.button{
+	display:inline-block;
+	width:100%;
+	padding:20px 70px;
+	border:1px solid #2d6898;
+	background-color:#538fbe;
+	background-image:linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+	background-image:gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgb(73,132,180)),
+		color-stop(1, rgb(97,155,203))
+	);
+	border-radius: 5px;
+	text-shadow: 0px -1px 0px rgba(0,0,0,.5);
+	box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	transition: all .2s ease-in-out;
+	transform: rotateX(20deg);
+	text-decoration: none;
+	color:#fff;
+	font-size:24px;
+	font-weight:bold;
+	text-align:center;
+}
+.button:hover{
+	background-image: linear-gradient(bottom, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
+	background-image:gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgb(79,142,191)),
+		color-stop(1, rgb(102,166,214))
+	);
+}
+
+.button:active{
+	box-shadow:0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	background-image:linear-gradient(bottom, rgb(88,154,204) 0%, rgb(90,150,199) 100%);	
+	background-image:gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgb(88,154,204)),
+		color-stop(1, rgb(90,150,199))
+	);
+    transform:translate(0, 4px) rotateX(20deg);
+}
+
+/* transition 효과 응용 */
+.poster{overflow:hidden;width:500px;height:300px;margin:0 auto 100px;}
+.poster a{display:block;position:relative;width:100%;height:100%;}
+.poster a img{width:100%;}
+.poster a::before{content:"";display:block;position:absolute;top:0;left:0;width:250px;height:100%;background:url(../images/door-left.png) no-repeat 0 0;transition:left 2.5s;}
+.poster a::after{content:"";display:block;position:absolute;top:0;right:0;width:250px;height:100%;background:url(../images/door-right.png) no-repeat 0 0;transition:right 2.5s;}
+.poster a:hover::before{left:-100%;}
+.poster a:hover::after{right:-100%;}
+
+
+
+
+/* IE 스크롤바 디자인 바꾸기 */
+html{
+	/* 스크롤 색상 바꾸기 */
+	scrollbar-3dLight-Color: #efefef; 
+	scrollbar-arrow-color: #dfdfdf; 
+	scrollbar-base-color: #efefef; 
+	scrollbar-Face-Color: #dfdfdf; 
+	scrollbar-Track-Color: #efefef; 
+	scrollbar-DarkShadow-Color: #efefef; 
+	scrollbar-Highlight-Color: #efefef; 
+	scrollbar-Shadow-Color: #efefef;
+	
+	/* ie 스크롤바 없애기 */
+	-ms-overflow-style: none;
+}
+
+/*
+IE는 스크롤 바 각 요소의 색만 바꿀 수 있다. 
+scrollbar-base-color   - 스크롤 바 전체 배경
+scrollbar-face-color   - 상하좌우로 움직이는 부분(thumb), 화살표가 포함된 상하좌우 끝 사각형 부분(button)
+scrollbar-track-color  - 스크롤 바 thumb을 제외한 나머지 부분
+scrollbar-arrow-color  - 좌우, 상하 스크롤바 화살표
+scrollbar-highlight-color, crollbar-3dlight-color    - 스크롤 바 thumb, button의 왼쪽과 위, 즉, 밝은 부분
+scrollbar-darkshadow-color, scrollbar-shadow-color   - 스크롤 바 thumb, button의 오른쪽과 아래, 즉, 어두운 부분
+*/
+
+
+/* 크롬,사파리 스크롤바 없애기 */
+::-webkit-scrollbar{display:none;}
+
+/* 사파리 / 크롬 브라우저 스크롤바 디자인 바꾸기 */
+::-webkit-scrollbar{width:8px;height:8px;border:3px solid #fff;}
+::-webkit-scrollbar-button:start:decrement, 
+::-webkit-scrollbar-button:end:increment{display:block;height:10px;background:#efefef;}
+::-webkit-scrollbar-track{background:#efefef;-webkit-border-radius:10px;border-radius:10px;-webkit-box-shadow:inset 0 0 4px rgba(0,0,0,.2);}
+::-webkit-scrollbar-thumb{height:50px;width:50px;background:rgba(0,0,0,.2);-webkit-border-radius:8px;border-radius:8px;-webkit-box-shadow:inset 0 0 4px rgba(0,0,0,.1);}
+/*
+가상 요소 종류
+::-webkit-scrollbar             {스크롤바 전체영역}
+::-webkit-scrollbar-button      {상하, 좌우스크롤바 버튼}
+::-webkit-scrollbar-track       {화살표를 제외한 부분}
+::-webkit-scrollbar-track-piece {track에서 실제 움직이는 부분을 제외한 나머지 부분}
+::-webkit-scrollbar-thumb       {실제로 움직이는 부분(스크롤바 알맹이)}
+::-webkit-scrollbar-corner      {리사이즈 하기 전 상하 좌우 스크롤바가 만나는 모서리 부분}
+::-webkit-resizer               {화면 리사이즈시 클릭앤드래그 하는 부분(모서리)}
+
+가상 선택자 종류
+:horizontal   좌우 스크롤 바의 모든 요소에 적용
+:vertical   상하 스크롤 바의 모든 요소에 적용
+:decrement   스크롤 바에서 윗쪽, 왼쪽 방향 button, track 요소에 적용
+:increment   스크롤 바에서 아래쪽, 오른쪽 방향 button, track 요소에 적용
+:start   thumb 이전에 위치한 button, track 요소에 적용
+:end   thumb 이후에 위치한 button, track 요소에 적용
+:double-button   상하 화살표가 붙어 두 개가 한꺼번에 표시된 요소에 적용 (좌우도 같음)
+:single-button   상하 화살표가 아래 위 따로 나뉘어 표시된 요소에 적용 (좌우도 같음)
+:no-button   화살표 button이 없는 요소에 적용
+:corner-present   스크롤 바 corner가 있는 요소에 적용
+:window-inactive   지금 활성화된 창의 스크롤 바에 적용
+*/
+
+
+
+
+
+
+
+
+

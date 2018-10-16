@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>자동 페이징 리스트 제이쿼리</title>
+<link rel="stylesheet" type="text/css" href="css/sjReset.css" />
+<script type="text/javascript" src="js/plugin/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+dl{width:800px;margin:20px auto;border:1px solid;}
+dt,dd{padding:5px;}
+</style>
+</head>
+<body>
+<p>※ 참고 url : <a href="http://api.jquery.com/category/events/mouse-events/" target="_blank">http://api.jquery.com/category/events/mouse-events/</a></p>
+<dl>
+	<dt><strong>클릭 (click)</strong></dt>
+	<dd>
+		<script>
+		$( document ).ready(function() {
+			//$( selector ).click(function() {});
+			$( ".test_click" ).click(function() {
+				alert( "Click Event." );
+			});
+		});
+		</script>
+		<a href="#" onclick="void(0); return false;" class="test_click">click test</a>
+	</dd>
+</dl>
+
+<dl>
+	<dt><strong>더블클릭 (dblclick)</strong></dt>
+	<dd>
+		<script>
+		$( document ).ready(function() {
+			//$( selector ).dblclick(function() {});
+			$( ".test_dblclick" ).dblclick(function() {
+				alert( "Double Click Event." );
+			});
+		});
+		</script>
+		<a href="#" onclick="void(0); return false;" class="test_dblclick">dblclick test</a>
+	</dd>
+</dl>
+
+<dl>
+	<dt><strong>마우스엔터/마우스리브 (mouseenter/mouseleave)</strong></dt>
+	<dd>※ 비슷한 이벤트로 마우스오버/마우스아웃(mouseover/mouseout)이 있으나<br>
+		마우스엔터/리브가 엘리먼츠 안에 들어왔을 때와 나갔을 때만 발생하는 반면<br>
+		마우스오버/아웃은 엘리먼츠 안에서 마우스를 이동할 때 마다 발생한다.</dd>
+	<dd>
+		<script>
+		$( document ).ready(function() {
+			//$( selector ).mouseenter(function() {});
+			//$( selector ).mouseleave(function() {});
+			$( ".test_enter" ).mouseenter(function() {
+				$(this).css("background","yellow");
+			});
+			 
+			$( ".test_enter" ).mouseleave(function() {
+				$(this).css("background","pink");
+			});
+		});
+		</script>
+		<a href="#" onclick="void(0); return false;" class="test_enter">enter/leave</a>
+	</dd>
+</dl>
+
+<dl>
+	<dt><strong>마우스다운/마우스업 (mousedown/mouseup) - 마우스 버튼을 눌렀을 때 / 뗐을 때</strong></dt>
+	<dd>
+		<script>
+		$( document ).ready(function() {
+			//$( selector ).mousedown(function() {});
+			//$( selector ).mouseup(function() {});
+			$( ".test_down" ).mousedown(function() {
+				$(this).css("background","yellow");
+			});
+			 
+			$( ".test_down" ).mouseup(function() {
+				$(this).css("background","pink");
+			});
+		});
+		</script>
+		<a href="#" onclick="void(0); return false;" class="test_down">down/up</a>
+	</dd>
+</dl>
+
+<dl>
+	<dt><strong>포커스인/포커스아웃 (focusin/focusout)</strong></dt>
+	<dd>
+		<script>
+		$( document ).ready(function() {
+			//$( selector ).focusin(function() {});
+			//$( selector ).focusout(function() {});
+			$( ".test_focus" ).focusin(function() {
+				$(this).css("background","yellow");
+			});
+			 
+			$( ".test_focus" ).focusout(function() {
+				$(this).css("background","pink");
+			});
+		});
+		</script>
+		<input class="test_focus" type="text">
+	</dd>
+</dl>
+
+</body>
+</html>

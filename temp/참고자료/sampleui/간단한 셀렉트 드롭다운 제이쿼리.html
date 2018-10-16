@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>자동 페이징 리스트 제이쿼리</title>
+<link rel="stylesheet" type="text/css" href="css/sjReset.css" />
+<script type="text/javascript" src="js/plugin/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+.select {position:relative; line-height:35px;}
+.select > a {display:block; border:1px solid #ccc; padding:0 8px; overflow:hidden;}
+.select > a:after,
+.select > ul > li:first-child:after {display:block; float:right;}
+.select > a:after {content:'▼';}
+.select > ul {position:absolute; width:100%; top:1px; background:#fff; display:none;}
+.select > ul > li {cursor:pointer; padding:0 8px; border:1px solid #ccc; border-top:0;}
+.select > ul > li:first-child:after {content:'▲';}
+</style>
+</head>
+<body>
+<div class="select">
+	<a href="#">Select 1</a>
+	<ul>
+		<li>Select 1</li>
+		<li>Select 2</li>
+		<li>Select 3</li>
+	</ul>
+</div>
+<script>
+$( ".list_example" ).ready(function() {
+	$("div.select > a").click(function() {
+		$(this).next("ul").toggle();
+		return false;
+	});
+	 
+	$("div.select > ul > li").click(function() {
+		$(this).parent().hide().parent("div.select").children("a").text($(this).text());
+		$(this).prependTo($(this).parent());
+	});
+});
+</script>
+</body>
+</html>

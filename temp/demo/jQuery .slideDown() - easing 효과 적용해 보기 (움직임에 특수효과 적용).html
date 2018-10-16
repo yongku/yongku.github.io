@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>jQuery 공작소 : .slideDown()</title>
+<meta name="author" content="jQuery 공작소">
+<link rel="stylesheet" type="text/css" href="http://superkts.com/jquery/core.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+
+<style type="text/css">
+	.wrapper { padding:0 !important; margin-bottom:30px; }
+	.wrapper .contents .ex .e { padding-top:50px; }
+	.wrapper .contents .ex .url { font-size:12pt; text-align:center; margin-bottom:10px; }
+</style>
+
+<div class="wrapper">
+	<h1>.slideDown()</h1>
+	<div class="contents">
+		<div class="ex">
+			<div class="url"><a class="link2" href="http://superkts.com/jquery/slideDown" target="_blank">▶ jQuery 공작소에서 보기</a></div>
+			<div class="t2">easing 효과 적용해 보기 (움직임에 특수효과 적용)</div>
+			<div class="e ac">
+
+
+<!-- 소스 시작 -->
+
+<style type="text/css">
+	.css_test {
+		border-collapse:collapse;
+		border:5px solid gray;
+		height:500px;
+		padding:5px;
+		text-align:center;
+	}
+	.css_test td {
+		border:1px solid black;
+		width:520px;
+	}
+	.css_test img {
+		display:none;
+		width:500px;
+	}
+</style>
+
+<div class="mb10">
+	<button type="button" class="bset1 wauto" onclick="$('.css_test img').hide().slideDown(500, 'easeOutBack')">easeOutBack</button>
+	<button type="button" class="bset1 wauto" onclick="$('.css_test img').hide().slideDown(2000, 'easeOutElastic')">easeOutElastic</button>
+	<button type="button" class="bset1 wauto" onclick="$('.css_test img').hide().slideDown(1000, 'easeOutCubic')">easeOutCubic</button>
+	<button type="button" class="bset1 wauto" onclick="$('.css_test img').hide().slideDown(1000, 'linear')">linear</button>
+</div>
+
+<table class="css_test" cellpadding="0" cellspacing="0" align="center">
+	<tr>
+		<td><img src="http://cfile2.uf.tistory.com/image/264E5438555ABF490A0911" /></td>
+	</tr>
+</table>
+
+<!-- 소스 종료 -->
+
+
+			</div>
+		</div>
+		<div class="ac">
+			<a href="http://superkts.com/jquery/" target="_blank">jQuery 공작소</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://superkts.com/css/" target="_blank">CSS 공작소</a>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

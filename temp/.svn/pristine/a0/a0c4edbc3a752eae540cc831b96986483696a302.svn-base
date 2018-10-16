@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>갤리러형 리스트 레이아웃 연습</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/gallery_layout.css">
+</head>
+<body>
+    <div class="glist">
+        <ul>
+            <li>
+                <a href="#">
+                    <div class="imgbox">
+                        <em>춘천시</em>
+                        <img src="images/gallery/2558819_image2_1.jpg" alt="">
+                        <img src="images/gallery/img_ov.png" alt="" class="ov">
+                    </div>
+                    <!-- imgbox end -->
+                    <dl>
+                        <dt>
+                            <strong>AM호텔</strong>
+                            <em>숙박시설</em>
+                        </dt>
+                        <dd>
+                            <p>지역:강원도 평창군</p>
+                            <p>전화번호:1855-2866</p>
+                            <p>객실수:365실</p>
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="imgbox">
+                        <em>평창시</em>
+                        <img src="images/gallery/2558819_image2_1.jpg" alt="">
+                        <img src="images/gallery/img_ov.png" alt="" class="ov">
+                    </div>
+                    <!-- imgbox end -->
+                    <dl>
+                        <dt>
+                            <strong>AM호텔</strong>
+                            <em>숙박시설</em>
+                        </dt>
+                        <dd>
+                            <p>지역:강원도 평창군</p>
+                            <p>전화번호:1855-2866</p>
+                            <p>객실수:365실</p>
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="images/gallery/2558819_image2_1.jpg" alt="">
+                        <img src="images/gallery/img_ov.png" alt="" class="ov">
+                    </div>
+                    <!-- imgbox end -->
+                    <dl>
+                        <dt>
+                            <strong>AM호텔</strong>
+                            <em>숙박시설</em>
+                        </dt>
+                        <dd>
+                            <p>지역:강원도 평창군</p>
+                            <p>전화번호:1855-2866</p>
+                            <p>객실수:365실</p>
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="images/gallery/2558819_image2_1.jpg" alt="">
+                        <img src="images/gallery/img_ov.png" alt="" class="ov">
+                    </div>
+                    <!-- imgbox end -->
+                    <dl>
+                        <dt>
+                            <strong>AM호텔</strong>
+                            <em>숙박시설</em>
+                        </dt>
+                        <dd>
+                            <p>지역:강원도 평창군</p>
+                            <p>전화번호:1855-2866</p>
+                            <p>객실수:365실</p>
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="images/gallery/2558819_image2_1.jpg" alt="">
+                        <img src="images/gallery/img_ov.png" alt="" class="ov">
+                    </div>
+                    <!-- imgbox end -->
+                    <dl>
+                        <dt>
+                            <strong>AM호텔</strong>
+                            <em>숙박시설</em>
+                        </dt>
+                        <dd>
+                            <p>지역:강원도 평창군</p>
+                            <p>전화번호:1855-2866</p>
+                            <p>객실수:365실</p>
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="images/gallery/2558819_image2_1.jpg" alt="">
+                        <img src="images/gallery/img_ov.png" alt="" class="ov">
+                    </div>
+                    <!-- imgbox end -->
+                    <dl>
+                        <dt>
+                            <strong>AM호텔</strong>
+                            <em>숙박시설</em>
+                        </dt>
+                        <dd>
+                            <p>지역:강원도 평창군</p>
+                            <p>전화번호:1855-2866</p>
+                            <p>객실수:365실</p>
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="images/gallery/2558819_image2_1.jpg" alt="">
+                        <img src="images/gallery/img_ov.png" alt="" class="ov">
+                    </div>
+                    <!-- imgbox end -->
+                    <dl>
+                        <dt>
+                            <strong>AM호텔</strong>
+                            <em>숙박시설</em>
+                        </dt>
+                        <dd>
+                            <p>지역:강원도 평창군</p>
+                            <p>전화번호:1855-2866</p>
+                            <p>객실수:365실</p>
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="images/gallery/2558819_image2_1.jpg" alt="">
+                        <img src="images/gallery/img_ov.png" alt="" class="ov">
+                    </div>
+                    <!-- imgbox end -->
+                    <dl>
+                        <dt>
+                            <strong>AM호텔</strong>
+                            <em>숙박시설</em>
+                        </dt>
+                        <dd>
+                            <p>지역:강원도 평창군</p>
+                            <p>전화번호:1855-2866</p>
+                            <p>객실수:365실</p>
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="images/gallery/2558819_image2_1.jpg" alt="">
+                        <img src="images/gallery/img_ov.png" alt="" class="ov">
+                    </div>
+                    <!-- imgbox end -->
+                    <dl>
+                        <dt>
+                            <strong>AM호텔</strong>
+                            <em>숙박시설</em>
+                        </dt>
+                        <dd>
+                            <p>지역:강원도 평창군</p>
+                            <p>전화번호:1855-2866</p>
+                            <p>객실수:365실</p>
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="images/gallery/2558819_image2_1.jpg" alt="">
+                        <img src="images/gallery/img_ov.png" alt="" class="ov">
+                    </div>
+                    <!-- imgbox end -->
+                    <dl>
+                        <dt>
+                            <strong>AM호텔</strong>
+                            <em>숙박시설</em>
+                        </dt>
+                        <dd>
+                            <p>지역:강원도 평창군</p>
+                            <p>전화번호:1855-2866</p>
+                            <p>객실수:365실</p>
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="images/gallery/2558819_image2_1.jpg" alt="">
+                        <img src="images/gallery/img_ov.png" alt="" class="ov">
+                    </div>
+                    <!-- imgbox end -->
+                    <dl>
+                        <dt>
+                            <strong>AM호텔</strong>
+                            <em>숙박시설</em>
+                        </dt>
+                        <dd>
+                            <p>지역:강원도 평창군</p>
+                            <p>전화번호:1855-2866</p>
+                            <p>객실수:365실</p>
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="images/gallery/2558819_image2_1.jpg" alt="">
+                        <img src="images/gallery/img_ov.png" alt="" class="ov">
+                    </div>
+                    <!-- imgbox end -->
+                    <dl>
+                        <dt>
+                            <strong>AM호텔</strong>
+                            <em>숙박시설</em>
+                        </dt>
+                        <dd>
+                            <p>지역:강원도 평창군</p>
+                            <p>전화번호:1855-2866</p>
+                            <p>객실수:365실</p>
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="images/gallery/2558819_image2_1.jpg" alt="">
+                        <img src="images/gallery/img_ov.png" alt="" class="ov">
+                    </div>
+                    <!-- imgbox end -->
+                    <dl>
+                        <dt>
+                            <strong>AM호텔</strong>
+                            <em>숙박시설</em>
+                        </dt>
+                        <dd>
+                            <p>지역:강원도 평창군</p>
+                            <p>전화번호:1855-2866</p>
+                            <p>객실수:365실</p>
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- //.glist end-->
+    <!-- <div class="paginav">
+        <a href="#" class="prev-child"><img src="images/gallery/btn_dir_first.gif" alt="처음"></a>
+        <a href="#" class="prev"><img src="images/gallery/btn_dir_prev.gif" alt="이전"></a>
+        <strong>1</strong>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">7</a>
+        <a href="#">8</a>
+        <a href="#">9</a>
+        <a href="#">1000</a>
+        <a href="#" class="next"><img src="images/gallery/btn_dir_next.gif" alt="다음"></a>
+        <a href="#" class="next-child"><img src="images/gallery/btn_dir_last.gif" alt="마지막"></a>
+    </div> -->
+    <div class="paginav">
+        <a href="#" class="prev-child"><img src="images/gallery/btn_dir_first.gif" alt="처음"></a><a href="#" class="prev"><img src="images/gallery/btn_dir_prev.gif" alt="이전"></a><strong>1</strong><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><a href="#">7</a><a href="#">8</a><a href="#">9</a><a href="#">1000</a><a href="#" class="next"><img src="images/gallery/btn_dir_next.gif" alt="다음"></a><a href="#" class="next-child"><img src="images/gallery/btn_dir_last.gif" alt="마지막"></a>
+    </div>
+    <!-- //. pagination end -->
+</body>
+</html>

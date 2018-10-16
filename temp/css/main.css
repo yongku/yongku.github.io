@@ -1,0 +1,34 @@
+/* Layout */
+.wrap{
+    width:1000px;
+    margin:0 auto;
+}
+.header{
+    height:40px;
+    background-color:#000;
+}
+.container{
+    margin-bottom:50px;
+}
+.container::after{
+    content:"";
+    display:block;
+    width:100%;
+    clear:both;
+}
+.sidebar{
+    float:left;
+    width:200px;
+    height:600px;
+    background-color:yellow;
+}
+.csection{
+    float:right;
+    width:780px;
+    height:1000px;
+    background-color:blue;
+}
+.footer{
+    height:40px;
+    background-color:gray;
+}

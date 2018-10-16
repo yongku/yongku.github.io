@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/20180829_layout.css">
+</head>
+<body>
+    <div class="box">
+        <video src="video/main.mp4" controls poster="images/common/TopLogo.gif">
+            <source src="video/main.mp4" type="video/mp4">
+            <source src="video/main.ogg" type="video/ogg">
+            <source src="video/main.ogv" type="video/ogv">
+            <source src="video/main.webm" type="video/webm">
+        </video>
+        <!--css -> video{width} 
+            속성 loop controls autoplay 
+            카카오인코더 팟인코더 convertio -->
+    </div>
+</body>
+</html>

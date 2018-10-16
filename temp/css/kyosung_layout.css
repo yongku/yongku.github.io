@@ -1,0 +1,751 @@
+.header{
+    width:100%;
+    height:169px;
+}
+.a{
+    width:1100px;
+    margin:0 auto;
+}
+.on{
+    display:block;
+}
+/* 전체 지정 부분 */
+
+
+
+.introbox{
+    width:100%;
+    height:36px;
+    background:#ebebeb;
+}
+.intro{
+    height:36px;
+}
+/* intro style */
+.int li{
+    float:left;
+    line-height:34px;
+    margin-left:15px;
+}
+.int li strong{
+    margin-left:15px;
+    color:#bbb;
+}
+.webMode{
+    position:relative;
+    float:right;
+}
+.webMode::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+.webMode > li{
+    float:left;
+    height:36px;
+    text-align:center;
+    line-height:34px;
+    background:#999;
+}
+.webMode li a{
+    color:#fff;
+}
+.webMode > li{
+    min-width:85px;
+    height:36px;
+    right:0;
+    border:1px solid #bbb;
+}
+.webMode .language{
+    cursor:pointer;
+}
+.webMode .language P{
+    height:34px;
+    line-height:34px;
+    color:#fff;
+}
+.webMode .language li{
+    display:none;
+    width:100%;
+    height:30px;
+    line-height:30px;
+    background:#fff;
+    border:1px solid #888;
+    border-top:none;
+}
+.webMode .language li:nth-child(2){
+    top:34px;
+}
+.webMode .language li:nth-child(3){
+    top:64px;
+}
+.webMode .language li:nth-child(4){
+    top:94px;
+}
+.webMode .fontsize > li{
+    float:left;
+    width:33.3%;
+}
+.webMode .fontsize a{
+    line-height:34px;
+}
+/* intro END*/
+/* input style */
+.inputbox{
+    width:100%;
+    height:89px;
+}
+.input{
+    height:89px;
+}
+.input > ul > li{
+    float:left;
+    width:33.3%;
+    height:100%;
+}
+/* input logo style */
+.tLogo a{
+    display:inline-block;
+    height:89px;
+    padding:15px 0 0 15px;
+}
+.tLogo img{
+    width:180px;
+    height:auto;
+}
+/* input tnb & search style */
+.input > ul > li > ul{
+    height:89px;
+}
+/* input tnb style */
+.tnb{
+    width:100%;
+    height:34px;
+    padding-left:40px;
+}
+.tnb > li{
+    float:left;
+    margin:10px 10px;
+}
+.tnb > li > strong{
+    margin-left:15px;
+    color:#bbb;
+}
+/* input search style */
+.search{
+    position:absolute;
+    width:360px;
+    height:35px;
+    margin-left:10px;
+    border:1px solid #aaa;
+    z-index:5;
+}
+.search::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+.search > li{
+    float:left;
+    height:100%;
+}
+.search .sList{
+    width:80px;
+    text-align:center;
+    cursor: pointer;
+}
+.search .sList p{
+    width:100%;
+    height:34px;
+    line-height:34px;
+}
+.search .sList li{
+    display:none;
+    width:100%;
+    height:25px;
+    line-height:25px;
+    background:#fff;
+    border:1px solid #888;
+    border-top:none;
+}
+.search > li input{
+    width:230px;
+    height:100%;
+    border-top:none;
+    border-bottom:none;
+}
+.search > li > a > img{
+    width:35px;
+    height:32px;
+}
+/* input search END */
+/* input date */
+.input > ul > .date{
+    height:89px;
+    text-align:center;
+    background:url(../images/cityhole/kyosung/winter.jpg) no-repeat 40px 0;
+}
+.date > ul > .day{
+    margin-top:25px;
+}
+.date > ul b{
+    font-size:16px;
+}
+.date > ul > .time > b{
+    font-weight:600;
+    color:#f30;
+}
+/* input END */
+
+
+.toptebbox{
+    width:100%;
+    height:44px;
+}
+.topteb{
+    height:100%;
+    text-align:left;
+    z-index:1;
+}
+.mainmenu{
+    width:100%;
+    height:100%;
+    padding-left:40px;
+}
+.mainmenu > li{
+    position:relative;
+}
+.mainmenu::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+.mainmenu > li{
+    float:left;
+    width:12%;
+    height:100%;
+    line-height:44px;
+    text-align:center;
+}
+.mainmenu > li > a{
+    font-size:16px;
+    font-weight:600;
+}
+.submenu{
+    position:absolute;
+    display:none;
+    width:100%;
+    height:280px;
+    background:#fff;
+    border-top:2px solid rgba(0,0,0,0.1);
+    z-index:3;
+}
+.submenu li{
+    overflow:hidden;
+    width:100%;
+    height:40px;
+    line-height:40px;
+}
+.submenu li:hover{
+    background:#333;
+}
+.submenu li:hover a{
+    color:#fff;
+}
+.submenu a{
+    font-size:14px;
+    color:#000;
+}
+/* topteb */
+/* header */
+
+.container{
+    width:100%;
+    height:1284px;
+    border-top:2px solid rgba(0,0,0,0.1);
+}
+.two{
+    width:100%;
+    height:340px;
+    background:#eaf9ff;
+}
+.twobox{
+    height:340px;
+}
+.news{
+    position:relative;
+    float:left;
+    width:320px;
+    height:340px;
+    padding:30px;
+    background:#fff;
+}
+.newsKind::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+.newsKind > li{
+    float:left;
+    width:25%;
+    height:33px;
+    line-height:33px;
+    text-align:center;
+    border-bottom:1px solid #bbb;
+    background:#f7f7f7;
+}
+.newsKind > li:first-child{
+    background:rgb(0, 153, 255);
+}
+.newsKind > li > ul{
+    position:absolute;
+    display:none;
+    width:260px;
+    height:125px;
+    top:73px;
+    left:30px;
+    text-align:left;
+    background:#fff;
+}
+.newsKind > li > .on{
+    display:block;
+}
+.newsKind > li > ul > li{
+    width:100%;
+    height:15%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.newsKind > li > ul > li::before{
+    content:"ㆍ";
+}
+.news img{
+    position:absolute;
+    top:230px;
+}
+.swiper-slide img{
+    width:90%;
+    height:350px;
+    margin-left:5%;
+    background:#fff;
+}
+/* //.two / header 아래쪽 (공지사항 보도자료(왼쪽) - 이미지(오른쪽))가 있는 부분 */
+.threebox{
+    height:157px;
+}
+.three{
+    width:100%;
+    height:157px;
+}
+/* .human style */
+.human{
+    position:relative;
+    float:left;
+    width:320px;
+    height:157px;
+}
+.human a{
+    font-weight:600;
+}
+.human ul{
+    width:130px;
+    height:40px;
+}
+.kyoQuick{
+    position:absolute;
+    top:45px;
+    left:165px;
+}
+.kyoQuick > li{
+    float:left;
+    width:55px;
+    height:20px;
+    line-height:20px;
+    text-align:center;
+}
+.btn_Quick{
+    width:55px;
+    height:20px;
+    background:#8cd2dc;
+    border-radius:3px;
+}
+.btn_Quick a{
+    color:#fff;
+}
+.kyoQuick > li b{
+    font-size:16px;
+    font-weight:600;
+}
+.hour24{
+    position:absolute;
+    top:85px;
+    left:145px;
+}
+.hour24 a::before{
+    content:"ㆍ";
+}
+/* .three .tebmenu style */
+.tebmenu{
+    float:right;
+    width:780px;
+    height:157px;
+}
+.tebmenu li{
+    float:left;
+    width:12.5%;
+    height:110px;
+    margin-top:30px;
+    text-align:center;
+}
+.tebmenu li a{
+    font-weight:600;
+}
+.tebmenu li img{
+    width:68px;
+    height:63px;
+    margin-bottom:10px;
+}
+/* //.three / two 부분 아래쪽 (교섭이 이미지(왼쪽) - 텝매뉴,아이콘(오른쪽))이 있는 부분 */
+/* 여기서부터는 안하셔도 됩니다. */
+.fourbox{
+    height:165px;
+    border-top:1px solid #888;
+    border-bottom:1px solid #888;
+}
+.four{
+    width:100%;
+    height:165px;
+}
+.newsimg{
+    float:left;
+    width:810px;
+    height:165px;
+}
+.newsimg ul li{
+    float:left;
+    width:270px;
+    height:164px;
+    text-align:center;
+    border-right:1px solid #888;
+}
+.newsimg ul li img{
+    width:227px;
+    height:105px;
+    margin-top:20px;
+    padding-bottom:5px;
+}
+.newsimg ul li a{
+    font-size:12px;
+    line-height:2;
+}
+.newsimg ul li .brown{
+    color:brown;
+}
+.newsimg ul li .green{
+    color:green;
+}
+.newsimg ul li .red{
+    color:red;
+}
+.newsteb{
+    float:right;
+    width:290px;
+    height:165px;
+}
+.newsteb ul li{
+    position:relative;
+    float:left;
+    width:290px;
+    height:42px;
+    line-height:3;
+    border-bottom:1px solid #888;
+}
+.newsteb ul li:nth-child(7){
+    border:0;
+}
+.newsteb ul .space{
+    position:absolute;
+    border:0;
+    margin-left:140px;
+}
+.newsteb ul li a{
+    margin-left:10px;
+}
+.newsteb ul li img{
+    margin-top:10px;
+    padding-right:7.5px;
+}
+.pixela{
+    margin-top:43px;
+}
+.pixelb{
+    margin-top:85px;
+}
+.pixelc{
+    margin-top:127px;
+}
+/* //.four / three 부분 아래쪽 (이미지 정보 3구간(왼쪽) - 텝매뉴 재난 정보(오른쪽))가 있는 부분 */
+.fivebox{
+    position:relative;
+    height:258px;
+}
+.spacea li{
+    width:420px;
+    height:18px;
+    text-align:left;
+    margin-top:7.5px;
+}
+.spacea li::before{
+    content:"·";
+    font-weight:900;
+    padding:3px;
+}
+.five{
+    width:100%;
+    height:258px;
+    border-bottom:1px solid #888;
+}
+.b{
+    padding-top:33px;
+    padding-bottom:33px;
+}
+.c{
+    margin-left:17px;
+    margin-top:20px;
+}
+.smlieimg{
+    float:left;
+    width:470px;
+    height:258px;
+}
+.none a img{
+    float:left;
+    width:276px;
+    height:148px;
+    margin-top:20px;
+    margin-right:16px;
+}
+.spacea{
+    margin-top:20px;
+}
+.spacea li a{
+    font-size:12px;
+    font-weight:100;
+}
+.btn{
+    position:absolute;
+    top:32px;
+    left:34%;
+    padding:2.5px;
+    font-size:13px;
+    border-radius:5px;
+    border:1px solid #999;
+}
+.notice{
+    float:left;
+    width:320px;
+    height:258px;
+}
+.notice span{
+    margin-left:13px;
+    font-weight:900;
+}
+.notice ul .wei{
+    font-weight:900;
+}
+.btn2{
+    position:absolute;
+    top:33px;
+    left:64%;
+}
+.btn2 img{
+    margin-top:-3px;
+    margin-left:-3px;
+}
+.btn2 span{
+    margin-right:5px;
+}
+.report{
+    float:right;
+    width:305px;
+    height:258px;
+}
+.report img{
+    margin-top:32px;
+    margin-left:35px;
+}
+.btn3{
+    position:absolute;
+    top:33px;
+    left:87%;
+}
+.btn3 img{
+    margin-top:-3px;
+    margin-left:-3px;
+}
+.btn3 span{
+    margin-right:5px;
+    font-weight:900;
+}
+
+/* //.five / four 부분 아래쪽 (스마일 이미지(왼쪽) - 알림창(중앙) - 신고 이미지(오른쪽))가 있는 부분 */
+.sixbox{
+    position:relative;
+    height:60px;
+}
+.six{
+    width:100%;
+    height:60px;
+    border-bottom:1px solid #888;
+}
+.sixbox ul{
+    text-align:center;
+}
+.sixbox ul li{
+    display:inline-block;
+    line-height:5;
+    width:270px;
+    height:60px;
+}
+.sixbox ul li a{
+    font-size:13px;
+    font-weight:400;
+    color:#777;
+}
+.sixbox ul li img{
+    position:absolute;
+    top:23px;
+    width:16px;
+    height:16px;
+    margin-left:5px;
+}
+/* //.six / five 부분 아래쪽 (사이트 정보)가 있는 부분 */
+.sevenbox{
+    position:relative;
+    height:245px;
+}
+.seven{
+    width:100%;
+    height:245px;
+}
+.boxb{
+    float:left;
+    margin-top:25px;
+    padding-left:30px;
+    width:364px;
+    height:200px;
+    border-right:1px solid #999;
+}
+.boxb span{
+    margin-left:-17px;
+}
+.d{
+    border-right:0;
+}
+.boxb ul{
+    margin-top:10px;
+}
+.boxb ul li{
+    padding-top:4px;
+    color:#444;
+}
+.boxb ul li::before{
+    content:"·";
+    font-weight:900;
+    padding-right:5px;
+}
+.citizen{
+    position:absolute;
+    top:43px;
+    margin-left:170px;
+}
+/* //.seven / six 부분 아래쪽 (시민, 관광객, 사업자)가 있는 부분 */
+.eightbox{
+    height:59px;
+}
+.eight{
+    width:100%;
+    height:59px;
+    background:#0a58aa;
+}
+.eightbox ul{
+
+}
+.eightbox .list li{
+    float:left;
+    margin-left:18px;
+    margin-top:18px;
+}
+.eightbox .list li a{
+    color:white;
+}
+.eightbox a{
+    color:white;
+}
+.eightbox .list li:after{
+    content:"|";
+    margin-left:18px;
+    color:white;
+}
+.btn_r{
+    float:right;
+    padding:6px;
+    margin-top:15px;
+    margin-left:10px;
+    color:#fff;
+    border:1px solid #fff;
+    border-radius:10px;
+}
+/* //.eight / seven 부분 아래쪽 (파란색 바)가 있는 부분 */
+/* container */
+
+
+.footer{
+    width:100%;
+    height:110px;
+    background-color:#e9e9e9;
+}
+.footerbox{
+    position:relative;
+    height:110px;
+}
+.fotlogo{
+    float:left;
+    width:140px;
+    height:110px;
+}
+.fotlogo img{
+    position:absolute;
+    top:40px;
+}
+.ads{
+    float:left;
+    width:670px;
+    height:110px;
+}
+.ads address{
+    margin-top:35px;
+    margin-bottom:5px;
+    font-size:14px;
+}
+.ads .blue{
+    font-size:14px;
+    color:blue;
+}
+.ads p{
+    line-height:16px;
+}
+.ads p span a{
+    margin-left:30px;
+    color:#777
+}
+.fotlogotwo{
+    float:right;
+    width:290px;
+    height:110px;
+}
+.fotlogotwo img{
+    padding-top:20px;
+    padding-left:10px;
+}

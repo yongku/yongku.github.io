@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>layout 연습</title>
+    <style>
+    *,*::after,*::before{margin:0; padding:0; list-style:none;}
+    html, body{height:100%;}
+    .wrap{
+        width:1000px;
+        margin:0 auto;
+    }
+    .header{
+        height:80px;
+        background:#0f0;
+    }
+    .container{
+        background:#00f;
+    }
+    .container::after{
+        content:"";
+        display:block;
+        width:100%;
+        clear:both;
+    }
+    .sidebar{
+        float:left;
+        width:200px;
+        height:400px;
+        background:#ff0;
+    }
+    .csection{
+        float:right;
+        width:780px;
+        height:1500px;
+        background:#f0f;
+    }
+    .footer{
+        height:80px;
+        margin-top:40px;
+        background:#0ff;
+    }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">상단영역</div>
+        <!-- header 종료 -->
+        <div class="container">
+            <div class="sidebar">좌측메뉴</div>
+            <div class="csection">콘텐츠 내용</div>
+        </div>
+        <!-- container 종료 -->
+        <div class="footer">하단영역</div>
+        <!-- footer 종료 -->
+    </div>
+</body>
+</html>

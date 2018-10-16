@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>자동 페이징 리스트 제이쿼리</title>
+<link rel="stylesheet" type="text/css" href="css/sjReset.css" />
+<script type="text/javascript" src="js/plugin/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+.bg_line {
+	padding: 10px 20px;
+	border: 1px solid #ddd;
+	background: url('http://ts.daumcdn.net/custom/blog/166/1664742/skin/images/bg_line.gif');
+	color: #333;
+	border-radius: 10px;
+</style>
+</head>
+<body>
+<script type="text/javascript">
+$( document ).ready(function() {
+	$(".count_test").text(function() {
+		$(this).append($(this).next("ul").children("li").size()+" item");
+	});
+});
+</script>
+<div class="ml bg_line">
+	<p class="count_test"></p>
+	<ul>
+		<li>list 1-1</li>
+		<li>list 1-2</li>
+		<li>list 1-3</li>
+	</ul>
+
+	<p class="count_test"></p>
+	<ul>
+		<li>list 2-1</li>
+		<li>list 2-2</li>
+	</ul>
+</div>
+
+</body>
+</html>

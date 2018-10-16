@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no, address=no, email=no, date=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>텍스트 담기</title>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<script type="text/javascript" src="js/jquery/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery.easing.min.js"></script>
+	<style>
+		.box {width:500px; margin:20px auto; padding:15px; font-size:13px; border:1px solid #ddd;}
+		.box h1 {font-size:16px;}
+		.box h1:before {content:"[";}
+		.box h1:after {content:"]";}
+		.box ul {margin-top:10px;}
+		.box li {height:50px; line-height:50px; border-top:1px solid #ddd;}
+		.box input {height:28px; margin-top:10px; padding:0 10px; border:1px solid #ddd;}
+		.box i {color:red; font-style:normal;}
+	</style>
+</head>
+<body>
+
+	<!-- 일반 텍스트 -->
+	<div class="box">
+		<h1>일반 텍스트</h1>
+		<ul class="normal_txt">
+			<li>
+				<strong>텍스트 1</strong>
+				<i></i>
+			</li>
+			<li>
+				<strong>텍스트 2</strong>
+				<i></i>
+			</li>
+			<li>
+				<strong>텍스트 3</strong>
+				<i></i>
+			</li>
+			<li>
+				<strong>텍스트 4</strong>
+				<i></i>
+			</li>
+		</ul>
+	</div>
+
+	<!-- 일반 인풋 -->
+	<div class="box">
+		<h1>일반 인풋</h1>
+		<ul class="normal_inp">
+			<li>
+				<input type="text" value="input value1">
+				<i></i>
+			</li>
+			<li>
+				<input type="text" value="input value2">
+				<i></i>
+			</li>
+			<li>
+				<input type="text" value="input value3">
+				<i></i>
+			</li>
+			<li>
+				<input type="text" value="input value4">
+				<i></i>
+			</li>
+		</ul>
+	</div>
+
+	<!-- 타이핑 인풋 -->
+	<div class="box">
+		<h1>타이핑 인풋</h1>
+		<ul class="typing_inp">
+			<li>
+				<input type="text" value="" placeholder="텍스트를 입력하세요.">
+				<i></i>
+			</li>
+			<li>
+				<input type="text" value="" placeholder="텍스트를 입력하세요.">
+				<i></i>
+			</li>
+			<li>
+				<input type="text" value="" placeholder="텍스트를 입력하세요.">
+				<i></i>
+			</li>
+			<li>
+				<input type="text" value="" placeholder="텍스트를 입력하세요.">
+				<i></i>
+			</li>
+		</ul>
+	</div>
+
+</body>
+<script>
+$(function(){
+	//일반 텍스트
+	var $normal_txt = $('.normal_txt');
+	$normal_txt.find('li').each(function(i, e){
+		$(e).find('i').text( $(e).find('strong').text() );
+	});
+
+	//일반 인풋
+	var $normal_inp = $('.normal_inp');
+	$normal_inp.find('li').each(function(i, e){
+		$(e).find('i').text( $(e).find('input').val() );
+	});
+
+	//타이핑 인풋
+	var $typing_inp = $('.typing_inp');
+	$typing_inp.find('li').each(function(i, e){
+		$(e).find('input').on('keydown keyup', function(){
+			$(e).find('i').text( $(e).find('input').val() );
+		});
+	});
+});
+</script>
+</html>

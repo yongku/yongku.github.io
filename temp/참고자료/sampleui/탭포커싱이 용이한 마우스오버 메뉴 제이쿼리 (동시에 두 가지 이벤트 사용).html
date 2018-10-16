@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>자동 페이징 리스트 제이쿼리</title>
+<link rel="stylesheet" type="text/css" href="css/sjReset.css" />
+<script type="text/javascript" src="js/plugin/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+#gnb {width:250px; background:#ccc;}
+#gnb > li {display:inline-block;}
+#gnb > li > a {display:block; line-height:25px; width:80px; text-align:center;}
+#gnb > li.on a {background:#777; color:#fff;}
+#gnb li ul {position:absolute; width:80px; height:0; overflow:hidden;}
+#gnb li.on ul {height:auto; background:#777;}
+#gnb li ul li a {margin:3px 0 3px 10px; color:#fff;}
+</style>
+</head>
+<body>
+<ul id="gnb">
+	<li>
+		<a href="">Menu1</a>
+		<ul>
+			<li><a href="">Menu1-1</a></li>
+			<li><a href="">Menu1-2</a></li>
+			<li><a href="">Menu1-3</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="">Menu2</a>
+		<ul>
+			<li><a href="">Menu2-1</a></li>
+			<li><a href="">Menu2-2</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="">Menu3</a>
+		<ul>
+			<li><a href="">Menu3-1</a></li>
+			<li><a href="">Menu3-2</a></li>
+			<li><a href="">Menu3-3</a></li>
+			<li><a href="">Menu3-4</a></li>
+		</ul>
+	</li>
+</ul>
+<script>
+$( document ).ready(function() {
+	$("#gnb > li").bind("mouseenter focusin", function() {
+		$(this).addClass("on").siblings().removeClass("on");
+	});
+	$("#gnb > li").bind("mouseleave focusout", function() {
+		$(this).removeClass("on");
+	});
+});
+</script>
+
+</body>
+</html>

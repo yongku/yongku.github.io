@@ -1,0 +1,21 @@
+@media all and (min-width: 321px) and (max-width: 375px) {
+	.first,.last,.rwdblid{display:none;}
+}
+@media all and (min-width: 376px) and (max-width: 480px) {
+	.first,.last,.rwdblid{display:none;}
+}
+@media all and (min-width: 481px) and (max-width: 768px) {
+	
+}
+@media all and (min-width: 769px) {
+	
+}
+@media all and (max-width: 320px) {
+	.rwdtable{overflow-x:auto;width:320px;}
+	.rwdtable table{overflow-x:auto;}
+	.rwdtable table th{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+	.rwdtable table td{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+	.rwdtable table td:nth-child(3){background:red;}
+	.first,.last,.rwdblid{display:none;}
+	
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul{
+            width:600px;
+        }
+        li{
+            display:inline-block;
+            width:100px;
+            height:100px;
+            border:1px solid #f0f;
+            float:left;
+            text-align:center;
+            line-height:100px;
+            position:relative;
+        }
+        i{
+            display:block;
+            width:100%;
+            height:100%;
+            cursor:pointer;
+        }
+        li:nth-child(3n+1){
+            clear:both;
+        }
+        li:nth-child(2n+1){
+            background-color:#ff0;
+        }
+        li:nth-child(2n){
+            background-color:#0ff;
+        }
+        input[type="checkbox"]{
+            position:absolute;
+            top:-9999em;
+        }
+        input:checked + i {
+            background-color:#0f0;
+        }
+        input:checked + i + span{
+            display:block;
+            position:absolute;
+            bottom:0;
+            left:0;
+            width:100%;
+            height:40px;
+            background:rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul type="none">
+            <li>
+                <label>
+                    <input type="checkbox">
+                    <i>click</i>
+                    <span></span>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox">
+                    <i>click</i>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox">
+                    <i>click</i>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox">
+                    <i>click</i>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox">
+                    <i>click</i>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox">
+                    <i>click</i>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox">
+                    <i>click</i>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox">
+                    <i>click</i>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox">
+                    <i>click</i>
+                </label>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

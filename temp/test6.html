@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery/jquery-1.12.4.min.js"></script>
+    <script tpye="text/javascript" src="js/common/uxDetect.min.js"></script>
+    <style>
+    body{
+        background:#f0f;
+    }
+    .chrome body{
+        background:#ff0;
+    }
+    .firefox body{
+        background:#0ff;
+    }
+    </style>
+</head>
+<body>
+        <span class="weight">알림창</span>
+        <ul class="spacea c">
+            <li><a href="#" class="wei">서울시 e-book 홈페이지</a></li>
+            <li><a href="#" class="wei">서울사랑 10월호</a></li>
+            <li><a href="#" class="wei">내친구서울 10월호</a></li>
+            <li><a href="#">천만시민 생활의힘</a></li>
+            <li><a href="#">서울의 인구는?<span>서울통계 보기</span></a></li>
+            <li><a href="#">희망서울 홍보 브로슈어</a></li>
+        </ul>
+        <ul class="spacea c">
+            <li><a href="#" class="wei">서울시 e-book 홈페이지1</a></li>
+            <li><a href="#" class="wei">서울사랑 10월호</a></li>
+            <li><a href="#" class="wei">내친구서울 10월호</a></li>
+            <li><a href="#">천만시민 생활의힘</a></li>
+            <li><a href="#">서울의 인구는?<span>서울통계 보기</span></a></li>
+            <li><a href="#">희망서울 홍보 브로슈어</a></li>
+        </ul>
+        <ul class="spacea c">
+            <li><a href="#" class="wei">서울시 e-book 홈페이지2</a></li>
+            <li><a href="#" class="wei">서울사랑 10월호</a></li>
+            <li><a href="#" class="wei">내친구서울 10월호</a></li>
+            <li><a href="#">천만시민 생활의힘</a></li>
+            <li><a href="#">서울의 인구는?<span>서울통계 보기</span></a></li>
+            <li><a href="#">희망서울 홍보 브로슈어</a></li>
+        </ul>
+        <ul class="spacea c">
+            <li><a href="#" class="wei">서울시 e-book 홈페이지3</a></li>
+            <li><a href="#" class="wei">서울사랑 10월호</a></li>
+            <li><a href="#" class="wei">내친구서울 10월호</a></li>
+            <li><a href="#">천만시민 생활의힘</a></li>
+            <li><a href="#">서울의 인구는?<span>서울통계 보기</span></a></li>
+            <li><a href="#">희망서울 홍보 브로슈어</a></li>
+        </ul>
+        <div class="btn2">
+            <span class="number"><em>1</em>/4</span>
+            <a href="#"><img src="images/cityhole/button1.png" alt=""></a>
+            <a href="#"><img src="images/cityhole/button2.png" alt=""></a>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $fList=$('.spacea.c');
+                $pBtn=$('.btn2 a:nth-child(2)');
+                $nBtn=$('.btn2 a:nth-child(3)');
+                var a=0;
+                $fList.hide();
+                $fList.eq(0).show();
+                $nBtn.click(function(){
+                    a+=1;
+                    if(a<$fList.length){
+                        $fList.eq(a).show();
+                        $fList.eq(a).siblings('ul').hide();
+                        $('.btn2 em').text(a+1);
+                    }else{
+                        return a=($fList.length)-1;
+                    }
+                console.log(a)
+                })
+                $pBtn.click(function(){
+                    a=a-1;
+                    if(a>=0){
+                        $fList.eq(a).show();
+                        $fList.eq(a).siblings('ul').hide();
+                        $('.btn2 em').text(a+1);
+                    }else{
+                        return a=0;
+                    }
+                console.log(a)
+                })
+                console.log($pBtn.text())
+                console.log($fList.length)
+            })
+        </script>
+</body>
+</html>

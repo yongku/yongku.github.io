@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no, address=no, email=no, date=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>02 슬라이더 plugin 사용하기</title>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/slider.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css"><!-- swiper slider plugin ver 3.3.1 css -->
+	<!-- 
+	cdn 사용시 지금 현재 버전
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+	로컬경로 불러들일 경우
+	<link rel="stylesheet" type="text/css" href="css/swiper-4.3.5.min.css">
+	-->
+	<script type="text/javascript" src="js/jquery/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery.easing.min.js"></script>
+	<script type="text/javascript" src="js/common/jqdemo.js"></script>
+</head>
+<body>
+	<div class="swiper-demo">
+		<!-- Swiper 클래스명은 변경하면 안 됨 - Swiper 슬라이더는 IE10부터 작동됨 IE9까지 고려한다면 다른 슬라이더 사용 -->
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" style="background-image:url(images/0912/slider/img01.jpg);"><!--<img src="images/slider/img01.jpg" alt="">--></div>
+				<div class="swiper-slide" style="background-image:url(images/0912/slider/img02.jpg);"><!--<img src="images/slider/img02.jpg" alt="">--></div>
+				<div class="swiper-slide" style="background-image:url(images/0912/slider/img03.jpg);"><!--<img src="images/slider/img03.jpg" alt="">--></div>
+				<div class="swiper-slide" style="background-image:url(images/0912/slider/img04.jpg);"><!--<img src="images/slider/img04.jpg" alt="">--></div>
+				<div class="swiper-slide" style="background-image:url(images/0912/slider/img05.jpg);"><!--<img src="images/slider/img05.jpg" alt="">--></div>
+			</div>
+			<!-- 좌우버튼 -->
+			<div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+			<div class="swiper-button-prev"></div><!-- 이전 버튼 -->
+			<!-- 페이징 -->
+			<div class="swiper-pagination"></div>
+			<!-- 스크롤바 -->
+			<div class="swiper-scrollbar"></div>
+		</div>
+
+		<!-- Swiper JS -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+		<!-- 
+		cdn 사용시 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+		로컬사용시 
+		<script src="js/plugin/swiper-4.3.5.min.js"></script>
+		-->
+		<script>
+			new Swiper('.swiper-container', {
+				direction: 'horizontal', // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+				initialSlide: 0, // 기본으로 먼저 보이는 슬라이드 순서
+				slidesPerView : 2, // 동시에 보여줄 슬라이드 갯수
+				spaceBetween : 0, // 슬라이드간 간격
+				slidesPerGroup : 1, // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
+
+				// 그룹수가 맞지 않을 경우 빈칸으로 메우기
+				// 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
+				loopFillGroupWithBlank : true,
+
+				autoplay : { // 자동 재생
+					delay : 3000, // autoplay: 3초 마다 자동 슬라이드
+				},
+				autoplayDisableOnInteraction: true, // 쓸어 넘기거나 버튼 클릭 시 자동 슬라이드 정지.
+				autoHeight : false, // 자동높이 사용여부 : 사용하지 않을시 기본값은 false - background 사용이 아니라 이미지 사용시
+				speed : 1000, // 슬라이드 속도 1초
+				centeredSlides: true, // 슬라이드 가운데 위치
+
+				loop : true, // 무한 반복
+
+				effect : 'slide', // 페이드 효과 사용 - 기본은 slide 'slide' or 'fade' or 'cube' or 'coverflow' or 'flip'
+				/*
+				// 큐브효과 설정
+				cubeEffect : { // effect cube 사용시
+					slideShadows : true, // 슬라이더를 돌릴때 흐릿해 지는 그림자 표시 여부
+					shadow : true, // 슬라이더 밑의 그림자 표시 여부
+					shadowOffset : 20, // 그림자 위치, 수치가 클수록 아래로 내려감
+					shadowScale : 0.94, // 그림자 크기, 수치가 클수록 그림자 커짐
+				},
+				// 플립효과 설정
+				flipEffect : { // effect flip 사용시
+					slideShadows : true, // 슬라이드 회전시 흐릿한 효과 여부 (입체적으로 보이기위한 효과)
+					limitRotation : true, // API 설명은 "Limit edge slides rotation"
+				},
+				// 커버플로우 설정
+				coverflowEffect : { // effect coverflow 사용시
+					slideShadows : true, // 슬라이더 그림자 : 3D 효과를 강조하기 위한 회전시 흐릿한 효과
+					rotate : 50, // 슬라이더 회전 각 : 클수록 슬라이딩시 회전이 커짐
+					stretch : 0, // 슬라이더간 거리(픽셀) : 클수록 슬라이더가 서로 많이 겹침
+					depth : 100, // 깊이 효과값 : 클수록 멀리있는 느낌이 강해짐
+					modifier : 1, // 효과 배수 : 위 숫자값들에 이 값을 곱하기 처리하여 효과를 강하게 처리함
+				},
+				*/
+
+				// 스크롤바 설정하기
+				scrollbar : {
+					el : '.swiper-scrollbar',
+					draggable: true,
+				},
+
+				pagination : { // 페이징
+					el : '.swiper-pagination',
+					clickable : true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
+					type: 'bullets', // 'bullets' or 'progressbar' or 'fraction' or 'custom'
+					renderBullet: function (index, className) { //블릿 안에 숫자가 있는 경우 사용
+						return '<span class="' + className + '">' + (index + 1) + '</span>';
+					},
+				},
+				navigation : { // 좌우버튼
+					nextEl : '.swiper-button-next', // 다음 버튼 클래스명
+					prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+				},
+				keyboard: { // 키보드 화살표로 컨트롤 가능
+					enabled: true,
+				},
+				mousewheel: true, // 마우스휠로 조절 여부 선택
+
+				// 반응형에서 보여질 개수 및 슬라이드 사이의 간격조절
+				breakpoints: {
+					1024: {
+						slidesPerView: 4,
+						spaceBetween: 40,
+					},
+					768: {
+						slidesPerView: 3,
+						spaceBetween: 30,
+					},
+					640: {
+						slidesPerView: 2,
+						spaceBetween: 20,
+					},
+					320: {
+						slidesPerView: 1,
+						spaceBetween: 10,
+					}
+				}
+			});
+		</script>
+	</div>
+	<!-- //.swiper-demo -->
+	
+</body>
+</html>

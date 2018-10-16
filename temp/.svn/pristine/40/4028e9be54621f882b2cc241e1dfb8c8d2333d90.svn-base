@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>노란풍선</title>
+</head>
+<body>
+    <div>
+        <div>
+            <div class="topad">
+                <a href="#">백두산 목단강의 절경</a>
+                <a href="#">크라비로 떠나는 호캉스</a>
+                <a href="#">코타키나발루 넥서스 리조트</a>
+            </div>
+            <!-- //광고 추천 여행 패키지-->
+            <div class="tnb">
+                <a href="#">노랑풍선 앱 다운로드</a>
+                <a href="#">로그인</a>
+                <a href="#">회원가입</a>
+                <a href="#">마이페이지</a>
+                <a href="#">예약확인/결제</a>
+                <a href="#">고객센터</a>
+            </div>
+            <!-- //로그인 영역-->
+            <div>
+                <div>
+                        <h1>노랑풍선</h1>
+                        <label>
+                            <input type="text">
+                            <button>검색</button>
+                        </label>
+                </div>
+                <!-- //검색 영역-->
+                <div>
+                    <ul>
+                        <li>
+                            <a href="#">노랑TV</a>
+                            <a href="#">오늘만노랑</a>
+                            <a href="#">스토리텔링</a>
+                            <a href="#">기획전/이벤트</a>
+                        </li>
+                        <li>
+                            <a href="#">8월 16,17,18일 베트남 다낭</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //마케팅&이벤트-->
+            </div>
+            <!-- //상단 검색 영역-->
+        </div>
+        <!-- //상단 감싸는 영역-->
+        <div>
+            <div>
+                <div class="topmanu">
+                    <ul>
+                        <li><a href="#">해외패키지</a></li>
+                        <li><a href="#">자유여행</a></li>
+                        <li><a href="#">허니문</a></li>
+                        <li><a href="#">크루즈/골프</a></li>
+                        <li><a href="#">부산/대구출발</a></li>
+                        <li><a href="#">해외항공</a></li>
+                        <li><a href="#">국내여행/항공</a></li>
+                        <li><a href="#">PREMIUM</a></li>
+                    </ul>
+                </div>
+                <div class="rolling">
+                    롤링 배경
+                </div>
+                <div>
+                    <a href="#">2018 추석연휴</a>
+                    <a href="#">어서와 북해도</a>
+                    <a href="#">100% 출발확정 푸켓</a>
+                    <a href="#">Always 서유럽</a>
+                    <a href="#">지구 반대편 대양주</a>
+                </div>
+                <!-- //상단 콘텐츠 메뉴-->
+            </div>
+            <!-- //상단 콘텐츠-->
+            <div>  
+                <div class="package">
+                    <h2>출발확정</h2>
+                    <a href="#">유럽</a>
+                    <a href="#">동남아</a>
+                    <a href="#">필리핀/인도차이나</a>
+                    <a href="#">중국/홍콩/대만</a>
+                    <a href="#">일본</a>
+                    <a href="#">괌/사이판</a>
+                    <a href="#">호주/뉴질랜드</a>
+                    <a href="#">미주/캐나다</a>
+                </div>
+                <div class="country">
+                    <a href="#">하루더!! 포트스테판</a>
+                    <a href="#">홈쇼핑한정특가</a>
+                    <a href="#">호텔UP/사막체험</a>
+                    <a href="#">호텔UP!오페라내부 시드니</a>
+                </div>
+            </div>
+            <!-- //출발 확정 패키지 상품-->
+            <div>
+                <div>
+                    <h2>노랑TV</h2>
+                    <a href="#">황산 4일</a>
+                    <a href="#">싱가포르+바탐 5일</a>
+                </div>
+                <div>
+                    <h2>오늘만 노랑</h2>
+                    <a href="#">혜택 1</a>
+                    <a href="#">혜택 2</a>
+                </div>
+            </div>
+            <!-- //노랑TV&오늘만 노랑-->
+        </div>
+        <!-- //콘텐츠 영역-->
+        <footer>
+            <div>
+                <p><strong>여행상담 대표 전화번호</strong></p>
+                <p><strong>1544-2288</strong></p>
+                <p>1번 해외패키지 2번 자유여행 3번 항공권</p>
+            </div>
+            <div>
+                <p><strong>항공상담 대표 전화번호</strong></p>
+                <p><strong>1644-3399</strong></p>
+                <p>1번 일본/중국 2번 동남아 3번 미주/대양주/괌/사이판</p>
+            </div>
+            <div>부산지사 : <a href="#">051-710-7744</a>대구지사 : <a href="#">053-720-7744</a></div>
+        </footer>
+        <!-- //하단 감싸는 영역-->
+    </div>
+    <!-- //전체 감싸는 영역-->
+</body>
+</html>

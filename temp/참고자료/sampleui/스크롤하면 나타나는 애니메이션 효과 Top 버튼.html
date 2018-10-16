@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>자동 페이징 리스트 제이쿼리</title>
+<link rel="stylesheet" type="text/css" href="css/sjReset.css" />
+<script type="text/javascript" src="js/plugin/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+#back-top {
+	position: fixed;
+	bottom: 30px;
+	margin-left: -150px;
+	border:1px solid
+}
+ 
+#back-top a {
+	width:900px;
+	display: block;
+	padding:10px;
+	text-align: center;
+	font: 11px/100% Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #bbb;
+ 
+	/* transition */
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+}
+#back-top a:hover {
+	color: #000;
+}
+ 
+/* arrow icon (span tag) */
+#back-top span {
+	width: 108px;
+	height: 108px;
+	display: block;
+	margin-bottom: 7px;
+	background: #ddd url(up-arrow.png) no-repeat center center;
+ 
+	/* rounded corners */
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+ 
+	/* transition */
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+}
+#back-top a:hover span {
+	background-color: #777;
+}
+</style>
+</head>
+<body>
+<ul>
+	<li>*튜토리얼 : <a href="http://webdesignerwall.com/tutorials/animated-scroll-to-top" target="_blank">http://webdesignerwall.com/tutorials/animated-scroll-to-top</a></li>
+	<li>*데모 : <a href="http://webdesignerwall.com/demo/scroll-to-top/scrolltotop.html" target="_blank">http://webdesignerwall.com/demo/scroll-to-top/scrolltotop.html</a></li>
+</ul>
+<div style="width:900px;height:1500px;margin:0 auto;">
+	<p id="back-top">
+		<a href="#top">Back To Top</a>
+	</p>
+</div>
+<script>
+$( document ).ready(function() {
+	// hide #back-top first
+	$("#back-top").hide();
+	 
+	// fade in #back-top
+	$(function () {
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > 100) {
+				$('#back-top').fadeIn();
+			} else {
+				$('#back-top').fadeOut();
+			}
+		});
+	 
+		// scroll body to 0px on click
+		$('#back-top a').click(function () {
+			$('body,html').animate({
+				scrollTop: 0
+			}, 800);
+			return false;
+		});
+	});
+});
+</script>
+
+</body>
+</html>

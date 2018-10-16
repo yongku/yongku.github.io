@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>jQuery 공작소 : 반응형 사진 뷰어 (카메라 렌즈 줌 성능보기)</title>
+<meta name="author" content="jQuery 공작소">
+<link rel="stylesheet" type="text/css" href="http://superkts.com/jquery/core.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+
+<style type="text/css">
+	.wrapper { padding:0 !important; margin-bottom:30px; }
+	.wrapper .contents .ex .e { padding-top:50px; }
+	.wrapper .contents .ex .url { font-size:12pt; text-align:center; margin-bottom:10px; }
+</style>
+
+<div class="wrapper">
+	<h1>반응형 사진 뷰어 (카메라 렌즈 줌 성능보기)</h1>
+	<div class="contents">
+		<div class="ex">
+			<div class="url"><a class="link2" href="http://superkts.com/jquery/@PhotoViewer" target="_blank">▶ jQuery 공작소에서 보기</a></div>
+			<div class="t2">반응형 사진뷰어</div>
+			<div class="e">
+
+
+<!-- 소스 시작 -->
+
+※ 빨간색 네모칸을 클릭하면 줌으로 당긴 사진이 나옵니다.<br>
+※ 커진 사진을 클릭하면 다시 작아집니다.<br>
+<br>
+<style type="text/css">
+	/* 사이트 레이아웃 변경 */
+	.wrapper { width:1580px; }
+	.wrapper .left { width:1250px; }
+
+	.css_test {
+		background-image:url('http://cfile8.uf.tistory.com/original/263AD04F553473B91C30C3');
+		background-repeat:no-repeat;
+		height:803px;
+		margin:0 auto;
+		width:1200px;
+	}
+	.css_test .photo {
+		position:absolute;
+	}
+	.css_test .photo img {
+		cursor:pointer;
+		opacity:0;
+		position:absolute;
+		width:0;
+		display:none;
+	}
+	.css_test .area {
+		position:absolute;
+	}
+	.css_test .area div {
+		border-radius:3px;
+		border:2px solid red;
+		cursor:pointer;
+		height:64px;
+		position:absolute;
+		width:100px;
+	}
+	.css_test .area div.half {
+		border-color:yellow;
+		width:23px;
+	}
+</style>
+
+<div class="css_test">
+	<div class="photo">
+		<img onclick="hidePhoto(this)" src="http://cfile3.uf.tistory.com/original/241B284C553475A7237455" />
+		<img onclick="hidePhoto(this)" src="http://cfile25.uf.tistory.com/original/272E224C553475A91EAC1A" />
+		<img onclick="hidePhoto(this)" src="http://cfile6.uf.tistory.com/original/26020D4C553475AD352703" />
+		<img onclick="hidePhoto(this)" src="http://cfile27.uf.tistory.com/original/2317984C553475AF2C3871" />
+		<img onclick="hidePhoto(this)" src="http://cfile26.uf.tistory.com/original/2122C64C553475B125902B" />
+		<img onclick="hidePhoto(this)" src="http://cfile26.uf.tistory.com/original/220DB84C553475B32F25FD" />
+		<img onclick="hidePhoto(this)" src="http://cfile22.uf.tistory.com/original/245A954D553475B7037F26" />
+		<img onclick="hidePhoto(this)" src="http://cfile22.uf.tistory.com/original/240F674D553475B92E3F1B" />
+		<img onclick="hidePhoto(this)" src="http://cfile26.uf.tistory.com/original/257CFF4D553475BA367EB2" />
+		<img onclick="hidePhoto(this)" src="http://cfile8.uf.tistory.com/original/277E104D553475BC3502CC" />
+	</div>
+	<div class="area">
+		<div style="left:117px; top:182px;"></div>
+		<div style="left:343px; top:585px;"></div>
+		<div style="left:603px; top:650px;"></div>
+		<div style="left:653px; top:423px;"></div>
+		<div style="left:615px; top:333px;"></div>
+		<div style="left:495px; top:235px;"></div>
+		<div style="left:15px; top:400px;"></div>
+		<div style="left:225px; top:175px;"></div>
+		<div style="left:628px; top:95px;"></div>
+		<div style="left:745px; top:625px;"></div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$('.css_test .photo img').bind('click', function(){ hidePhoto(this) });
+	$('.css_test .area div').bind('click', function(){ showPhoto(this) });
+
+	function showPhoto(o){
+		$('.css_test .photo').show();
+		$('.css_test .area').fadeOut();
+		var top = $(o).css('top');
+		var left = $(o).css('left');
+		var idx = $(o).index('.area div');
+
+		$('.photo img:eq(' + idx + ')').css({
+			top:top,
+			left:left,
+			opacity:0,
+			width:96
+		}).stop().animate({
+			opacity:1,
+			top:0,
+			left:0,
+			width:1200
+		}, 750);
+	}
+
+	function hidePhoto(o){
+		$('.css_test .area').fadeIn();
+		var idx = $(o).index('.photo img');
+		var top = $('.area div:eq(' + idx + ')').css('top');
+		var left= $('.area div:eq(' + idx + ')').css('left');
+
+		$(o).stop().animate({
+			opacity:0,
+			top:top,
+			left:left,
+			width:96
+		}, 500, function(){ $('.css_test .photo').hide(); });
+	}
+</script>
+
+<!-- 소스 종료 -->
+
+
+			</div>
+		</div>
+		<div class="ac">
+			<a href="http://superkts.com/jquery/" target="_blank">jQuery 공작소</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://superkts.com/css/" target="_blank">CSS 공작소</a>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

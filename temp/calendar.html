@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *,*::after,*::before{
+        margin:0;
+        padding:0;
+        text-decoration:none;
+        /*transform: translate(-50%, -50%); 가운데 정렬*/
+    }
+    html,body{
+        height:100%;
+    }
+    table,th,td{
+        border-spacing:0;
+        border-collapse: collapse;
+    }
+    table > caption > input:checked{
+        display:block;
+    }
+    body > label{
+        position:absolute;
+        width:100px;
+        height:40px;
+        font-weight:600;
+        text-align:center;
+        line-height:40px;
+        border:1px solid #000;
+        background:#777;
+    }
+    input[type="radio"]{
+        position:absolute;
+        top:-999em;
+    }
+    table{
+        display:none;
+    }
+    table thead{
+        position:absolute;
+        top:42px;
+    }
+    table thead th{
+        width:150px;
+        height:20px;
+        top:60px;
+        border:1px solid #000;
+        background:#aaa;
+    }
+    table thead th:first-child, tbody td:first-child{
+        color:#f00;
+    }
+    table thead th:last-child, tbody td:last-child{
+        color:#00f;
+    }
+    table tbody{
+        position:absolute;
+        top:65px;
+    }
+    table tbody td{
+        position:relative;
+        width:150px;
+        height:150px;
+        border:1px solid #000;
+        text-align:left;
+    }
+    table tbody ul{
+        position:absolute;
+        width:150px;
+        height:120px;
+        top:30px;
+        left:4px;
+        line-height:25px;
+    }
+    table tbody ul li{
+        display:block;
+    }
+    table tbody ul li + b{
+        position:absolute;
+        width:150px;
+        height:120px;
+        left:0;
+        text-align:center;
+        line-height:100px;
+        font-size:28px;
+        color:#f00;
+    }
+    table tbody td span{
+        position:absolute;
+        top:5px;
+        right:10px;
+        width:150px;
+        height:30px;
+        font-size:20px;
+        text-align:right;
+    }
+    tbody .holly{
+        color:#f00;
+    }
+    table tbody td strong + span{
+        position:absolute;
+        width:150px;
+        height:150px;
+        top:0px;
+        left:0px;
+        background-color:#ccc;
+        z-index:-1;
+    }
+    #eight{
+        left:100px;
+    }
+    body input:checked + label + table{
+        display:block;
+    }
+    strong{
+        position:absolute;
+        width:150px;
+        height:150px;
+        top:5px;
+        right:10px;
+        text-align:right;
+        color:#fff
+    }
+    section{
+        position:absolute;
+        left:1100px;
+        top:40px;
+    }
+    </style>
+</head>
+<body>
+    <input type="radio" name="month" id="july" checked>
+    <label for="july" id="seven">2018.08</label>
+    <table class="table">
+        <caption></caption>
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>일요일</th>
+                <th>월요일</th>
+                <th>화요일</th>
+                <th>수요일</th>
+                <th>목요일</th>
+                <th>금요일</th>
+                <th>토요일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label>
+                        <strong>29</strong>
+                        <span></span>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <strong>30</strong>
+                        <span></span>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <strong>31</strong>
+                        <span></span>
+                    </label>
+                </td>
+                <td>
+                    <span>1</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>2</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>3</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>4</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+            <tr>
+                <td>
+                    <span>5</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>6</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>7</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>8</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>9</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>10</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>11</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>12</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>13</span>
+                    <ul>
+                        <li><a href="20180813_10h23m.html" target="mainframe">1.태그구조 1</a></li>
+                        <li><a href="20180813_12h43m.html" target="mainframe">2.태그구조 2</a></li>
+                        <li><a href="20180813_15h32m.html" target="mainframe">3.header 제작</a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>14</span>
+                    <ul>
+                        <li><a href="20180814_10h44m.html" target="mainframe">1.이용약관(form)</a></li>
+                        <li><a href="20180814_14h34m.html" target="mainframe">2.회원가입(form)</a></li>
+                        <li><a href="20180814_15h42m.html" target="mainframe">3.CSS기본</a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span class="holly">15</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                        <b>광복절</b>
+                    </ul>
+                </td>
+                <td>
+                    <span>16</span>
+                    <ul>
+                        <li><a href="20180816_10h36m.html" target="mainframe">1.회원가입(form)</a></li>
+                        <li><a href="20180816_11h30m.html" target="mainframe">2.게시판(table)</a></li>
+                        <li><a href="20180816_12h57m.html" target="mainframe">3.CSS(float)</a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>17</span>
+                    <ul>
+                        <li><a href="20180817_14h22m.html" target="mainframe">1.background</a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>18</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>19</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>20</span>
+                    <ul>
+                        <li><a href="20180820_10h00m.html" target="mainframe">1.hover</a></li>
+                        <li><a href="20180820_11h51m.html" target="mainframe">2.background</a></li>
+                        <li><a href="20180820_12h35m.html" target="mainframe">3.background2</a></li>
+                        <li><a href="20180820_13h00m.html" target="mainframe">4.nth-child</a></li>
+                        <li><a href="20180820_16h52m.html" target="mainframe">5.checkbox</a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>21</span>
+                    <ul>
+                        <li><a href="20180821_09h37m.html" target="mainframe">1.checkbox</a></li>
+                        <li><a href="20180821_10h55m.html" target="mainframe">2.tab구조</a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>22</span>
+                    <ul>
+                        <li><a href="20180822_15h51m.html" target="mainframe">1.게시판</a></li>
+                        <li><a href="20180822_17h00m.html" target="mainframe">2.게시글</a></li>
+                        <li><a href="20180822_16h00m.html" target="mainframe">3.게시글작성</a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>23</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>24</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>25</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>26</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>27</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>28</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>29</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>30</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>31</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <label>
+                        <strong>1</strong>
+                        <span></span>
+                    </label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="radio" name="month" id="august">
+    <label for="august" id="eight">2018.09</label>
+    <table class="table">
+        <caption></caption>
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>일요일</th>
+                <th>월요일</th>
+                <th>화요일</th>
+                <th>수요일</th>
+                <th>목요일</th>
+                <th>금요일</th>
+                <th>토요일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label>
+                        <strong>26</strong>
+                        <span></span>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <strong>27</strong>
+                        <span></span>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <strong>28</strong>
+                        <span></span>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <strong>29</strong>
+                        <span></span>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <strong>30</strong>
+                        <span></span>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <strong>31</strong>
+                        <span></span>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <span>1</span>
+                        <ul>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>2</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>3</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>4</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>5</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>6</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>7</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>8</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>9</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>10</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>11</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>12</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>13</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>14</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>15</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>16</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>17</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>18</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>19</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>20</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>21</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>22</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>23</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span class="holly">24</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                        <b>추석</b>
+                    </ul>
+                </td>
+                <td>
+                    <span class="holly">25</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span class="holly">26</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                        <b>대체 휴일</b>
+                    </ul>
+                </td>
+                <td>
+                    <span>27</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>28</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>29</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>30</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <span>31</span>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </td>
+                <td>
+                    <label>
+                        <strong>1</strong>
+                        <span></span>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <strong>2</strong>
+                        <span></span>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <strong>3</strong>
+                        <span></span>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <strong>4</strong>
+                        <span></span>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <strong>5</strong>
+                        <span></span>
+                    </label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <section>
+        <iframe width="700px" height="700px" src="20180814_10h44m.html" name="mainframe"></iframe>
+    </section>
+</body>
+</html>

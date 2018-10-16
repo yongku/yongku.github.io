@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>자동 페이징 리스트 제이쿼리</title>
+<link rel="stylesheet" type="text/css" href="css/sjReset.css" />
+<script type="text/javascript" src="js/plugin/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+.fold_list {border:1px solid #ccc; border-bottom:0;}
+.fold_list > li {border-bottom:1px solid #ccc;}
+.fold_list > li > a {background:#f2f2f2; display:block; padding:10px 20px;}
+.fold_list > li > div {border-top:1px dashed #ccc; padding:10px 20px; display:none;}
+</style>
+</head>
+<body>
+<ul class="fold_list">
+	<li>
+		<a href="#" title="View Detail">Summary</a>
+		<div>
+			Detail<br>Detail<br>Detail<br>Detail
+		</div>
+	</li>
+	<li>
+		<a href="#" title="View Detail">Summary 2</a>
+		<div>
+			Detail 2<br>Detail 2<br>Detail 2<br>Detail 2
+		</div>
+	</li>
+	<li>
+		<a href="#" title="View Detail">Summary 3</a>
+		<div>
+			Detail 3<br>Detail 3<br>Detail 3<br>Detail 3
+		</div>
+	</li>
+</ul>
+<script>
+$( document ).ready(function() {
+	$(".fold_list>li>a").click(function() {
+		$(this).next("div").slideToggle().parent("li").siblings().children("div").hide();
+		$("body,html").animate({scrollTop: $(this).offset().top}, 500);
+		return false;
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <style>
+        button.on{
+            font-size:30px;
+        }
+        .modal{
+            display:none;
+            position:fixed;
+            top:50%;
+            left:50%;
+            width:500px;
+            height:500px;
+            margin-top:-250px;
+            margin-left:-250px;
+            background:#f00;
+        }
+        .modal.on{
+            background:#ff0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        /*
+            .on() . 함수를 여러개 부를 수 있음
+            .bind() . on의 예전버전
+            .click() . 클릭하면 <조건>
+            .hover() . 마우스를 올리면 <조건>
+            .show() . 요소가 보임 / 속성 fast, slow, 5000
+            .hide() . 요소 숨김
+            .toggle() . show + hide 두 동작을 가능
+            .slideToggle() . toggle이 슬라이드 형식으로 반응함
+            .mouseover() . 마우스 올렸을때
+            .mouseenter() . mouseover + click 두 동작을 가능
+        */
+        $(function(){
+            // $('button').click(function(){
+            //     $('.modal').toggle();
+            // })
+
+            // $('button').mouseover(function(){
+            //     $('.modal').show();
+            // })
+            // $('button').mouseleave(function(){
+            //     $('.modal').hide();
+            // })
+
+            // $('button').on('click focusin', function(){
+            //     $('.modal').show();
+            // })
+
+            // $('button').on('mouseenter', function(){
+            //     $('.modal').show();
+            // })
+
+            $('button').on('click', function(){
+                $('.modal').toggle(5000).toggleClass('on');
+                $(this).toggleClass('on');
+            })
+        })
+    </script>
+    <button>
+        나는야 버튼임!!!!
+    </button>
+    <div class="modal"></div>
+    <!-- jquery 최신 버전 사용 -->
+    <!-- https://zetawiki.com/wiki/JQuery_CDN,_%EC%B5%9C%EC%8B%A0_%EB%B2%84%EC%A0%84_%EC%82%AC%EC%9A%A9 -->
+    <script>
+        // alert('페이지 준비중입니다');
+        // location.href = "https://www.naver.com";
+        /*
+        window.close();
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no, address=no, email=no, date=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>09_each_메소드.html</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<script type="text/javascript" src="../js/jquery/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../js/jquery/jquery.easing.min.js"></script>
+	<style>
+		body span { color:red; font-size: 30px; }
+		#wrapper > ul > li { margin:5px; list-style: none; border: 1px solid green; }
+		#wrapper > ul > li > ul > li  { margin:5px; list-style: none; border: 1px solid blue; }
+
+		.menu ul {}
+		.menu ul:after {display:block; clear:both; content:"";}
+		.menu ul li {float:left; width:100px; line-height:50px; text-align:center; color:#666; background:#eee;}
+		.menu ul li.on {color:#fff; background:#000;}
+		.menu > .cntwrap > div {width:300px; height:100px; background:#000; color:#fff;}
+
+		.notice {margin-top:20px;}
+		.notice li {line-height:40px; font-size:20px;}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$('.ul li').each(function(i, e){
+				//console.log(i)
+			});
+
+		});
+	</script>
+</head>
+
+<body>
+	<span>each() 메소드를 사용하여 ul엘리먼트 자식엘리먼트를 순환하여 모두 색을 바꿔 주세요.</span>
+	<div class="ul" style="display:none">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+	</div>
+
+	<div class="ul"></div>
+
+	<p class="ul"></p>
+
+	<div class="section">
+		<!-- ex1 -->
+		<div class="menu tab_ui">
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+			<div class="cntwrap">
+				<div>1111</div>
+				<div>2222</div>
+				<div>3333</div>
+			</div>
+		</div>
+
+		<div class="sub">
+			<div class="menu tab_ui">
+				<ul>
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+				</ul>
+				<div class="cntwrap">
+					<div>1111</div>
+					<div>2222</div>
+					<div>3333</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			$(function(){
+				$('.tab_ui').each(function(i, e){
+					var $tab = $(e).find('li');
+					var $con = $(e).find('> .cntwrap > div');
+					$tab.eq(0).addClass('on');
+					$con.not(':first').hide();
+					
+					$tab.click(function(){
+						var idx = $(this).index();
+						$tab.eq(idx).addClass('on').siblings().removeClass('on');
+						$con.eq(idx).show().siblings().hide();
+					});
+				});
+
+				/*
+				var $tab = $('.menu li');
+				var $con = $('.menu > div > div');
+				$tab.eq(0).addClass('on');
+				$con.not(':first').hide();
+
+				$tab.click(function(){
+					var idx = $(this).index();
+					$tab.eq(idx).addClass('on').siblings().removeClass('on');
+					$con.eq(idx).show().siblings().hide();
+				});
+				*/
+			});
+		</script>
+		<!-- //ex1 -->
+
+	</div>
+
+
+	<!-- ex2 -->
+	<!-- slice, each문을 이용하여 각각의 글자를 10단위까지만 노출시키시오 -->
+	<ul class="notice">
+		<li>안녕하세요. 반갑습니다. 반갑습니다.</li>
+		<li>공지사항 입니다. 필독!! 반갑습니다.</li>
+		<li>안녕하세요. 반갑습니다. 반갑습니다.</li>
+		<li>공지사항 입니다. 필독!! 반갑습니다.</li>
+		<li>지금 잠이?!</li>
+	</ul>
+
+
+	<script>
+	$(function(){
+		$('.notice li').each(function(i, e){
+			if( $(e).text().length > 10 ){
+				var txt = $(e).text().slice(0, 10)+'...';
+				$(e).text(txt)
+			}
+		});
+
+	});
+	</script>
+
+
+</body>
+</html>

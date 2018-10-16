@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>자동 페이징 리스트 제이쿼리</title>
+<link rel="stylesheet" type="text/css" href="css/sjReset.css" />
+<script type="text/javascript" src="js/plugin/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+.container_test {width:300px; position:relative;}
+.gnb_test {background:#aaa; padding-left:10px;}
+.gnb_test > li {display:inline-block; margin-right:10px;}
+.gnb_test > li > a {display:block; padding:0 10px; line-height:25px;}
+.gnb_test > li > a:hover,
+.gnb_test > li.on a {background:#ccc;}
+.gnb_test > li > ul {position:absolute; left:0; top:25px; height:0; overflow:hidden;}
+.gnb_test > li.on > ul {width:100%; height:auto; background:#ccc;}
+.gnb_test > li > ul > li {display:inline-block; margin-left:10px; vertical-align:top;}
+.gnb_test li ul li ul {margin-left:10px; font-size:11px;}
+.contents_test {border:1px solid #bbb; padding:50px;}
+</style>
+</head>
+<body>
+<div class="container_test">
+	<ul class="gnb_test">
+		<li>
+			<a href="#">Menu1</a>
+			<ul>
+				<li>
+					<a href="#">Menu1-1</a>
+					<ul>
+						<li><a href="#">Menu-1-1-1</a></li>
+						<li><a href="#">Menu-1-1-2</a></li>
+						<li><a href="#">Menu-1-1-3</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Menu1-2</a>
+					<ul>
+						<li><a href="#">Menu-1-2-1</a></li>
+						<li><a href="#">Menu-1-2-2</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Menu1-3</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Menu2</a>
+			<ul>
+				<li>
+					<a href="#">Menu2-1</a>
+					<ul>
+						<li><a href="#">Menu2-1-1</a></li>
+						<li><a href="#">Menu2-1-2</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Menu2-2</a></li>
+				<li><a href="#">Menu2-3</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Menu3</a>
+			<ul>
+				<li><a href="#">Menu3-1</a></li>
+				<li><a href="#">Menu3-2</a></li>
+				<li><a href="#">Menu3-3</a></li>
+			</ul>
+		</li>
+	</ul>
+	<div class="contents_test">
+		Contents Area
+	</div>
+</div>
+<script>
+$( document ).ready(function() {
+	$( ".gnb_test > li > a" ).click(function() {
+		if($(this).parent().hasClass("on")){
+			$(".gnb_test > li").removeClass("on");
+			$(".contents_test").css("margin-top","0");
+		}
+		else {
+			$(this).parent().addClass("on").siblings().removeClass("on");
+			$(".contents_test").css({"margin-top":($(this).next().height())+"px"});
+		}
+		return false;
+	});
+});
+</script>
+<p>메뉴의 height를 계산해서 컨텐츠에 마진 값을 준다. (메뉴의 높이가 모두 같을 때는 고정 값을 스크립트에 입력)</p>
+</body>
+</html>

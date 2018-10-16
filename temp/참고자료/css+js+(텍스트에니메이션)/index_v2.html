@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>css animate test</title>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<style>
+*, html, body, ul, li, a, p, span, i {margin:0; padding:0; border:0; list-style:none; vertical-align:top; text-decoration:none;}
+*, html, body {font-family:'Ubuntu', sans-serif;}
+i {font-style:normal;}
+html, body {height:100%;}
+
+.visual_area {position:relative; height:500px; background:#eee;}
+.visual_area:before {
+	position:absolute; left:0; top:0; right:0; bottom:0;
+	background:url('img/lightbulb.jpg') no-repeat center;
+	background-size:cover;
+	content:"";
+}
+.visual_area:after {
+	position:absolute; left:0; top:0; right:0; bottom:0;
+	background:url('img/lightbulb_right.png') no-repeat center;
+	background-size:cover;
+	animation:light 10s ease-in-out infinite;
+	opacity:0;
+	content:"";
+}
+@keyframes light {
+	0% {opacity:0;}
+	5% {opacity:.3;}
+	13% {opacity:0;}
+	22% {opacity:.3;}
+	25% {opacity:0;}
+	40% {opacity:.5;}
+	50% {opacity:0;}
+	55% {opacity:.4;}
+	60% {opacity:0;}
+	90% {opacity:1;}
+	100% {opacity:0;}
+}
+
+.visual_txt {
+	position:absolute; left:50%; bottom:110px; /*transform:translate(0, -50%);*/
+	color:#000;
+}
+.visual_txt strong {
+	display:block;
+	line-height:50px;
+	font-size:30px; font-weight:400; letter-spacing:-1px;
+}
+.visual_txt span {
+	display:block;
+	line-height:20px;
+	font-size:20px; font-weight:300;
+}
+.visual_txt ul {position:relative; height:50px; margin-top:20px;}
+.visual_txt li {position:absolute; left:0; top:0; width:250px; line-height:50px;}
+.visual_txt i {
+	display:inline-block; vertical-align:top; font-size:50px; font-weight:700; letter-spacing:-1px;
+	transform-origin:50% 50% 40px; opacity:0;
+}
+.visual_txt .out {
+	transform:rotateX(90deg); transition:transform .5s cubic-bezier(0.215, 0.61, 0.355, 1); opacity:1;
+}
+.visual_txt .reset {
+	transform:rotateX(-90deg); transition:transform 0s; opacity:0;
+}
+.visual_txt .in {
+	transform:rotateX(0deg); transition:transform .55s cubic-bezier(0.175, 0.885, 0.32, 1.275); opacity:1;
+}
+
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+
+	<div class="visual_area">
+
+		<div class="visual_txt">
+			<strong>TEST.COM</strong>
+			<span>WEB PUBLISHER & DESIGNER</span>
+			<ul>
+				<li>Home</li>
+				<li>Study</li>
+				<li>Family</li>
+				<li>Portfolio</li>
+				<li>Privacy</li>
+			</ul>
+		</div>
+	</div>
+
+
+</div>
+</body>
+<script>
+$(function(){
+	var $each_txt = $('.visual_txt li');
+	var each_t_length = $each_txt.length;
+	var e_txt_Arr = [];
+	var tag_name = 'i';
+	var txt_time = 3000; //로테이트 시간
+	var each_time = 80; //각각의 텍스트 애니 시간
+
+	//각각 li의 텍스트를 e_txt_Arr에 담고 li는 비우기
+	$each_txt.each(function(i, e){
+		e_txt_Arr.push( $(e).text() );
+		$(e).text('');
+		console.log(e);
+	});
+
+	//e_txt_Arr에 담은 텍스트를 변수 'tag_name'으로 감싸며 각각의 li에 담기
+	for( i=0; i<each_t_length; i++ ){
+		for( j=0; j<e_txt_Arr[i].length; j++ ){
+			$each_txt.eq(i).append('<'+tag_name+'>'+ e_txt_Arr[i][j] +'</'+tag_name+'>');
+		}
+	}
+
+	//텍스트 클래스 컨트롤
+	var interval_idx = 0;
+	each_text_class(interval_idx);
+	function each_text_class(interval_idx){
+		var idx = interval_idx;
+
+		//나타나는 텍스트
+		txt_ani(idx, 'out reset', 'in', true);
+
+		//사라지는 텍스트
+		idx == 0 ? txt_ani(each_t_length-1, 'in', 'out', false) : txt_ani(idx-1, 'in', 'out', false);
+
+		function txt_ani(target_idx, removeClass, addClass, reset){
+			$each_txt.eq(target_idx).children().each(function(i, e){
+				if( reset == true ) $(e).addClass('reset');
+				var addTime = (each_time * i) + each_time * 3;
+				var inInterval = setInterval(function(){
+					$(e).removeClass(removeClass).addClass(addClass);
+					clearInterval(inInterval);
+				}, addTime);
+			});
+		}
+	}
+
+	//일정시간 동안 애니메이션 작동 및 idx증가값 계산
+	setInterval(function(){
+		interval_idx++;
+		each_text_class(interval_idx);
+		if( interval_idx == each_t_length ){
+			interval_idx = 0;
+			each_text_class(interval_idx);
+		}
+		//console.log(interval_idx); //idx 흐름 확인
+	}, txt_time);
+
+});
+</script>
+</html>

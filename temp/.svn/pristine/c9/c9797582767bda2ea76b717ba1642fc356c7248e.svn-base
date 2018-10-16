@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GREEN LIGHT 초록여행</title>
+    <!-- reset.css 모든 초기화 및 공통요소 작업된 부분-->
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <!-- layout.css 레이아웃의 공통요소 상단영역 및 하단 공통부분 작업-->
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <!-- main.css index 또는 메인의 콘텐츠 부분 작업-->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+    <div class="headerwrap">
+        <ul class="tnb">
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">아이디암호찾기</a></li>
+            <li><a href="#">회원가입</a></li>
+            <li><a href="#">마이페이지</a></li>
+        </ul>
+        <!-- //.tnb-->
+        <div class="navwrap">
+            <div class="navigation">
+                <h1><a href="#"><img src="images/common/TopLogo.gif" art="GREEN LIGHT 초록여행"></a></h1>
+                <nav class="nav">
+                    <ul>
+                        <li class="dep1"><a href="#">초록여행</a>
+                            <ul>
+                                <li><a href="#">사업소개</a></li>
+                                <li><a href="#">프로그램</a></li>
+                                <li><a href="#">운영기관</a></li>
+                                <li><a href="#">지역거점</a></li>
+                            </ul>
+                        </li>
+                        <li class="dep1"><a href="#">여행준비</a>
+                            <ul>
+                                <li><a href="#">이용안내</a></li>
+                                <li><a href="#">자유여행</a></li>
+                                <li><a href="#">미션여행</a></li>
+                                <li class="dep2"><a href="#">테마여행</a>
+                                    <ul>
+                                        <li><a href="#">-호국야희망나들이</a></li>
+                                        <li><a href="#">-학대피해장애인 지원</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">여행상담</a></li>
+                                <li><a href="#">도움말(FAQ)</a></li>
+                            </ul>
+                        </li>
+                        <li class="dep1"><a href="#">여행정보</a>
+                            <ul>
+                                <li><a href="#">편의정보</a></li>
+                                <li><a href="#">여행코스</a></li>
+                                <li><a href="#">여행후기</a></li>
+                                <li><a href="#">동영상</a></li>
+                                <li><a href="#">이미지</a></li>
+                                <li><a href="#">문화예술</a></li>
+                            </ul>
+                        </li>
+                        <li class="dep1"><a href="#">소식안내</a>
+                            <ul>
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">초록뉴스</a></li>
+                                <li><a href="#">언론보도</a></li>
+                                <li><a href="#">뉴미디어</a></li>
+                            </ul>
+                        </li>
+                        <li class="dep1"><a href="#">고객참여</a>
+                            <ul>
+                                <li><a href="#">편의정보등록</a></li>
+                                <li><a href="#">여행코스등록</a></li>
+                                <li><a href="#">응원메세지</a></li>
+                                <li><a href="#">포인트이용법</a></li>
+                                <li><a href="#">사업후원안내</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- //.navigation -->
+        </div>
+        <!-- //.navwrap -->
+    </div>
+    <!-- //.headerwrap -->
+    <div></div>
+    <div></div>
+</body>
+</html>

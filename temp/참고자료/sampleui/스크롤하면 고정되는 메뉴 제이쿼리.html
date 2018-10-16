@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>자동 페이징 리스트 제이쿼리</title>
+<link rel="stylesheet" type="text/css" href="css/sjReset.css" />
+<script type="text/javascript" src="js/plugin/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+.nav-container {background:url('images/nav_bg.jpg') repeat-x 0 0;}
+.f-nav {z-index:9999; position:fixed; left:0; top:0; width:100%;}
+.nav {height:42px;}
+.nav ul {list-style:none;}
+.nav ul li {float:left; margin-top:6px; padding:6px; border-right:1px solid #ACACAC;}
+.nav ul li:first-child {padding-left:0;}
+.nav ul li a:hover {text-decoration: underline;}
+</style>
+</head>
+<body style="height:1500px;">
+<ul>
+<li>* 튜토리얼: <a href="http://www.sutanaryan.com/how-to-create-fixed-menu-when-scrolling-page-with-css-and-jquery/" target="_blank">http://www.sutanaryan.com/how-to-create-fixed-menu-when-scrolling-page-with-css-and-jquery/</a></li>
+<li>* 데모: <a href="http://www.sutanaryan.com/wpcp/Tutorials/fixed-menu-when-scrolling-page-with-CSS-and-jQuery/" target="_blank">http://www.sutanaryan.com/wpcp/Tutorials/fixed-menu-when-scrolling-page-with-CSS-and-jQuery/</a></li>
+</ul>
+<div class="nav-container">
+	<div class="nav">
+		<ul>
+			<li><a href="">Home</a></li>
+			<li><a href="">CSS</a></li>
+			<li><a href="">PHP</a></li>
+			<li><a href="">SEO</a></li>
+			<li><a href="">jQuery</a></li>
+			<li><a href="">Wordpress</a></li>
+			<li><a href="">Services</a></li>
+		</ul>
+		<div class="clear"></div> /*clear floating div*/
+	</div>
+</div>
+<script>
+$( document ).ready(function() {
+	var nav = $('.nav-container');
+	 
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 136) {
+			nav.addClass("f-nav");
+		} else {
+			nav.removeClass("f-nav");
+		}
+	});
+});
+</script>
+
+</body>
+</html>

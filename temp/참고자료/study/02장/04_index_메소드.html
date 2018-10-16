@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no, address=no, email=no, date=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>04_index_method</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<script type="text/javascript" src="../js/jquery/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../js/jquery/jquery.easing.min.js"></script>
+	<style>
+		body span { color:red; font-size: 30px; }
+		#wrapper > ul > li { margin:5px; list-style: none; border: 1px solid green; }
+	</style>
+	<script>
+		$(document).ready(function(){
+			var idx = $('#el').index(3);
+			console.log(idx);
+		});
+	</script>
+</head>
+
+<body>
+	<span>ul의 자식 엘리먼트중 네번째 엘리먼트를 index() 메서드로 해당 index값을 alert()을 띄워 봅시다.</span>
+	<div id="wrapper">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li id="el">4 ( 여긴 몇번째 index일까요?? )</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+	</div>
+</body>
+</html>

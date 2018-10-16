@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>jQuery 공작소 : 새키우기</title>
+<meta name="author" content="jQuery 공작소">
+<link rel="stylesheet" type="text/css" href="http://superkts.com/jquery/core.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+
+<style type="text/css">
+	.wrapper { padding:0 !important; margin-bottom:30px; }
+	.wrapper .contents .ex .e { padding-top:50px; }
+	.wrapper .contents .ex .url { font-size:12pt; text-align:center; margin-bottom:10px; }
+</style>
+
+<div class="wrapper">
+	<h1>새키우기</h1>
+	<div class="contents">
+		<div class="ex">
+			<div class="url"><a class="link2" href="http://superkts.com/jquery/@ShowMeTheBird" target="_blank">▶ jQuery 공작소에서 보기</a></div>
+			<div class="t2">애니메이션 메서드와 이징효과를 이용한 간단한 예제입니다</div>
+			<div class="e ac">
+
+
+<!-- 소스 시작 -->
+
+<style type="text/css">
+	.css_test {
+		border-radius:5px;
+		border:5px solid gray;
+		height:150px;
+		padding:5px;
+		text-align:center;
+		width:100%;
+		
+	}
+	.css_test img {
+		cursor:pointer;
+		vertical-align:bottom;
+	}
+</style>
+
+새를 눌러보세요!<br><br>
+
+<table class="css_test" cellpadding="0" cellspacing="0">
+	<tr>
+		<td valign="bottom">
+			<img src="http://superkts.com/img/bird.gif" />
+			<img src="http://superkts.com/img/bird.gif" />
+			<img src="http://superkts.com/img/bird.gif" />
+			<img src="http://superkts.com/img/bird.gif" />
+			<img src="http://superkts.com/img/bird.gif" />
+			<img src="http://superkts.com/img/bird.gif" />
+			<img src="http://superkts.com/img/bird.gif" />
+			<img src="http://superkts.com/img/bird.gif" />
+		</td>
+	</tr>
+</table>
+
+<button class="mt10" type="button" onclick="$('.css_test img').animate({height:'37'}, 500, 'easeInOutBack')">작아지게 하기</button>
+
+<script type="text/javascript">
+
+	$('.css_test img').bind('click', function(){
+		$(this).animate({height:'120'}, 250, 'easeInOutBack');
+	});
+
+</script>
+
+<!-- 소스 종료 -->
+
+
+			</div>
+		</div>
+		<div class="ac">
+			<a href="http://superkts.com/jquery/" target="_blank">jQuery 공작소</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://superkts.com/css/" target="_blank">CSS 공작소</a>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

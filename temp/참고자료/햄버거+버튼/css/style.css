@@ -1,0 +1,81 @@
+@charset 'utf-8';
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, 
+cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, 
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, 
+footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video 
+{margin:0; padding:0; border:0; font-size:100%; font:inherit; vertical-align:top;}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block;}
+body {line-height:1;}
+ol, ul li {list-style:none;}
+blockquote, q {quotes:none;}
+blockquote:before, blockquote:after, q:before, q:after {content:''; content:none;}
+table {border-collapse:collapse; border-spacing:0;}
+a {text-decoration:none;}
+caption, .hide, .sound_only {position:absolute; top:-9999px; display:block; width:0; height:0; margin:0; padding:0; line-height:0; font-size:0; text-indent:-9999px;}
+img {height:auto; border:0; vertical-align:top;}
+button {margin:0; padding:0; border:0; background:none;}
+textarea {vertical-align:top;}
+/* 아이폰 가로모드 텍스트 크기 조정 */
+* {-webkit-text-size-adjust:none}
+/* 아이폰 라운드, 안쪽 그림자 제거 */
+input {-webkit-border-radius:0; -webkit-appearance:none;}
+/* common */
+.ell {overflow:hidden; white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis;}
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="submit"], textarea, select 
+{font-size:13px; border-radius:0; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; vertical-align:top;}
+
+
+.header {}
+.footer {}
+
+
+.container {margin:50px 0;}
+.container article {padding:10px 20px;}
+.container article > a {margin-right:10px;}
+.container article > i {line-height:60px;}
+
+
+/* 버튼 공통 */
+.hbg_btn {display:inline-block; position:relative; width:60px; height:60px; transition:background-color .3s;}
+.hbg_btn:hover {background-color:#eee;}
+.hbg_btn i {font-size:0; text-indent:-9999px;}
+.hbg_btn i,
+.hbg_btn i:before,
+.hbg_btn i:after {position:absolute; left:0; width:30px; height:4px; background:#000; border-radius:10px; content:"";}
+.hbg_btn i {left:50%; top:50%; margin:-2px 0 0 -15px;}
+.hbg_btn i:before {top:-12px;}
+.hbg_btn i:after {bottom:-12px;}
+
+
+/* style1 */
+.hbg_btn.style1 i {transition:background-color .05s .2s;}
+.hbg_btn.style1 i:before {transition:top 0.15s 0.2s ease-in, transform 0.1s ease-in;}
+.hbg_btn.style1 i:after {transition:bottom 0.15s 0.2s ease-in, transform 0.1s ease-in;}
+
+.hbg_btn.style1.active i {background-color:rgba(255,255,255,0);}
+.hbg_btn.style1.active i:before {top:0;
+	transform:rotate(45deg); 
+	transition:top 0.15s ease-out, transform 0.1s  0.2s ease-out;
+}
+.hbg_btn.style1.active i:after {bottom:0;
+	transform:rotate(-45deg); 
+	transition:bottom 0.15s ease-out, transform 0.1s  0.2s ease-out;
+}
+
+
+/* style2 */
+.hbg_btn.style2 i {transition:background-color .05s .2s;}
+.hbg_btn.style2 i:before {transition:top 0.15s 0.25s, transform 0.2s;}
+.hbg_btn.style2 i:after {transition:bottom 0.15s 0.25s, transform 0.2s;}
+
+.hbg_btn.style2.active i {background-color:rgba(255,255,255,0);}
+.hbg_btn.style2.active i:before {top:0;
+	transform:rotate(225deg); 
+	transition:top 0.15s, transform .25s  0.2s ease-out;
+}
+.hbg_btn.style2.active i:after {bottom:0;
+	transform:rotate(135deg); 
+	transition:bottom 0.15s, transform .25s  0.2s ease-out;
+}

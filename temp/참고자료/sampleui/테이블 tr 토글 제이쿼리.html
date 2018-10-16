@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>자동 페이징 리스트 제이쿼리</title>
+<link rel="stylesheet" type="text/css" href="css/sjReset.css" />
+<script type="text/javascript" src="js/plugin/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+.tb_fruits {width:100%; border-spacing:0; border-collapse:collapse; position:relative;}
+.tb_fruits th,
+.tb_fruits td {padding:10px;border:1px solid #ccc; border-top:0; text-align:center; width:50%;}
+.tb_fruits thead th {border-top:1px solid #ccc; background:#767676; color:#fff;}
+.tb_fruits caption {position:absolute; height:0; overflow:hidden;}
+.tb_fruits tbody tr {display:none;}
+.tb_fruits tbody tr.tr_visible {background:#eee; display:table-row;}
+.tb_fruits .tr_visible a {
+	position:absolute;
+	width:100%;
+	text-indent:-9999px;
+	left:0;
+	background:#fff;
+	opacity:0;
+	-ms-filter:alpha(opacity=0);
+	filter:alpha(opacity=0);
+}
+</style>
+</head>
+<body>
+<table class="tb_fruits" summary="Seasonal Fruits. First column: Name, Second column: Season">
+	<caption>Seasonal Fruits</caption>
+	<thead>
+		<tr>
+			<th scope="col">Name</th>
+			<th scope="col">Season</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="tr_visible">
+			<th scope="row">
+				<a href="#">View More</a>
+				Apple
+			</th>
+			<td>Autumn</td>
+		</tr>
+		<tr>
+			<th scope="row">Fuji</th>
+			<td>Autumn</td>
+		</tr>
+		<tr>
+			<th scope="row">Granny Smith</th>
+			<td>Autumn</td>
+		</tr>
+		<tr class="tr_visible">
+			<th scope="row">
+				<a href="#">View More</a>
+				Orange
+			</th>
+			<td>Spring</td>
+		</tr>
+		<tr>
+			<th scope="row">Navel</th>
+			<td>Spring</td>
+		</tr>
+		<tr>
+			<th scope="row">Valencia</th>
+			<td>Spring</td>
+		</tr>
+	</tbody>
+</table>
+<script>
+$( document ).ready(function() {
+	$(".tr_visible a").click(function() {
+		$(this).parent().parent().nextUntil(".tr_visible").toggle();
+		return false;
+	});
+});
+</script>
+<p>
+tr이 아닌 a태그에 링크를 걸어 탭 포커싱이 용이하다.<br>
+(* a 태그 css에 background와 opacity를 준 이유는 IE에서 텍스트를 덮는 영역을 인식하게 하기 위함.)
+</p>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>jQuery 공작소 : 음식 무한 복제</title>
+<meta name="author" content="jQuery 공작소">
+<link rel="stylesheet" type="text/css" href="http://superkts.com/jquery/core.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+
+<style type="text/css">
+	.wrapper { padding:0 !important; margin-bottom:30px; }
+	.wrapper .contents .ex .e { padding-top:50px; }
+	.wrapper .contents .ex .url { font-size:12pt; text-align:center; margin-bottom:10px; }
+</style>
+
+<div class="wrapper">
+	<h1>음식 무한 복제</h1>
+	<div class="contents">
+		<div class="ex">
+			<div class="url"><a class="link2" href="http://superkts.com/jquery/@ShowMeTheFood" target="_blank">▶ jQuery 공작소에서 보기</a></div>
+			<div class="t2">click 메서드를 이용하여 자동클릭 하기</div>
+			<div class="e ac">
+
+
+<!-- 소스 시작 -->
+
+<style type="text/css">
+	.css_test {
+		text-align:center;
+	}
+	.css_test img {
+		position:relative;
+	}
+</style>
+
+click 메서드를 사용한 자동 클릭. 버튼을 눌러보세요.<br><br>
+
+<div class="css_test">
+	<img class="cp" style="z-index:999;" src="http://superkts.com/img/icon/food/food_fd32.gif" onclick="j_test(this)" />
+</div>
+
+<script type="text/javascript">
+
+	function j_test(o){
+
+		var pos  = $(o).offset(); // 클릭한 이미지의 위치알아내기
+		var rnd1  = Math.round( Math.random() * 900 - 450 );
+		var rnd2 = Math.round( Math.random() * 900 - 450 );
+
+		// 클릭한 이미지 기준으로 이동할 위치계산
+		var move_top = pos.top - rnd1;
+		var move_left = pos.left - rnd2;
+
+		// 보기편하게 여러줄 코딩
+		$(o)
+		.clone() // 클릭한 이미지 복제
+		.appendTo( '.css_test' ) // css_test 에 복제한것 추가
+		.css({ top : pos.top, left : pos.left, position:'absolute' }) // 위치설정과 position 설정 변경
+		.animate( { top : move_top, left : move_left }, 1000, function(){
+			var img = this; // setTimeout 에서 사용하기 위해 지역변수로 만들기
+			setTimeout( function(){ $(img).remove(); }, 2000); // 2초후 제거
+		});
+	}
+
+	var j_test_timer = 100;
+	var j_test_inter;
+
+	function j_test_click(){
+		$('.css_test img:eq(0)').click();
+	}
+
+	// 자동 클릭 (광클)
+	function j_test_start(){
+		j_test_inter = setInterval(j_test_click, j_test_timer);
+	}
+
+	function j_test_stop(){
+		clearInterval(j_test_inter);
+	}
+
+	function j_test_speed(n){
+		j_test_timer = n;
+		j_test_stop();
+		j_test_start();
+	}
+
+</script>
+
+<div class="ac" style="z-index:1000; position:relative;">
+	<button type="button" class="bset1" onclick="j_test_speed(500)">느리게</button>
+	<button type="button" class="bset1" onclick="j_test_speed(250)">보통</button>
+	<button type="button" class="bset1" onclick="j_test_speed(100)">빠르게</button>
+	<button type="button" class="bset1" onclick="j_test_speed(10)">매우 빠르게</button>
+	<button type="button" class="bset1" onclick="j_test_speed(1)">완전 빠르게</button><br>
+	<button type="button" class="bset1 red mt10" onclick="j_test_stop()">멈추기</button>
+</div>
+
+<!-- 소스 종료 -->
+
+
+			</div>
+		</div>
+		<div class="ac">
+			<a href="http://superkts.com/jquery/" target="_blank">jQuery 공작소</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://superkts.com/css/" target="_blank">CSS 공작소</a>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+
+html,body{
+    width:100%;
+    height:100%;
+}
+body{
+    position:relative;
+    background:url(../images/itsme/wrapback.jpg) no-repeat 50% 0;
+}
+.header{
+    width:100%;
+    height:10%;
+}
+.mMenu{
+    width:80%;
+    margin:0 auto;
+    text-align:center;
+    transition:all 0.5s;
+}
+.mMenu::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+.mMenu li{
+    float:left;
+    width:12%;
+    height:80px;
+    line-height:80px;
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+}
+.mMenu li:first-child{
+    margin-left:12%;
+}
+.dep1:hover{
+    border-top:3px solid #8812dd;
+}
+.mMenu li:nth-child(2){
+    background:linear-gradient(90deg, #f00, #f70);
+}
+.mMenu li:nth-child(3){
+    background:linear-gradient(90deg, #f70, #ff0);
+}
+.mMenu li:nth-child(4){
+    background:linear-gradient(90deg, #ff0, #0f0);
+}
+.mMenu li:nth-child(5){
+    background:linear-gradient(90deg, #0f0, #02f);
+}
+.mMenu li:nth-child(6){
+    background:linear-gradient(90deg, #02f, #009);
+}
+.mMenu li span{
+    font-size:30px;
+    color:#fff
+}
+.container{
+    width:100%;
+    height:80%;
+    border:1px solid #f00;
+}

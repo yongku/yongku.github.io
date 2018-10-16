@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>차례대로 나타나기</title>
+<link href="css/effect.css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script>
+<!--<script type="text/javascript" src="js/viewportChecker.js"></script>-->
+<script type="text/javascript" src="js/jquery.viewportchecker.js"></script>
+<style>
+*, html, body, ul, li, a, p, span, i {margin:0; padding:0; border:0; list-style:none; vertical-align:top; text-decoration:none; font-family:Dotum;}
+section, article {display:block;}
+.wrap article {height:1000px;}
+header {position:relative; height:100px; background:#fff;}
+footer {position:relative; height:100px; color:#fff; background:#000;}
+</style>
+</head>
+<body>
+<div class="wrap">
+	<header>header</header>
+	<section>
+		<article class="fdi_up" style="background:#bbb;">box1</article>
+		<article class="fdi_up" style="background:#888;">box2</article>
+		<article class="fdi_up" style="background:#bbb;">box3</article>
+		<article class="fdi_up" style="background:#888;">box4</article>
+		<article class="fdi_up" style="background:#bbb;">box5</article>
+	</section>
+	<footer>footer</footer>
+</div>
+</body>
+
+<script>
+$('.fdi_up').addClass("hidden_dv").viewportChecker({
+	classToAdd: 'visible_dv  animated  fadeInUp',
+	offset: 1
+});   
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no, address=no, email=no, date=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>06_filter_method</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<script type="text/javascript" src="../js/jquery/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../js/jquery/jquery.easing.min.js"></script>
+	<style>
+		body span { color:red; font-size: 30px; }
+		#wrapper > ul > li { margin:5px; list-style: none; border: 1px solid green; }
+	</style>
+	<script>
+		$(document).ready(function(){
+			//$('#wrapper li').filter('.el').css('color','red') //형제찾기
+			$('#wrapper').find('.el').css('color','red')	//자식찾기
+		});
+	</script>
+</head>
+
+<body>
+	<span>ul의 자식 엘리먼트중 클래스값이 el인 엘리먼트만 글자색을 변경해 주세요.</span>
+	<div id="wrapper">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li class="el">4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+	</div>
+</body>
+</html>

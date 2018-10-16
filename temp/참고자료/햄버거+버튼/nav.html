@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>햄버거 버튼</title>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/typeface-nanum-square@1.1.0/nanumsquare.css">
+<link href="css/style.css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script>
+$(function(){
+	$('.hbg_btn').each(function(i, e){
+		$(e).click(function(){
+			if( !$(e).is('.active') ) $(e).addClass('active');
+			else $(e).removeClass('active');
+			return false;
+		});
+	});
+});
+</script>
+</head>
+<body>
+
+
+
+<div class="wrap">
+	<!-- header -->
+	<header class="header">
+		<h1>햄버거 버튼 주</h1>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<section id="container" class="container">
+		<article>
+			<a href="#none" class="hbg_btn style1"><i>메뉴버튼1</i></a>
+			<i>연습용1</i>
+		</article>
+		<article>
+			<a href="#none" class="hbg_btn style2"><i>메뉴버튼2</i></a>
+			<i>연습용2</i>
+		</article>
+	</section>
+	<!-- //container -->
+</div>
+
+
+</body>
+</html>

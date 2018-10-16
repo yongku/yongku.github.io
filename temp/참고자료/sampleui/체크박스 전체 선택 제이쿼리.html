@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>자동 페이징 리스트 제이쿼리</title>
+<link rel="stylesheet" type="text/css" href="css/sjReset.css" />
+<script type="text/javascript" src="js/plugin/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+.nav-container {background:url('images/nav_bg.jpg') repeat-x 0 0;}
+.f-nav {z-index:9999; position:fixed; left:0; top:0; width:100%;}
+.nav {height:42px;}
+.nav ul {list-style:none;}
+.nav ul li {float:left; margin-top:6px; padding:6px; border-right:1px solid #ACACAC;}
+.nav ul li:first-child {padding-left:0;}
+.nav ul li a:hover {text-decoration: underline;}
+</style>
+</head>
+<body>
+<p>※ 제이쿼리 1.7 이상일 때 정상 동작</p>
+<div style="overflow:hidden;">
+	<div style="width:150px; float:left;">
+		<input type="checkbox" class="check_all">
+		<ul>
+			<li><label><input type="checkbox">check 1-1</label></li>
+			<li><label><input type="checkbox">check 1-2</label></li>
+			<li><label><input type="checkbox">check 1-3</label></li>
+		</ul>
+	</div>
+ 
+	<div style="width:150px; float:left;">
+		<input type="checkbox" class="check_all">
+		<ul>
+			<li><label><input type="checkbox">check 2-1</label></li>
+			<li><label><input type="checkbox">check 2-2</label></li>
+			<li><label><input type="checkbox">check 2-3</label></li>
+		</ul>
+	</div>
+</div>
+<script>
+$( document ).ready(function() {
+	$(".check_all").click(function() {
+		if($(this).is(':checked')) {
+			$(this).next().find("input[type=checkbox]").prop("checked", true);
+		} else {
+			$(this).next().find("input[type=checkbox]").prop("checked", false);
+		}
+	});
+});
+</script>
+
+</body>
+</html>

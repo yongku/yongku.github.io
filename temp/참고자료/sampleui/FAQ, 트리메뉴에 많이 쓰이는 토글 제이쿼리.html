@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>자동 페이징 리스트 제이쿼리</title>
+<link rel="stylesheet" type="text/css" href="css/sjReset.css" />
+<script type="text/javascript" src="js/plugin/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+.bg_line {padding:10px 20px; border:1px solid #ddd; background:url('http://ts.daumcdn.net/custom/blog/166/1664742/skin/images/bg_line.gif'); color:#333; border-radius:10px;}
+ul.faq li p {display:none;}
+</style>
+</head>
+<body>
+<div class="bg_line">
+	<ul class="faq">
+		<li>
+			<a href="#" title="View Answer">Question1</a>
+			<p>
+				Answer1
+			</p>
+		</li>
+		<li>
+			<a href="#" title="View Answer">Question2</a>
+			<p>
+				Answer2
+			</p>
+		</li>
+		<li>
+			<a href="#" title="View Answer">Question3</a>
+			<p>
+				Answer3
+			</p>
+		</li>
+	</ul>
+</div>
+<script>
+$( document ).ready(function() {
+	$(".faq a").click(function() {
+		$(this).next().slideToggle("fast").parent().siblings().children("p").hide();
+		return false;
+	});
+});
+</script>
+</body>
+</html>

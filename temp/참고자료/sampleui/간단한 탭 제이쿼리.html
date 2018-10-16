@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>자동 페이징 리스트 제이쿼리</title>
+<link rel="stylesheet" type="text/css" href="css/sjReset.css" />
+<script type="text/javascript" src="js/plugin/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+.tab {position:relative; padding-top:31px;}
+.tab>li>a {
+	display:block; 
+	position:absolute; 
+	top:0; 
+	width:95px;
+	height:30px;
+	line-height:30px;
+	text-align:center; 
+	background:#eee; 
+	color:#555; 
+	border:1px solid #767676; 
+	border-bottom:0;
+}
+.tab>li.on>a {background:#767676; color:#fff;}
+.tab>li:first-child>a {left:0;}
+.tab>li+li>a {left:100px;}
+.tab>li+li+li>a {left:200px;}
+.tab>li>div {height:0; overflow:hidden; position:absolute;}
+.tab>li.on>div {height:auto; position:static; border:1px solid #767676; padding:10px;}
+</style>
+</head>
+<body>
+<ul class="tab">
+	<li class="on">
+		<a href="#">TAB 1</a>
+		<div>
+			Contents 1
+		</div>
+	</li>
+	<li>
+		<a href="#">TAB 2</a>
+		<div>
+			Contents 2
+		</div>
+	</li>
+	<li>
+		<a href="#">TAB 3</a>
+		<div>
+			Contents 3
+		</div>
+	</li>
+</ul>
+<script>
+$( document ).ready(function() {
+	$( ".tab>li>a" ).click(function() {
+		$(this).parent().addClass("on").siblings().removeClass("on");
+		return false;
+	});
+});
+</script>
+</body>
+</html>

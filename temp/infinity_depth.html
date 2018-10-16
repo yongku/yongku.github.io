@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no, address=no, email=no, date=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>left menu 무한뎁스</title>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<script type="text/javascript" src="js/jquery/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery.easing.min.js"></script>
+	<style>
+	section, article {display:block;}
+	.nav {
+		width:250px;
+		margin:20px;
+		border:1px solid #ddd;
+	}
+	.nav h2 {
+		padding:0 15px;
+		line-height:50px;
+		font-size:16px;
+		color:#fff;
+		background:#222;
+	}
+	.nav .arr > a:after {
+		position:absolute; right:15px; top:50%;
+		margin-top:-3px;
+		border-left:4px solid transparent;
+		border-right:4px solid transparent;
+		border-top:6px solid #666;
+		content:"";
+	}
+	.nav .open > a:after {
+		transform:rotate(180deg);
+	}
+	.nav .menu a {
+		display:block;
+		position:relative;
+		line-height:40px;
+		padding:0 15px;
+		font-size:14px; color:#555;
+	}
+	.nav .menu > li {
+		border-top:1px solid #ddd;
+	}
+	.nav .menu > li:first-child {
+		border-top:0;
+	}
+	.nav .depth {
+		display:none;
+	}
+	.nav .depth2 li {
+		margin-left:15px;
+	}
+	</style>
+</head>
+<body>
+
+	<nav class="nav">
+		<h2>무한 뎁스 메뉴</h2>
+		<ul class="menu">
+			<li>
+				<a href="#">회사소개</a>
+				<ul class="depth depth2">
+					<li>
+						<a href="#">회사소개1</a>
+						<ul class="depth depth3">
+							<li>
+								<a href="#">회사소개1_1</a>
+								<ul class="depth depth4">
+									<li><a href="#">회사소개1_1_1</a></li>
+									<li><a href="#">회사소개1_1_2</a></li>
+									<li><a href="#">회사소개1_1_3</a></li>
+									<li><a href="#">회사소개1_1_4</a></li>
+								</ul>
+							</li>
+							<li><a href="#">회사소개1_2</a></li>
+							<li><a href="#">회사소개1_3</a></li>
+							<li><a href="#">회사소개1_4</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">회사소개2</a>
+						<ul class="depth depth3">
+							<li><a href="#">회사소개2_1</a></li>
+							<li><a href="#">회사소개2_2</a></li>
+							<li><a href="#">회사소개2_3</a></li>
+							<li><a href="#">회사소개2_4</a></li>
+						</ul>
+					</li>
+					<li><a href="#">회사소개3</a></li>
+					<li><a href="#">회사소개4</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">대표 인사말</a>
+			</li>
+			<li>
+				<a href="#">연혁</a>
+				<ul class="depth depth2">
+					<li><a href="#">연혁1_1</a></li>
+					<li><a href="#">연혁1_2</a></li>
+					<li><a href="#">연혁1_3</a></li>
+					<li><a href="#">연혁1_4</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">조직도</a>
+			</li>
+		</ul>
+	</nav>
+
+</body>
+<script>
+$(function(){
+	var $menu = $('.menu');
+
+	$menu.find('li').each(function(i, e){
+		//하위 메뉴가 있다면 해당 li에 클래스 생성
+		if( $(e).children().length > 1 ){
+			$(e).addClass('arr');
+		}
+
+		//클릭 이벤트
+		$(e).click(function(){
+			if( $(e).is('.arr') ){
+				var speed = 200;
+				var open = 'open';
+				//해당 메뉴 열고 닫힘
+				$(e).toggleClass(open).find('>.depth').slideToggle(speed);
+				//닫을경우 해당 메뉴의 하위 모두 닫힘
+				$(e).find('li').removeClass(open).find('.depth').slideUp(speed);
+				//형제 포함 형제의 하위메뉴 모두 닫음
+				$(e).siblings().removeClass(open).find('.depth').slideUp(speed).find('li').removeClass(open);
+				return false;
+			}
+		});
+	});
+});
+</script>
+</html>

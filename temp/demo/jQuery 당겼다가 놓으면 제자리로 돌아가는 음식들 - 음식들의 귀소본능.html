@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>jQuery 공작소 : 당겼다가 놓으면 제자리로 돌아가는 음식들</title>
+<meta name="author" content="jQuery 공작소">
+<link rel="stylesheet" type="text/css" href="http://superkts.com/jquery/core.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+
+<style type="text/css">
+	.wrapper { padding:0 !important; margin-bottom:30px; }
+	.wrapper .contents .ex .e { padding-top:50px; }
+	.wrapper .contents .ex .url { font-size:12pt; text-align:center; margin-bottom:10px; }
+</style>
+
+<div class="wrapper">
+	<h1>당겼다가 놓으면 제자리로 돌아가는 음식들</h1>
+	<div class="contents">
+		<div class="ex">
+			<div class="url"><a class="link2" href="http://superkts.com/jquery/@FoodBreaker" target="_blank">▶ jQuery 공작소에서 보기</a></div>
+			<div class="t2">음식들의 귀소본능</div>
+			<div class="e ac">
+
+
+<!-- 소스 시작 -->
+
+<style type="text/css">
+	.css_test {
+	}
+	.css_test img {
+		cursor:move;
+	}
+</style>
+
+음식들을 드래그 했다가 놓아보세요~<br><br>
+
+<div class="css_test">
+	<img src="http://superkts.com/img/icon/food/fff22.gif" />
+	<img src="http://superkts.com/img/icon/food/fff27.gif" />
+	<img src="http://superkts.com/img/icon/food/fff28.gif" />
+	<img src="http://superkts.com/img/icon/food/fo028.gif" />
+	<img src="http://superkts.com/img/icon/food/fo035.gif" /><br><br>
+	<img src="http://superkts.com/img/icon/food/food_fd32.gif" />
+	<img src="http://superkts.com/img/icon/food/food09[1].gif" />
+	<img src="http://superkts.com/img/icon/food/food_fd213.gif" />
+</div>
+
+<script type="text/javascript">
+
+	// 보기편하게 여러줄로 코딩
+	$( '.css_test img' )
+	.draggable({
+		stop : function(){ // 드래그 종료시 실행
+			$(this).animate({ top : 0, left : 0 }, 1000, 'easeOutElastic' ); // 원위치로
+			// 제이쿼리UI 의 이징효과 사용
+		}
+	})
+
+</script>
+
+<!-- 소스 종료 -->
+
+
+			</div>
+		</div>
+		<div class="ac">
+			<a href="http://superkts.com/jquery/" target="_blank">jQuery 공작소</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://superkts.com/css/" target="_blank">CSS 공작소</a>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

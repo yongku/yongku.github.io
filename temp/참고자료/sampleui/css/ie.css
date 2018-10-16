@@ -1,0 +1,6 @@
+/* Button Style */
+.btn{padding:10px 15px;line-height:1.4em;}
+.btn.btn-small{padding:7px 10px 3px;line-height:1.2em;color:#000}
+.btn.btn-big{padding:12px 25px;}
+.btn.btn-large{padding:20px 25px;}
+.btn.btn-empty{padding:8px 15px;}

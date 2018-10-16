@@ -1,0 +1,129 @@
+html,body{
+    width:100%;
+    height:100%;
+}
+body{
+    position:relative;
+    background:url(../images/itsme/wrapback.jpg) no-repeat 50% 0;
+}
+.header{
+    width:100%;
+    height:10%;
+}
+nav{
+    width:100%;
+    height:100%;
+}
+.mMenu{
+    width:100%;
+    height:80%;
+    margin:0 auto;
+    text-align:center;
+    transition:all 0.5s;
+}
+.mMenu::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+.mMenu li{
+    float:left;
+    width:12%;
+    height:100%;
+    line-height:80px;
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+}
+.mMenu li img{
+    width:60%;
+}
+.mMenu li:first-child{
+    margin-left:12%;
+}
+.dep1:hover{
+    border-top:3px solid #8812dd;
+}
+.mMenu li:nth-child(2){
+    background:linear-gradient(90deg, #f00, #f70);
+}
+.mMenu li:nth-child(3){
+    background:linear-gradient(90deg, #f70, #ff0);
+}
+.mMenu li:nth-child(4){
+    background:linear-gradient(90deg, #ff0, #0f0);
+}
+.mMenu li:nth-child(5){
+    background:linear-gradient(90deg, #0f0, #02f);
+}
+.mMenu li:nth-child(6){
+    background:linear-gradient(90deg, #02f, #009);
+}
+.mMenu li span{
+    font-size:30px;
+    color:#fff
+}
+.container{
+    width:100%;
+    height:80%;
+}
+.container > div > ul > li{
+    float:left;
+}
+.container > div > ul{
+    width:100%;
+    height:100%;
+}
+.container > div > ul::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+.history{
+    position:relative;
+    width:80%;
+    height:90%;
+    margin:0 auto;
+}
+.close{
+    position:absolute;
+    width:5%;
+    min-width:30px;
+    height:10%;
+    min-height:30px;
+    right:0;
+    border:1px solid #009;
+    cursor:pointer;
+}
+.sMenu{
+    width:20%;
+    height:100%;
+    border:1px solid #777;
+}
+.sMenu ul{
+    width:100%;
+    height:100%;
+    background:#fff;
+}
+.sMenu ul li{
+    width:100%;
+    height:12.5%;
+    border-bottom:1px solid #777;
+    text-align:center;
+    cursor:pointer;
+}
+.sMenu strong{
+    font-size:30px;
+    font-weight:800;
+    line-height:80px;
+}
+.sInner{
+    width:80%;
+    height:100%;
+    border:1px solid #777;
+    border-left:none;
+}
+.sInner ul{
+    width:100%;
+    height:100%;
+    background:#fff;
+}

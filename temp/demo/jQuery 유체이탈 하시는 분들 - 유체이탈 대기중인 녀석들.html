@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>jQuery 공작소 : 유체이탈 하시는 분들</title>
+<meta name="author" content="jQuery 공작소">
+<link rel="stylesheet" type="text/css" href="http://superkts.com/jquery/core.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+
+<style type="text/css">
+	.wrapper { padding:0 !important; margin-bottom:30px; }
+	.wrapper .contents .ex .e { padding-top:50px; }
+	.wrapper .contents .ex .url { font-size:12pt; text-align:center; margin-bottom:10px; }
+</style>
+
+<div class="wrapper">
+	<h1>유체이탈 하시는 분들</h1>
+	<div class="contents">
+		<div class="ex">
+			<div class="url"><a class="link2" href="http://superkts.com/jquery/@OutOfBody" target="_blank">▶ jQuery 공작소에서 보기</a></div>
+			<div class="t2">유체이탈 대기중인 녀석들</div>
+			<div class="e ac">
+
+
+<!-- 소스 시작 -->
+
+<style type="text/css">
+	.css_test {
+		text-align:center;
+	}
+	.css_test img {
+		cursor:pointer;
+		width:120px;
+	}
+	.css_test .new_img { /* 새로 추가되는 이미지 */
+		position:absolute;
+	}
+</style>
+<br><br><br><br><br>
+얼굴을 클릭해 보세요.<br><br>
+<div class="css_test">
+	<img src="http://superkts.com/img/css/huk.gif" onclick="j_test(this)" />
+	<img src="http://superkts.com/img/css/huk.gif" onclick="j_test(this)" />
+	<img src="http://superkts.com/img/css/huk.gif" onclick="j_test(this)" />
+	<img src="http://superkts.com/img/css/huk.gif" onclick="j_test(this)" />
+</div>
+<br><br><br>
+<script type="text/javascript">
+	function j_test(el){
+		var o = $(el).offset(); // 클릭한 이미지를 대상으로 offset !
+		var img = $('.css_test').append('<img class="new_img" src="http://superkts.com/img/css/huk.gif">'); // 이미지 하나 추가
+
+		// 이미지를 클릭하면 새로운 이미지를 하나 추가합니다. - append 메소드 사용
+		// 새로 추가된 이미지를 클릭한 이미지와 동일한 위치로 설정 후 애니메이션 합니다.
+		// 그럼 해당 위치에서 새로추가된 이미지가 위로 올라가게 되죠.
+		$( '.css_test img:last' ).css( { top : o.top, left : o.left } ).animate( { top : '-=300', opacity : 0 }, 1000, function(){
+			$(this).remove();
+		});
+	}
+</script>
+
+<!-- 소스 종료 -->
+
+
+			</div>
+		</div>
+		<div class="ac">
+			<a href="http://superkts.com/jquery/" target="_blank">jQuery 공작소</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://superkts.com/css/" target="_blank">CSS 공작소</a>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>자동 페이징 리스트 제이쿼리</title>
+<link rel="stylesheet" type="text/css" href="css/sjReset.css" />
+<script type="text/javascript" src="js/plugin/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+#gallery {width:600px; margin:0 auto; padding:0;}
+#gallery li {display:none;}
+#gallery li:first-child {display:block;}
+#gallery li img {width:600px;}
+#btn_gallery {text-align:center;}
+#btn_gallery a.off {cursor:default; opacity:0.5;}
+</style>
+</head>
+<body>
+<ul id="gallery">
+	<li>
+		<img src="http://cfile25.uf.tistory.com/image/220E4534516620D3242100" alt="">
+	</li>
+	<li>
+		<img src="http://cfile2.uf.tistory.com/image/11729434516620D23156EB" alt="">
+	</li>
+	<li>
+		<img src="http://cfile23.uf.tistory.com/image/277D9334516620D32DC098" alt="">
+	</li>
+	<li>
+		<img src="http://cfile6.uf.tistory.com/image/2377DF425359B4DA1012F5" alt="">
+	</li>
+</ul>
+<div id="btn_gallery">
+	<a href="#" class="btn_gallery_prev off">Prev</a>
+	<a href="#" class="btn_gallery_next">Next</a>
+</div>
+<script>
+$( document ).ready(function() {
+	$( ".btn_gallery_next" ).click(function() {
+		if(!$("#gallery li").last().is(":visible")){
+			$("#gallery li:visible").hide().next("li").fadeIn("80");
+			$(".btn_gallery_prev").removeClass("off");
+		}
+		if($("#gallery li").last().is(":visible")){
+			$(this).addClass("off");
+		}
+		return false;
+	});
+	$( ".btn_gallery_prev" ).click(function() {
+		if(!$("#gallery li").first().is(":visible")){
+			$("#gallery li:visible").hide().prev("li").fadeIn("80");
+			$(".btn_gallery_next").removeClass("off");
+		}
+		if($("#gallery li").first().is(":visible")){
+			$(this).addClass("off");
+		}
+		return false;
+	});
+});
+</script>
+</body>
+</html>

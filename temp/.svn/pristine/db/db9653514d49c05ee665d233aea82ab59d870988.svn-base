@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no, address=no, email=no, date=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>13_has_필터셀렉터</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<script type="text/javascript" src="../js/jquery/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../js/jquery/jquery.easing.min.js"></script>
+	<style>
+		body span { color:red; font-size: 30px; }
+		div { border:1px solid green; margin:5px; }
+		li { border:1px solid blue; list-style: none; margin:5px; }
+	</style>
+	<script>
+		$(document).ready(function(){
+			$('#el').children().hasClass('p').css('background','#00f');
+		});
+	</script>
+</head>
+<body>
+	<span>아이디가 el인 엘리먼트의 자식엘리먼트중 :has 필터셀렉터를 이용하여 p태그를 포함하는 엘리먼트를 선택해 글자색을 변경해 주세요.</span>
+	<div>
+		<ul id="el">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li class="p"><span>4</span></li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+	</div>
+</body>
+</html>

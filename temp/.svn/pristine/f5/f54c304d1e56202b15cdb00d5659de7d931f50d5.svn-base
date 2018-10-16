@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no, address=no, email=no, date=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>hs연습</title>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<script type="text/javascript" src="js/jquery/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery.easing.min.js"></script>
+	<style>
+	.accmenu{
+		width:100%;
+	}
+	.accmenu > li{
+		width:100%;
+	}
+	.accmenu > li > a{
+		display:block;
+		width:100%;
+		padding:5px;
+		border:1px solid #0ff;
+	}
+	.accmenu > li > ul{
+		display:none;
+		padding:5px 10px;
+	}
+	/* .accmenu > li.on > ul{
+		display:block;
+	} */
+	.accmenu > li > ul > li{
+		width:100%;
+		border-bottom:1px solid #666;
+	}
+	.accmenu > li > ul > li > a{
+		display:block;
+		width:100%;
+		padding:4px;
+	}
+	.accmenu > li > ul > li > ul{
+		display:none;
+	}
+	.accmenu > li > ul > li.on > ul{
+		display:block;
+	}
+	</style>
+	<script>
+		// $(document).ready(function(){
+		// 	var $accLi = $('.accmenu > li')
+		// 	var $accLi2 = $('.accmenu > li > ul > li')
+		// 	$accLi.on('click', function(){
+		// 		$(this).addClass('on').siblings().removeClass('on');
+		// 		return false;
+		// 	})
+		// 	$accLi2.on('click', function(){
+		// 		$(this).addClass('on').siblings().removeClass('on');
+		// 		return false;
+		// 	})
+		// })
+		$(document).ready(function(){
+			var $accLi = $('.accmenu > li')
+			var $accLi2 = $('.accmenu > li > ul > li')
+			$accLi.on('click', function(){
+				var $slip=$accLi.find('.on');
+				if($slip == 0){
+					$accLi.addClass('off');
+				}else{
+					$accLi.addClass('on');
+				}
+			})
+			$accLi2.on('click', function(){
+				$(this).addClass('on').siblings().removeClass();
+				return false;
+			})
+		})
+	</script>
+</head>
+<body>
+	<nav>
+		<ul class="accmenu">
+			<li><a href="#">메뉴 1</a>
+				<ul class="on">
+					<li><a href="#">메뉴 1-1</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 1-2</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 1-3</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 1-4</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 1-5</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a href="#">메뉴 2</a>
+				<ul>
+					<li><a href="#">메뉴 2-1</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 2-2</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 2-3</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 2-4</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 2-5</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a href="#">메뉴 3</a>
+				<ul>
+					<li><a href="#">메뉴 3-1</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 3-2</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 3-3</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 3-4</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 3-5</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a href="#">메뉴 4</a>
+				<ul>
+					<li><a href="#">메뉴 4-1</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 4-2</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 4-3</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 4-4</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 4-5</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a href="#">메뉴 5</a>
+				<ul>
+					<li><a href="#">메뉴 5-1</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 5-2</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 5-3</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 5-4</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴 5-5</a>
+						<ul>
+							<li><a href="#">메뉴 1-1-1</a></li>
+							<li><a href="#">메뉴 1-1-2</a></li>
+							<li><a href="#">메뉴 1-1-3</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</body>
+</html>
