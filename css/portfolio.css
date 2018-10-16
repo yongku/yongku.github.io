@@ -132,7 +132,7 @@ body > div > div{
     position:relative;
 }
 .tnbMenu strong{
-    font-size:16px;
+    font-size:25px;
     font-weight:800;
     color:#fff;
 }
@@ -202,23 +202,15 @@ body > div > div{
     float:right;
     width:87%;
     height:100%;
+    background:#2f3238;
+    border:3px solid #ddd;
+    border-radius:6px;
 }
 .poList ul{
     overflow-y:scroll;
     width:96%;
     height:100%;
     margin-left:4%;
-}
-.poList ul::-webkit-scrollbar {
-    width: 12px;
-}
-.poList ul::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.3); 
-    border-radius: 10px;
-}
-.poList ul::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgb(0, 0, 255); 
 }
 .poList li{
     position:relative;
@@ -496,6 +488,11 @@ body > div > div{
     .tnb li h1{
         width:290px;
         margin:0 auto;
+    }
+    .tnbMenu strong{
+        font-size:16px;
+        font-weight:800;
+        color:#fff;
     }
     /* portfolio */
     .poInner{

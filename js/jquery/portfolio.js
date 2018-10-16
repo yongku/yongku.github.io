@@ -121,6 +121,19 @@ $(document).ready(function(){
         $('.jqTest').fadeIn();
         $('.copy').add('.htmlTest').add('.cssTest').hide();
     })
+    // portfolio list scroll
+    $(function(){
+        $('.poList ul').slimScroll({
+            position: 'right',
+            color:'#00f',
+            railColor:'#fff',
+            wheelStep: 8,
+            railOpacity:0.3,
+            height: 'auto',
+            railVisible: true,
+            alwaysVisible: true
+        });
+    })
     // fancy box
     $('.cover').click(function(){
         var bg_idx=-1;
