@@ -63,15 +63,16 @@ body > div > div{
     100% {opacity:0;}
 }
 .aground strong{
+    position:absolute;
+    display:inline-block;
     animation-name:tText;
     animation-duration:4s;
     animation-iteration-count:infinite;
-    display:inline-block;
-    width:100%;
-    height:100%;
+    top:50%;
+    left:50%;
     font-size:200px;
     font-weight:800;
-    line-height:400%;
+    transform:translate(-50%,-50%);
 }
 /* tnb style */
 .tnbWrap{
@@ -89,7 +90,7 @@ body > div > div{
     position:fixed;
     height:60px;
     top:0;
-    z-index:9;
+    z-index:100;
 }
 .local{
     color:#f00;
@@ -420,12 +421,14 @@ body > div > div{
     font-size:30px;
     font-weight:600;
     color:#fff;
+    white-space:nowrap;
 }
 .comInpo address{
     font-size:16px;
     font-weight:600;
     line-height:50px;
     color:#fff;
+    white-space:nowrap;
 }
 .oPage{
     width:80%;
@@ -480,6 +483,10 @@ body > div > div{
     height:100%;
 }
 @media (max-width:1024px){
+    /* title cover text */
+    .aground strong{
+        font-size:100px;
+    }
     /* tnb */
     .tnbWrap{
         height:120px;
@@ -551,6 +558,16 @@ body > div > div{
         width:100%;
         height:50%;
         text-align:center;
+    }
+    .comInpo h3{
+        font-size:24px;
+        font-weight:600;
+        color:#fff;
+        white-space:nowrap;
+    }
+    .comInpo address{
+        font-size:12px;
+        line-height:30px;
     }
     .oPage{
         height:20%;

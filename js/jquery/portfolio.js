@@ -2,7 +2,7 @@ $(document).ready(function(){
     //title images
     var $sImage_length=$('.sImage').length;
     var a=1;
-    var $tText=['one','two','three','four','five'];
+    var $tText=['PREV','&&','TO','||','NEXT'];
     var c=1;
     setInterval(function(){
         if(c < $sImage_length){
