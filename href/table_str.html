@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table{width:100%;}
+        table,th,td{border:1px solid #000;}
+        .tblex td{padding:40px;}
+    </style>
+</head>
+<body>
+    <div class="tablelist">
+        <h1>제출</h1>
+        <div class="tblhead">
+            <label>
+                <input type="checkbox" name="" value="공지숨기기" class="blind">
+                공지숨기기
+            </label>
+            <label>
+                <a href="#">크게보기</a>
+                <a href="#">작게보기</a>
+                <a href="#">자세히보기</a>
+            </label>
+            <label>
+                <select name="group" id="">
+                    <option value="">10개씩</option>
+                    <option value="">15개씩</option>
+                    <option value="">20개씩</option>
+                </select>
+            </label>
+        </div>
+        <table>
+            <caption>글보기</caption>
+            <colgroup>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">선택</th>
+                    <th scope="col">제목</th>
+                    <th scope="col">작성자</th>
+                    <th scope="col">작성일</th>
+                    <th scope="col">조회</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 등록된 글이 없을 경우-->
+                <tr>
+                    <td colspan="5">등록된 글이 없습니다.</td>
+                </tr>
+                <!-- 등록된 글이 있을 경우-->
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="">
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <a href="#">과제1</a>
+                        </label>
+                    </td>
+                    <td>작성자1</td>
+                    <td>작성일1</td>
+                    <td>조회수1</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="">
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <a href="#">과제2</a>
+                        </label>
+                    </td>
+                    <td>작성자2</td>
+                    <td>작성일2</td>
+                    <td>조회수2</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="">
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <a href="#">과제3</a>
+                        </label>
+                    </td>
+                    <td>작성자3</td>
+                    <td>작성일3</td>
+                    <td>조회수3</td>
+                </tr>
+                <tr>
+                <td>
+                        <label>
+                            <input type="checkbox" name="">
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <a href="#">과제4</a>
+                        </label>
+                    </td>
+                    <td>작성자4</td>
+                    <td>작성일4</td>
+                    <td>조회수4</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="btnWrite">
+        <input type="submit" name="" value="이동" class="btn btn_move">
+        <input type="submit" name="" value="삭제" class="btn btn_delete">
+        <input type="submit" name="" value="글쓰기" class="btn btn_wirte">
+    </div>
+    <!-- //게시판 작성-->
+    <div class="tblex">
+        <table>
+            <caption>테이블 구조 연습</caption>
+            <colgroup>
+                <col>
+                <col>
+                <col>
+                <col>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td colspan="2" rowspan="3">왕</td>
+                    <td>우의정</td>
+                    <td>좌의정</td>
+                </tr>
+                <tr>
+                    <td>형조판서</td>
+                    <td>이조판서</td>
+                </tr>
+                <tr>
+                    <td>별순검</td>
+                    <td>조광조</td>
+                </tr>
+                <tr>
+                    <td>태조</td>
+                    <td>정종</td>
+                    <td colspan="2">태종</td>
+                </tr>
+                <tr>
+                    <td>세종</td>
+                    <td>문종</td>
+                    <td>단종</td>
+                    <td>세조</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
