@@ -25,13 +25,13 @@ $(document).ready(function(){
     },4000)
     //logo
     var text_arr=[];
-    $('.logo h1').each(function(i,e){
+    $('.logo').each(function(i,e){
         text_arr.push($(e).text());
         $(e).text('');
     })
     for(i=0;i<text_arr[0].length;i++){
-        $('.logo h1').append('<strong>'+text_arr[0][i]+'</strong>');
-        $('.logo h1').children('strong').eq(i).css({
+        $('.logo').append('<strong>'+text_arr[0][i]+'</strong>');
+        $('.logo').children('strong').eq(i).css({
             'animation-name':'logo',
             'animation-duration':'7s',
             'animation-delay':i+'s',
@@ -54,30 +54,30 @@ $(document).ready(function(){
         e.preventDefault();
         var $target=$(this);
         var $index=$target.index();
-        var $section=$local.eq($index-1);
+        var $section=$local.eq($index);
         var $offset=$section.offset().top;
         $("body, html").animate({scrollTop:$offset},400);
 		});
     $(window).scroll(function(){
         if ($(document).scrollTop() < $local.eq(1).offset().top){
-            $tnbBtn.eq(1).children('strong').css('color','#f00');
-            $tnbBtn.eq(1).siblings().children('strong').css('color','#fff');
-            $tnbBtn.eq(1).siblings().children('.tnbUnderbar').remove();
+            $tnbBtn.eq(0).children('strong').css('color','#f00');
+            $tnbBtn.eq(0).siblings().children('strong').css('color','#fff');
+            $tnbBtn.eq(0).siblings().children('.tnbUnderbar').remove();
             $('.tnbMenu').eq(0).append('<div class="tnbUnderbar" style="background:#f00;"></div>');
         }else if($(document).scrollTop() < $local.eq(2).offset().top){
-            $tnbBtn.eq(2).children('strong').css('color','#f80');
-            $tnbBtn.eq(2).siblings().children('strong').css('color','#fff');
-            $tnbBtn.eq(2).siblings().children('.tnbUnderbar').remove();
+            $tnbBtn.eq(1).children('strong').css('color','#f80');
+            $tnbBtn.eq(1).siblings().children('strong').css('color','#fff');
+            $tnbBtn.eq(1).siblings().children('.tnbUnderbar').remove();
             $('.tnbMenu').eq(1).append('<div class="tnbUnderbar" style="background:#f80;"></div>');
         }else if($(document).scrollTop() < $local.eq(3).offset().top){
-            $tnbBtn.eq(3).children('strong').css('color','#ff0');
-            $tnbBtn.eq(3).siblings().children('strong').css('color','#fff');
-            $tnbBtn.eq(3).siblings().children('.tnbUnderbar').remove();
+            $tnbBtn.eq(2).children('strong').css('color','#ff0');
+            $tnbBtn.eq(2).siblings().children('strong').css('color','#fff');
+            $tnbBtn.eq(2).siblings().children('.tnbUnderbar').remove();
             $('.tnbMenu').eq(2).append('<div class="tnbUnderbar" style="background:#ff0;"></div>');
         }else{
-            $tnbBtn.eq(4).children('strong').css('color','#0f0');
-            $tnbBtn.eq(4).siblings().children('strong').css('color','#fff');
-            $tnbBtn.eq(4).siblings().children('.tnbUnderbar').remove();
+            $tnbBtn.eq(3).children('strong').css('color','#0f0');
+            $tnbBtn.eq(3).siblings().children('strong').css('color','#fff');
+            $tnbBtn.eq(3).siblings().children('.tnbUnderbar').remove();
             $('.tnbMenu').eq(3).append('<div class="tnbUnderbar" style="background:#0f0;"></div>');
         }
     })
@@ -127,7 +127,7 @@ $(document).ready(function(){
             position: 'right',
             color:'#00f',
             railColor:'#fff',
-            wheelStep: 8,
+            wheelStep: 20,
             railOpacity:0.3,
             height: '100%',
             railVisible: true,

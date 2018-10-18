@@ -82,8 +82,9 @@ body > div > div{
 }
 .tnb{
     position:relative;
-    width:100%;
+    width:80%;
     height:100%;
+    margin:0 auto;
     background:#26292e;
 }
 .fix{
@@ -100,16 +101,16 @@ body > div > div{
     display:block;
     clear:both;
 }
+.tnb h1{
+    float:left;
+    width:40%;
+}
 .tnb li{
     float:left;
-    width:10%;
+    width:15%;
     text-align:center;
     line-height:60px;
     cursor:pointer;
-}
-.tnb li:first-child{
-    width:55%;
-    text-align:left;
 }
 @keyframes logo {
     6%  { color:#f00; }
@@ -449,9 +450,10 @@ body > div > div{
     width:25%;
     height:100%;
 }
-.oPage a{
-    width:50%;
-    height:50%;
+.oPage li a{
+    display:inline-block;
+    width:100%;
+    height:100%;
     margin:0 auto;
 }
 .oPage img{
@@ -491,19 +493,18 @@ body > div > div{
     .tnbWrap{
         height:120px;
     }
+    .tnb{
+        width:100%;
+    }
     .tnb.fix{
         height:120px;
     }
+    .tnb h1{
+        width:100%;
+        text-align:center;
+    }
     .tnb li{
         width:25%;
-    }
-    .tnb li:nth-child(1){
-        width:100%;
-        clear:both;
-    }
-    .tnb li h1{
-        width:290px;
-        margin:0 auto;
     }
     .tnbMenu strong{
         font-size:16px;
