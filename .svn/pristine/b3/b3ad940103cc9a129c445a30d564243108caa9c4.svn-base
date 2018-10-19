@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>hover</title>
+    <style>
+        *,*::before,*::after{
+            margin:0;
+            padding:0;
+        }
+        .link{
+            display:inline-block;
+            position:relative;
+            height:286px;
+            /* overflow:hidden; */
+        }
+        .pcr{
+            width:200px;
+            height:100%;
+        }
+        .pcr img{
+            width:100%;
+        }
+        .link:hover .caption{
+            /* position:block; */
+            width:100%;
+            height:100%;
+            bottom:0;
+            left:0;
+        }
+        .caption{
+            /* position:none */
+            position:absolute;
+            bottom:0%;
+            left:50%;
+            width:1%;
+            height:1%;
+            background-image:url(images/test1/movie2.jpg);
+            background-size:200px 286px;
+            line-height:286px; /*행간간격*/
+            color:#fff;
+            text-align:center;
+            transition:all 5s; /* 변경에 걸리는 시간 */
+        }
+        .caption strong{
+            color:inherit;
+            font-size:14px;
+            font-family:"맑은 고딕";
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="link">
+        <div class="pcr">
+            <img src="images/test1/movie1.jpg" alt="busan">
+        </div>
+        <div class="caption">
+            <span></span>
+        </div>
+    </a>
+    
+</body>
+</html>

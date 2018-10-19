@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    /*reset*/
+    *,*::before,*::after{
+        margin:0;
+        padding:0;
+        color:#666;
+        font-size:13px;
+        font-family:"맑은 고딕";
+        box-sizing:border-box;
+    }
+    html,body{
+        height:100%;
+    }
+    .tabmenu{
+        position:relative;
+        width:600px;
+        height:260px;
+        border:1px solid #666;
+    }
+    .tabmenu > li{
+        width:100%;
+    }
+    ul,ol{
+        list-style:none;
+    }
+    a{
+        color:#666;
+        font-size:13px;
+        text-decoration:none;
+    }
+    .tabmenu > li > input[type="radio"]{
+        position:absolute;
+        top:-999em;
+        z-index:-1;
+    }
+    .tabmenu > li > input + label{
+        display:inline-block;
+        position:absolute;
+        top:0px;
+        left:0px;
+        width:100px;
+        height:40px;
+        line-height:40px;
+        text-align:center;
+        font-size:15px;
+        font-weight:600;
+        border:1px solid #777;
+    }
+    .tabmenu > li ul {
+        display:none;
+        width:100%;
+    }
+    .tabmenu > li ul li{
+        position:relative;
+        padding:5px 0;
+        width:100%;
+        border-bottom:1px solid #0ff;
+    }
+    .tabmenu > li ul li a{
+        overflow:hidden;
+        display:inline-block;
+        max-width:320px;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+    }
+    .tabmenu > li ul li i{
+        position:absolute;
+        line-height:30px;
+        top:0;
+        right:0;
+    }
+    .tabmenu > li ul li::before{
+        content:"";
+        display:inline-block;
+        width:5px;
+        height:5px;
+        background:#f0f;
+    }
+    .tabmenu > li > input + label + ul{
+        position:absolute;
+        top:39px;
+        left:0px;
+        z-index:-1;
+    }
+    .tabmenu > li > input:checked + label + ul{
+        display:block;
+        border-top:1px solid #666;
+    }
+    .tabmenu > li > input:checked + label{
+        background:#fff;
+        color:#000;
+        border-bottom-color:#fff;
+    }
+    .tabmenu > li:nth-child(2) > input + label{
+        left:101px;
+    }
+    .tabmenu > li:nth-child(3) > input + label{
+        left:201px;
+    }
+    .tabmenu > li:nth-child(4) > input + label{
+        left:301px;
+    }
+    .tabmenu > li:nth-child(5) > input + label{
+        left:401px;
+    }
+    .tabmenu > li > label:hover{
+        background:#ff0;
+    }
+    .tabmenu > li > input + label + ul +a{
+        position:absolute;
+        top:5px;
+        right:0;
+        width:20px;
+        height:20px;
+        padding:0px;
+        border:1px solid #666;
+        color:#666;
+        font-size:14px;
+        text-align:center;
+    }
+    </style>
+</head>
+<body>
+    <ul class="tabmenu">
+        <li>
+            <input type="radio" name="menu" id="tabnews" checked>
+            <label for="tabnews">공지사항</label>
+            <ul>
+                <li>
+                    <a href="#">공지사항 글입니다. 오늘은 비가 와서 바닥이 추적추적 추적 60분 어제는 맑음 맑음 바닥도 푸석푸석</a>
+                    <i>2018.08.21</i>
+                </li>
+                <li>
+                    <a href="#">공지사항 글입니다.</a>
+                    <i>2018.08.21</i>
+                </li>
+                <li>
+                    <a href="#">공지사항 글입니다.</a>
+                    <i>2018.08.21</i>
+                </li>
+                <li>
+                    <a href="#">공지사항 글입니다.</a>
+                    <i>2018.08.21</i>
+                </li>
+                <li>
+                    <a href="#">공지사항 글입니다.</a>
+                    <i>2018.08.21</i>
+                </li>
+            </ul>
+            <a href="#" class="more" title="공지사항 더보기">+</a>
+        </li>
+        <li>
+            <input type="radio" name="menu" id="tabBoard">
+            <label for="tabBoard">보도자료</label>
+            <ul>
+                <li>
+                    <a href="#">보도자료 글입니다. 오늘은 비가 와서 바닥이 추적추적 추적 60분 어제는 맑음 맑음 바닥도 푸석푸석</a>
+                    <i>2018.08.21</i>
+                </li>
+                <li>
+                    <a href="#">보도자료 글입니다.</a>
+                    <i>2018.08.21</i>
+                </li>
+                <li>
+                    <a href="#">보도자료 글입니다.</a>
+                    <i>2018.08.21</i>
+                </li>
+                <li>
+                    <a href="#">보도자료 글입니다.</a>
+                    <i>2018.08.21</i>
+                </li>
+                <li>
+                    <a href="#">보도자료 글입니다.</a>
+                    <i>2018.08.21</i>
+                </li>
+            </ul>
+            <a href="#" class="more" title="보도자료 더보기">+</a>
+        </li>
+        <li>
+                <input type="radio" name="menu" id="tabBoard1">
+                <label for="tabBoard1">보도자료</label>
+                <ul>
+                    <li>
+                        <a href="#">보도자료 글입니다. 오늘은 비가 와서 바닥이 추적추적 추적 60분 어제는 맑음 맑음 바닥도 푸석푸석</a>
+                        <i>2018.08.21</i>
+                    </li>
+                    <li>
+                        <a href="#">구모라 글입니다.</a>
+                        <i>2018.08.21</i>
+                    </li>
+                    <li>
+                        <a href="#">보도자료 글입니다.</a>
+                        <i>2018.08.21</i>
+                    </li>
+                    <li>
+                        <a href="#">보도자료 글입니다.</a>
+                        <i>2018.08.21</i>
+                    </li>
+                    <li>
+                        <a href="#">보도자료 글입니다.</a>
+                        <i>2018.08.21</i>
+                    </li>
+                </ul>
+                <a href="#" class="more" title="보도자료 더보기">+</a>
+            </li>
+            <li>
+                    <input type="radio" name="menu" id="tabBoard2">
+                    <label for="tabBoard2">보도자료</label>
+                    <ul>
+                        <li>
+                            <a href="#">보도자료 글입니다. 오늘은 비가 와서 바닥이 추적추적 추적 60분 어제는 맑음 맑음 바닥도 푸석푸석</a>
+                            <i>2018.08.21</i>
+                        </li>
+                        <li>
+                            <a href="#">보도자료 글입니다.</a>
+                            <i>2018.08.21</i>
+                        </li>
+                        <li>
+                            <a href="#">보도자료 글입니다.</a>
+                            <i>2018.08.21</i>
+                        </li>
+                        <li>
+                            <a href="#">보도자료 글입니다.</a>
+                            <i>2018.08.21</i>
+                        </li>
+                        <li>
+                            <a href="#">보도자료 글입니다.</a>
+                            <i>2018.08.21</i>
+                        </li>
+                    </ul>
+                    <a href="#" class="more" title="보도자료 더보기">+</a>
+                </li>
+                <li>
+                        <input type="radio" name="menu" id="tabBoard3">
+                        <label for="tabBoard3">보도자료</label>
+                        <ul>
+                            <li>
+                                <a href="#">보도자료 글입니다. 오늘은 비가 와서 바닥이 추적추적 추적 60분 어제는 맑음 맑음 바닥도 푸석푸석</a>
+                                <i>2018.08.21</i>
+                            </li>
+                            <li>
+                                <a href="#">보도자료 글입니다.</a>
+                                <i>2018.08.21</i>
+                            </li>
+                            <li>
+                                <a href="#">보도자료 글입니다.</a>
+                                <i>2018.08.21</i>
+                            </li>
+                            <li>
+                                <a href="#">보도자료 글입니다.</a>
+                                <i>2018.08.21</i>
+                            </li>
+                            <li>
+                                <a href="#">보도자료 글입니다.</a>
+                                <i>2018.08.21</i>
+                            </li>
+                        </ul>
+                        <a href="#" class="more" title="보도자료 더보기">+</a>
+                    </li>
+    </ul>
+</body>
+</html>

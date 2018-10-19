@@ -20,8 +20,6 @@ $(document).ready(function(){
             a=1;
             c=1;
         }
-        console.log($sImage_length);
-        console.log(c)
     },4000)
     //logo
     var text_arr=[];
@@ -81,43 +79,45 @@ $(document).ready(function(){
             $('.tnbMenu').eq(3).append('<div class="tnbUnderbar" style="background:#0f0;"></div>');
         }
     })
-    console.log($('.portfolio').offset().top)
-    console.log($(document).scrollTop())
-    console.log($local.eq(1).offset().top);
-    console.log($(document).height());
-    console.log($(window).scrollTop());
+    // svg path number
+    var $svgPathNumber=[];
+    for(d=0;d<$('path').length;d++){
+        $pathNumber1=$('path').eq(d).attr('d').split(',').length;
+        $pathNumber2=$('path').eq(d).attr('d').split('.').length;
+        $('path').css('stroke-dasharray',$pathNumber1+$pathNumber2);
+        $svgPathNumber.push($pathNumber1+$pathNumber2);
+    }
+    $('.poMenu li').hover(function(){
+
+    })
+    console.log($svgPathNumber)
     // portfolio type
+    $poMenuLi=$('.poMenu ul li')
     $poTotal=$('.poMenu ul li').eq(0);
     $poCopy=$('.poMenu ul li').eq(1);
     $poHtml=$('.poMenu ul li').eq(2);
     $poCss=$('.poMenu ul li').eq(3);
     $poJq=$('.poMenu ul li').eq(4);
+    $poMenuLi.click(function(){
+        $(this).find('path').css({'fill':'#ff0','stroke':'#ff0'});
+        $(this).siblings().find('path').css({'fill':'#fff','stroke':'#fff'});
+    })
     $poTotal.click(function(){
-        $(this).children('span').css('color','#ff0');
-        $(this).siblings().children('span').css('color','#fff');
         $('.copy').add('.htmlTest').add('.cssTest').add('.jqTest').fadeIn();
     })
     $poCopy.click(function(){
-        $(this).children('span').css('color','#ff0');
-        $(this).siblings().children('span').css('color','#fff');
         $('.copy').show();
         $('.htmlTest').add('.cssTest').add('.jqTest').hide();
     })
     $poHtml.click(function(){
-        $(this).children('span').css('color','#ff0');
-        $(this).siblings().children('span').css('color','#fff');
         $('.htmlTest').fadeIn();
         $('.copy').add('.cssTest').add('.jqTest').hide();
     })
     $poCss.click(function(){
-        $(this).children('span').css('color','#ff0');
-        $(this).siblings().children('span').css('color','#fff');
         $('.cssTest').fadeIn();
         $('.copy').add('.htmlTest').add('.jqTest').hide();
     })
     $poJq.click(function(){
-        $(this).children('span').css('color','#ff0');
-        $(this).siblings().children('span').css('color','#fff');
         $('.jqTest').fadeIn();
         $('.copy').add('.htmlTest').add('.cssTest').hide();
     })
@@ -134,11 +134,17 @@ $(document).ready(function(){
             alwaysVisible: true
         });
     })
+    // portfolio list hover --> make cover
+    $('.poList > ul > li').hover(function(){
+        $(this).append('<div class="cover"><img src="images/portfolio/bg_recom.png" alt="expandimage"></div>')
+    },function(){
+        $('.cover').remove();
+    })
     // fancy box
-    $('.cover').click(function(){
+    $('.viewList li').click(function(){
         var bg_idx=-1;
         bg_idx=bg_idx+10;
-        $('.fancyBx').append('<div class="fancyImg"><img src="'+$(this).siblings().children('img').attr('src')+'"></div>');
+        $('.fancyBx').append('<div class="fancyImg"><img src="'+$(this).find('img').attr('src')+'"></div>');
         $('.fancyBg').css('z-index',bg_idx);
         $('.fancyBg').stop().animate({width:'100%',height:'100%',top:'0',left:'0'},1000);
         $('.fancyBg').click(function(){

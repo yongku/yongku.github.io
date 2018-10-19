@@ -192,14 +192,29 @@ body > div > div{
     line-height:70px;
     cursor:pointer;
 }
-.poMenu li:first-child span{
-    color:#ff0;
+/* svg path css */
+path{
+    stroke:#fff;
+    fill:#fff;
 }
-.poMenu span{
-    font-size:20px;
-    font-weight:600;
-    color:#fff;
+.poMenu li:first-child path{
+    stroke:#ff0;
+    fill:#ff0;
 }
+.poMenu li:hover path{
+    animation:pathani 3s cubic-bezier(.3,0.3,.1,.8);
+}
+@keyframes pathani{
+    0% {
+      stroke-dashoffset:200;
+      fill:none;
+    }
+    100% {
+      stroke-dashoffset:0;
+      fill:#fff;
+      }
+  }
+/* portfolio list */
 .poList{
     float:right;
     width:87%;

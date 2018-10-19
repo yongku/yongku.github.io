@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery/jquery-1.12.4.min.js"></script>
+    <script tpye="text/javascript" src="js/common/uxDetect.min.js"></script>
+    <style>
+        html,body{
+            width:100%;
+            height:100%;
+        }
+        .canvas{
+            position:relative;
+            width:100%;
+            height:100%;
+        }
+        .local{
+            position:absolute;
+            width:200px;
+            height:200px;
+        }
+        .cWrap{
+            position:relative;
+            width:200px;
+            height:200px;
+        }
+        .circle{
+            position:absolute;
+            top:50%;
+            left:50%;
+            border:1px solid #333;
+            border-radius:100%;
+        }
+        .rCircle{
+            position:absolute;
+            top:50%;
+            left:50%;
+            border-radius:100%;
+            background:#0ff;
+        }
+        @keyframes csize{
+            0%{width:0; height:0;}
+            50%{width:20px; height:20px;}
+            100%{width:0px; height:0px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="canvas">
+            <form>
+                마우스를 이동해 보세요. <br><br>
+                Mouse Position:
+                (X,Y)=(<input id="x" size="3" type="text/">, <input id="y" size="3" type="text"/>)
+            </form>
+    </div>
+</body>
+<script>
+    $('body').mousemove(function(){
+          e = window.event;
+          mouse_x = e.clientX;
+          mouse_y = e.clientY;
+          
+          document.getElementById("x").value = mouse_x;
+          document.getElementById("y").value = mouse_y;
+    })
+    j=0;
+    $('.canvas').click(function(){
+        j=j+1;
+        $('.canvas').append('<div class="local" style="top:'+(mouse_y-50)+'px;left:'+(mouse_x-50)+'px;"><div class="cWrap"><div class="circle"></div></dic></div>');
+        $('.circle').stop().animate({'width':'200px','height':'200px','top':'0','left':'0'},2000);
+        var $ranbox_x=[];
+        var $ranbox_y=[];
+        for(a=0;a<20;a++){
+            b=Math.ceil(Math.random()*100);
+            c=Math.ceil(Math.random()*100);
+            if(b<25){
+                $ranbox_x.push(150+b/2);
+                $ranbox_y.push(c);
+            }else if(b>=25 && b<50){
+                $ranbox_x.push(50-b/2);
+                $ranbox_y.push(c);
+            }else if(b>=50 && b<75){
+                $ranbox_x.push(b);
+                $ranbox_y.push(150+c/2);
+            }else{
+                $ranbox_x.push(b);
+                $ranbox_y.push(50-c/2);
+            }
+            setInterval(function(){
+                $('.local').last().append('<div class="rCircle"></div>');
+                },50)
+        }
+            var i=0;
+            setInterval(function(){
+                if(i<$ranbox_x.length){
+                    $('.rCircle').eq(i).stop().animate({'top':$ranbox_x[i],'left':$ranbox_y[i]},2000);
+                    $('.rCircle').eq(i).css({'animation-name':'csize','animation-duration':'2s'})
+                    i=i+1;
+                }
+            },50)
+        setTimeout(function(){
+            $('.local').first().remove();
+            j=j-1;
+        },2000)
+    })
+</script>
+</html>
