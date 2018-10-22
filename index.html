@@ -13,26 +13,26 @@
     <script type="text/javascript" src="js/plugin/jquery.slimscroll.min.js"></script>
     <script type="text/javascript" src="js/jquery/portfolio.js"></script>
     <style>
-        *:focus{
+        /* *:focus{
             border:1px dotted #f00;
-        }
+        } */
     </style>
-    <!--[if lt IE 9]>
-		<script type="text/javascript" src="js/plugin/respond.min.js"></script>
-		<script type="text/javascript" src="js/plugin/css3-mediaqueries.js"></script>
-	<![endif]-->
-	<!-- lt = less than -->
+    <script>
+        $(document).ready(function(){
+            $(".tnbMenu").attr("tabindex","0");
+        })
+    </script>
 </head>
 <body>
     <div class="tWrap">
         <!-- 메인화면 (첫번째 block) -->
         <div class="title">
             <div class="pWrap">
-                <div class="sImage on"><img src="images/cupang/mainad1.jpg" alt=""></div>
-                <div class="sImage"><img src="images/cupang/mainad2.jpg" alt=""></div>
-                <div class="sImage"><img src="images/cupang/mainad3.jpg" alt=""></div>
-                <div class="sImage"><img src="images/cupang/mainad4.jpg" alt=""></div>
-                <div class="sImage"><img src="images/cupang/mainad5.jpg" alt=""></div>
+                <div class="sImage on"><img src="images/portfolio/titleimg1.jpg" alt=""></div>
+                <div class="sImage"><img src="images/portfolio/titleimg2.jpg" alt=""></div>
+                <div class="sImage"><img src="images/portfolio/titleimg3.jpg" alt=""></div>
+                <div class="sImage"><img src="images/portfolio/titleimg4.jpg" alt=""></div>
+                <div class="sImage"><img src="images/portfolio/titleimg5.jpg" alt=""></div>
             </div>
             <div class="aground"><strong>PREV</strong></div>
         </div>

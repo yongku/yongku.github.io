@@ -80,6 +80,11 @@ body > div > div{
     height:60px;
     background:#26292e;
 }
+.tbnWrap::after{
+    content:"";
+    display:block;
+    clear:both;
+}
 .tnb{
     position:relative;
     width:80%;
@@ -316,9 +321,10 @@ path{
     height:100%;
 }
 .proImg img{
-    width:60%;
+    width:80%;
     height:80%;
-    margin:10%;
+    margin-top:10%;
+    margin-left:20%;
 }
 .proText{
     width:60%;
@@ -554,6 +560,9 @@ path{
         height:72%;
     }
     /* profile */
+    .proTitle h2{
+        
+    }
     .proImg{
         display:none;
     }

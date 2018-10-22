@@ -40,12 +40,13 @@ $(document).ready(function(){
     $(window).scroll(function(){
         var $tnbfix = $('.portfolio').offset();
         if ($(document).scrollTop() > $tnbfix.top){
-            $('.tnb').addClass('fix');
+            $('.tnbWrap').addClass('fix');
         }else{
-            $('.tnb').removeClass('fix');
+            $('.tnbWrap').removeClass('fix');
         }
     })
     // section scroll
+    var $tnbHeight=$('.tnbWrap').height();
     var $tnbBtn=$(".tnb > ul > li");
     var $local=$(".tWrap > div");
     $tnbBtn.click(function(e){
@@ -54,20 +55,24 @@ $(document).ready(function(){
         var $index=$target.index();
         var $section=$local.eq($index);
         var $offset=$section.offset().top;
-        $("body, html").animate({scrollTop:$offset},400);
-		});
+        if($index<2){
+            $("body, html").animate({scrollTop:$offset},400);
+        }else{
+            $("body, html").animate({scrollTop:$offset-$tnbHeight},400);
+        }    
+    });
     $(window).scroll(function(){
         if ($(document).scrollTop() < $local.eq(1).offset().top){
             $tnbBtn.eq(0).children('strong').css('color','#f00');
             $tnbBtn.eq(0).siblings().children('strong').css('color','#fff');
             $tnbBtn.eq(0).siblings().children('.tnbUnderbar').remove();
             $('.tnbMenu').eq(0).append('<div class="tnbUnderbar" style="background:#f00;"></div>');
-        }else if($(document).scrollTop() < $local.eq(2).offset().top){
+        }else if($(document).scrollTop() < $local.eq(2).offset().top-$tnbHeight){
             $tnbBtn.eq(1).children('strong').css('color','#f80');
             $tnbBtn.eq(1).siblings().children('strong').css('color','#fff');
             $tnbBtn.eq(1).siblings().children('.tnbUnderbar').remove();
             $('.tnbMenu').eq(1).append('<div class="tnbUnderbar" style="background:#f80;"></div>');
-        }else if($(document).scrollTop() < $local.eq(3).offset().top){
+        }else if($(document).scrollTop() < $local.eq(3).offset().top-$tnbHeight){
             $tnbBtn.eq(2).children('strong').css('color','#ff0');
             $tnbBtn.eq(2).siblings().children('strong').css('color','#fff');
             $tnbBtn.eq(2).siblings().children('.tnbUnderbar').remove();
