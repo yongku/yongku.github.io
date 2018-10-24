@@ -159,6 +159,12 @@ $(document).ready(function(){
                 $('.fancyBg').css('z-index',bg_idx);
                 $('.fancyImg').remove();
             },700)
+            $('.viewList li a').click(function(){
+                setTimeout(function(){
+                    $('.fancyBg').css('z-index',bg_idx-10);
+                    $('.fancyImg').remove();
+                },100)
+            })
         })
     })
     //send button
