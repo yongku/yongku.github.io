@@ -92,39 +92,23 @@ $(document).ready(function(){
         $('path').css('stroke-dasharray',$pathNumber1+$pathNumber2);
         $svgPathNumber.push($pathNumber1+$pathNumber2);
     }
-    $('.poMenu li').hover(function(){
+    // $('.poMenu li').hover(function(){
 
-    })
-    console.log($svgPathNumber)
+    // })
     // portfolio type
-    $poMenuLi=$('.poMenu ul li')
-    $poTotal=$('.poMenu ul li').eq(0);
-    $poCopy=$('.poMenu ul li').eq(1);
-    $poHtml=$('.poMenu ul li').eq(2);
-    $poCss=$('.poMenu ul li').eq(3);
-    $poJq=$('.poMenu ul li').eq(4);
+    var $poList=['.total','.copy','.htmlTest','.cssTest','.jqTest'];
+    var $poMenuLi=$('.poMenu ul li');
     $poMenuLi.click(function(){
         $(this).find('path').css({'fill':'#ff0','stroke':'#ff0'});
         $(this).siblings().find('path').css({'fill':'#fff','stroke':'#fff'});
-    })
-    $poTotal.click(function(){
-        $('.copy').add('.htmlTest').add('.cssTest').add('.jqTest').fadeIn();
-    })
-    $poCopy.click(function(){
-        $('.copy').show();
-        $('.htmlTest').add('.cssTest').add('.jqTest').hide();
-    })
-    $poHtml.click(function(){
-        $('.htmlTest').fadeIn();
-        $('.copy').add('.cssTest').add('.jqTest').hide();
-    })
-    $poCss.click(function(){
-        $('.cssTest').fadeIn();
-        $('.copy').add('.htmlTest').add('.jqTest').hide();
-    })
-    $poJq.click(function(){
-        $('.jqTest').fadeIn();
-        $('.copy').add('.htmlTest').add('.cssTest').hide();
+        var $clickIndex=$(this).index();
+        var $clickName=$poList[$clickIndex];
+        if($clickName==='.total'){
+            $('.viewList li').fadeIn();
+        }else{
+            $('.viewList').find($clickName).siblings().fadeOut();
+            $('.viewList').find($clickName).fadeIn();
+        }
     })
     // portfolio list scroll
     $(function(){
