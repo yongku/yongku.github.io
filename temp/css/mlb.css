@@ -36,22 +36,19 @@ html,body{
     text-align:center;
 }
 .header nav > ul > li:first-child{
-    position:absolute;
-    width:auto;
     text-align:left;
+    margin-bottom:7px;
 }
 .header nav > ul > li:first-child > div{
     display:none;
-    width:120px;
-    height:30px;
-    margin:10px;
-    margin-top:15px;
-    padding:5px;
-    padding-left:10px;
+    width:100%;
+    height:100%;
+    text-align:center;
     border:1px solid #aaa;
     background:#102576;
 }
 .header nav > ul > li:first-child a{
+    line-height:45px;
     font-size:14px;
     color:#fff;
 }
@@ -62,8 +59,8 @@ html,body{
     position:absolute;
     width: 0;
     height: 0;
-    top:25px;
-    right:30px;
+    top:20px;
+    right:15px;
     border-radius:3px;
 	border-left: 8px solid transparent;
 	border-right: 8px solid transparent;
@@ -78,10 +75,6 @@ html,body{
     display:none;
     background:#fff;
     z-index:4;
-}
-.header nav > ul > li:first-child:hover{
-    background:#102576;
-    border:none;
 }
 .header nav > ul > li:hover{
     background:#fff;
@@ -507,19 +500,46 @@ html,body{
 /* 1300px 1024 768 */
 @media (max-width:1300px){
     .hWrap{
-        height:120px;
+        height:115px;
     }
     .header nav{
         position: unset;
     }
     .header nav > ul{
+        position:absolute;
+        width:140px;
+        height:40px;
         background:#102576;
+        z-index:10;
     }
-    .header nav > ul > li:hover > ul{
+    .header nav > ul > li{
+        float:unset;
         display:none;
+        width:140px;
+        background:#102576;
+        border:1px solid #016;
+    }
+    .header nav > ul > li:first-child{
+        position:unset;
+        display:block;
+        border:none;
+        cursor:pointer;
+    }
+    .header nav > ul > li:hover{
+        background:#fff;
+        border-top:none;
+    }
+    .mLeft{
+        top:55px;
+        left:140px;
+        border-bottom:1px solid #333;
+    }
+    .mRight{
+        top:405px;
+        left:140px;
     }
     .tLogo img{
-        position: unset;
+        position:unset;
     }
     .header nav > ul > li:first-child > div{
         display:block;

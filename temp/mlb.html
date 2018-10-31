@@ -20,7 +20,7 @@
             </ul>
             <nav>
                 <ul>
-                    <li>
+                    <li class="openBtn">
                         <div>
                             <a href="#">SECTIONS<strong id="triangle-up"></strong>
                             </a>
@@ -113,8 +113,84 @@
                     </li>
                     <li>
                         <a href="#">VIDEO</a>
-                        <ul>
-                            
+                        <ul class="mLeft">
+                            <li class="half">
+                                <h2>NEWS</h2>
+                                <a href="#">
+                                    <img src="images/mlb/news1.jpg" alt="">
+                                    <strong>Hader K's 6 straight Cubs as Crew closes in</strong><br>
+                                </a>
+                                <em>30 minutes ago</em>
+                            </li>
+                            <li class="half">
+                                    <a href="#">
+                                        <img src="images/mlb/news2.jpg" alt="">
+                                        <strong>Adams caps Cards' comeback in waino's return</strong><br>
+                                    </a>
+                                    <em>41 minutes ago</em>
+                            </li>
+                        </ul>
+                        <ul class="mRight">
+                            <li>
+                                <h2>IN THIS SECTION</h2>
+                                <ul>
+                                    <li><a href="#">Probable Pitchers</a></li>
+                                    <li><a href="#">Top Prospects</a></li>
+                                    <li><a href="#">Injury Updates</a></li>
+                                    <li><a href="#">Transactions</a></li>
+                                    <li><a href="#">Starting Lineups</a></li>
+                                    <li><a href="#">Hall of Fame</a></li>
+                                    <li><a href="#">Postseason history</a></li>
+                                    <li><a href="#">Awards</a></li>
+                                    <li><a href="#">MLB Draft</a></li>
+                                    <li><a href="#">All-Star Game</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h2>FEATURED</h2>
+                                <ul>
+                                    <li><a href="#">Cut4</a></li>
+                                    <li><a href="#">Trade Talk</a></li>
+                                    <li><a href="#">play ball</a></li>
+                                    <li><a href="#">players of the week</a></li>
+                                    <li><a href="#">Plpeline</a></li>
+                                    <li><a href="#">MLB photo Stream</a></li>
+                                    <li><a href="#">Entertainment</a></li>
+                                    <li><a href="#">Reporter's Inbox</a></li>
+                                    <li><a href="#">This Date in History</a></li>
+                                    <li><a href="#">Glossary</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h2></h2>
+                                <ul>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h2></h2>
+                                <ul>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                     <li>
@@ -421,5 +497,20 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function(){
+            var a=0;
+            $(".openBtn").click(function(){
+                a+=1;
+                if(a<2){
+                    $(this).siblings().show();
+                }else{
+                    $(this).siblings().hide();
+                    return a=0;
+                }
+                console.log(a);
+            })
+        })
+    </script>
 </body>
 </html>
