@@ -48,7 +48,7 @@ $(document).ready(function(){
     // section scroll
     var $tnbHeight=$('.tnbWrap').height();
     var $tnbBtn=$(".tnb > ul > li");
-    var $local=$(".tWrap > div");
+    var $local=$(".tWrap > section");
     $tnbBtn.click(function(e){
         e.preventDefault();
         var $target=$(this);

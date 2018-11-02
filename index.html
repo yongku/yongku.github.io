@@ -26,7 +26,7 @@
 <body>
     <div class="tWrap">
         <!-- 메인화면 (첫번째 block) -->
-        <div class="title">
+        <section class="title">
             <div class="pWrap">
                 <div class="sImage on"><img src="images/portfolio/titleimg1.jpg" alt=""></div>
                 <div class="sImage"><img src="images/portfolio/titleimg2.jpg" alt=""></div>
@@ -38,12 +38,12 @@
             <div class="scrDown"><strong>SCROLL DOWN</strong>
                 <div id="chevron"></div>
             </div>
-        </div>
+        </section>
         <!-- portfolio (두번째 block) -->
-        <div class="portfolio">
+        <section class="portfolio">
             <div class="tnbWrap">
                 <!-- tnb 메뉴 -->
-                <div class="tnb">
+                <article class="tnb">
                     <h1 class=logo>CRURUNG</h1>
                     <ul>
                         <li class='tnbMenu'><strong>TITLE</strong></li>
@@ -51,15 +51,15 @@
                         <li class='tnbMenu'><strong>PROFILE</strong></li>
                         <li class='tnbMenu'><strong>CONTACT</strong></li>
                     </ul>
-                </div>
+                </article>
             </div>
             <!-- portfolio 내용 -->
-            <div class="poTitle">
+            <article class="poTitle">
                 <h2>Portfolio</h2>
                 <p>Made in Yong goo</p>
-            </div>
+            </article>
             <div class="poInner">
-                <div class="poMenu">
+                <article class="poMenu">
                     <ul>
                         <li>
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -283,8 +283,8 @@
                            </svg>
                         </li>
                     </ul>
-                </div>
-                <div class="poList">
+                </article>
+                <article class="poList">
                     <ul class="viewList">
                         <li class="copy">
                             <div>
@@ -391,25 +391,25 @@
                             </div>
                         </li>
                     </ul>
-                </div>
+                </article>
                 <!-- fancybox -->
-                <div class="fancyBg">
+                <article class="fancyBg">
                     <div class="fancyBx">
                     </div>
-                </div>
+                </article>
             </div>
-        </div>
+        </section>
         <!-- profile (세번째 block) -->
-        <div class="profile">
-            <div class="proTitle">
+        <section class="profile">
+            <article class="proTitle">
                 <h2>Profile</h2>
                 <p>Introduce</p>
-            </div>
+            </article>
             <div class="proInner">
-                <div class="proImg">
+                <article class="proImg">
                     <img src="images/portfolio/proimg.jpg" alt="">
-                </div>
-                <div class="proText">
+                </article>
+                <article class="proText">
                     <ul>
                         <li><strong>Name : Jang yong goo</strong></li>
                         <li><strong>Birth : 1988.09.09</strong></li>
@@ -418,44 +418,31 @@
                         <li><strong>Specialty : Copy</strong></li>
                         <li><strong></strong></li>
                     </ul>
-                </div>
+                </article>
             </div>
-        </div>
+        </section>
         <!-- contact (네번째 block) -->
-        <div class="contact">
-            <div class="conTitle">
+        <section class="contact">
+            <article class="conTitle">
                 <h2>Contact</h2>
-                <p>send message</p>
-            </div>
+            </article>
             <div class="mSend">
-                <div class="custInpo">
+                <article class="oPage">
                     <ul>
-                        <li><input type="text" placeholder="Full Name" font-size="30px"></li>
-                        <li><input type="text" placeholder="Email Address"></li>
-                        <li><textarea cols="30" rows="10" placeholder="Your message"></textarea></li>
-                        <li>
-                            <div>
-                                <span class="sendBtn">SEND</span>
-                            </div>
-                        </li>
+                        <li><a href="https://blog.naver.com/rjafydrkr" target="_blank" title="블로그 바로가기(새창열림)"><img src="images/portfolio/contact1.jpg" alt="blog"></a></li>
+                        <li><a href="javascript:;" onclick="alert('준비중입니다')"><img src="images/portfolio/contact2.png" alt="facebook"></a></li>
+                        <li><a href="javascript:;" onclick="alert('준비중입니다')"><img src="images/portfolio/contact3.png" alt="instagram"></a></li>
                     </ul>
-                </div>
-                <div class="comInpo">
+                </article>
+                <article class="comInpo">
                     <h3>CONTACT DETAILS</h3>
                     <address>joyclub486@nate.com</address>
                     <address>(123)456-7890</address>
                     <address>Neverwood 1541th street.</address>
-                </div>
+                </article>
             </div>
             <!-- 바로가기 icon -->
-            <div class="oPage">
-                <ul>
-                    <li><a href="https://blog.naver.com/rjafydrkr" target="_blank" title="블로그 바로가기(새창열림)"><img src="images/portfolio/contact1.jpg" alt="blog"></a></li>
-                    <li><a href="javascript:;" onclick="alert('준비중입니다')"><img src="images/portfolio/contact2.png" alt="facebook"></a></li>
-                    <li><a href="javascript:;" onclick="alert('준비중입니다')"><img src="images/portfolio/contact3.png" alt="instagram"></a></li>
-                </ul>
-            </div>
-        </div>
+        </section>
     </div>
 </body>
 </html>

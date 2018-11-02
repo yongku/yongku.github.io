@@ -6,7 +6,7 @@ body > div{
     width:100%;
     height:100%;
 }
-body > div > div{
+body > div > section{
     width:100%;
     height:100%;
 }
@@ -107,15 +107,6 @@ body > div > div{
     background: #fff;
     transform: skew(0deg, -20deg);
 }
-@keyframes moveimg{
-    0% {opacity:0;}
-    100% {opacity:1;}
-}
-@keyframes tText{
-    0%{opacity:0;}
-    50%{opacity:1;}
-    100% {opacity:0;}
-}
 /* tnb style */
 .tnbWrap{
     width:100%;
@@ -158,20 +149,6 @@ body > div > div{
     text-align:center;
     line-height:60px;
     cursor:pointer;
-}
-@keyframes logo {
-    6%  { color:#f00; }
-    20% { color:#f80; }
-    34% { color:#ff0; }
-    48% { color:#0f0; }
-    62% { color:#08f; }
-    76% { color:#00f; }
-    90% { color:#f0f; }
-}
-@keyframes blind{
-    0%{}
-    50%{color:#08f;}
-    100%{}
 }
 .tnb h1 strong{
     padding-left:10px;
@@ -251,16 +228,6 @@ path{
 .poMenu li:hover path{
     animation:pathani 3s cubic-bezier(.3,0.3,.1,.8);
 }
-@keyframes pathani{
-    0% {
-      stroke-dashoffset:200;
-      fill:none;
-    }
-    100% {
-      stroke-dashoffset:0;
-      fill:#fff;
-      }
-  }
 /* portfolio list */
 .poList{
     float:right;
@@ -355,7 +322,7 @@ path{
     height:80%;
     margin:0 auto;
 }
-.proInner div{
+.proInner article{
     float:left
 }
 .proImg{
@@ -389,6 +356,7 @@ path{
 }
 /* contact style */
 .contact{
+    height:50%;
     background:#2f3238;
     padding-top:5%;
 }
@@ -407,11 +375,6 @@ path{
 .conTitle h2::first-letter{
     color:#0f0;
 }
-.conTitle p{
-    font-size:20px;
-    font-weight:600;
-    color:#fff;
-}
 .mSend{
     width:80%;
     height:40%;
@@ -421,59 +384,6 @@ path{
     content:"";
     display:block;
     clear:both;
-}
-.custInpo{
-    float:left;
-    width:70%;
-    height:100%;
-}
-.custInpo ul{
-    width:100%;
-    height:100%;
-}
-.custInpo li{
-    width:100%;
-    height:10%;
-    border:2px solid #888;
-    border-bottom:none;
-    background:#333;
-}
-.custInpo li:nth-child(3){
-    height:40%;
-    border-bottom:2px solid #888;
-}
-.custInpo li:last-child{
-    border:none;
-    background:none;
-}
-.custInpo div{
-    width:150px;
-    height:50px;
-    margin:10px auto;
-    text-align:center;
-    background:#333;
-    border:2px solid #888;
-    cursor:pointer;
-}
-.custInpo span{
-    font-size:20px;
-    line-height:45px;
-    color:#888;
-}
-.custInpo input{
-    width:90%;
-    height:100%;
-    margin-left:10px;
-    color:#fff;
-    background:none;
-    border:none;
-}
-.custInpo textarea{
-    width:100%;
-    height:100%;
-    padding:10px;
-    color:#fff;
-    background:none;
 }
 .comInpo{
     float:right;
@@ -520,6 +430,7 @@ path{
     margin:0 auto;
 }
 .oPage img{
+    min-width:40px;
     width:40%;
     margin:25%;
 }
@@ -546,6 +457,39 @@ path{
 .fancyImg img{
     width:100%;
     height:100%;
+}
+@keyframes logo {
+    6%  { color:#f00; }
+    20% { color:#f80; }
+    34% { color:#ff0; }
+    48% { color:#0f0; }
+    62% { color:#08f; }
+    76% { color:#00f; }
+    90% { color:#f0f; }
+}
+@keyframes blind{
+    0%{}
+    50%{color:#08f;}
+    100%{}
+}
+@keyframes moveimg{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@keyframes tText{
+    0%{opacity:0;}
+    50%{opacity:1;}
+    100% {opacity:0;}
+}
+@keyframes pathani{
+    0% {
+      stroke-dashoffset:200;
+      fill:none;
+    }
+    100% {
+      stroke-dashoffset:0;
+      fill:#fff;
+    }
 }
 @media (max-width:1024px){
     /* title cover text */
@@ -637,6 +581,7 @@ path{
         line-height:30px;
     }
     .oPage{
+        width:100%;
         height:20%;
     }
 }
