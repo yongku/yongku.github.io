@@ -358,11 +358,10 @@ path{
 .contact{
     height:50%;
     background:#2f3238;
-    padding-top:5%;
 }
 .conTitle{
     width:80%;
-    height:20%;
+    height:30%;
     margin:0 auto;
     text-align:center;
 }
@@ -377,7 +376,7 @@ path{
 }
 .mSend{
     width:80%;
-    height:40%;
+    height:70%;
     margin:0 auto;
 }
 .mSend::after{
@@ -386,10 +385,11 @@ path{
     clear:both;
 }
 .comInpo{
-    float:right;
     width:30%;
-    height:100%;
+    height:70%;
+    margin:0 auto;
     padding:20px;
+    text-align:center;
 }
 .comInpo h3{
     font-size:30px;
@@ -400,7 +400,7 @@ path{
 .comInpo address{
     font-size:16px;
     font-weight:600;
-    line-height:50px;
+    line-height:35px;
     color:#fff;
     white-space:nowrap;
 }
@@ -432,7 +432,8 @@ path{
 .oPage img{
     min-width:40px;
     width:40%;
-    margin:25%;
+    max-width:80px;
+    margin:0 25%;
 }
 .fancyBg{
     position:fixed;
@@ -546,9 +547,6 @@ path{
         height:72%;
     }
     /* profile */
-    .proTitle h2{
-        
-    }
     .proImg{
         display:none;
     }
@@ -556,22 +554,13 @@ path{
         width:100%;
     }
     /* contact */
-    .mSend{
-        height:60%;
-    }
-    .custInpo{
-        float:unset;
-        width:100%;
-        height:50%;
-    }
     .comInpo{
-        float:unset;
         width:100%;
         height:50%;
         text-align:center;
     }
     .comInpo h3{
-        font-size:24px;
+        font-size:22px;
         font-weight:600;
         color:#fff;
         white-space:nowrap;
@@ -582,6 +571,5 @@ path{
     }
     .oPage{
         width:100%;
-        height:20%;
     }
 }
