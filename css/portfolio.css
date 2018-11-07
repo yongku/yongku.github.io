@@ -573,3 +573,9 @@ path{
         width:100%;
     }
 }
+@media (max-width:400px){
+    .poList li{
+        float:unset;
+        margin-left:10%;
+    }  
+}
