@@ -115,6 +115,11 @@ $(document).ready(function(){
         $(this).css({'width':'100%','height':'100%'})
     })
     //polist 
+    if($(document).width()<1024){
+        $('.poMenu ul li').eq(0).remove();
+        $('.copy').siblings().fadeOut();
+        $('.copy').fadeIn();
+    }
     console.log($(document).width())
     // fancy box
     $('.viewList li').click(function(){
