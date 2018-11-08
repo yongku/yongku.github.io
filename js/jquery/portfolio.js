@@ -92,9 +92,6 @@ $(document).ready(function(){
         $('path').css('stroke-dasharray',$pathNumber1+$pathNumber2);
         $svgPathNumber.push($pathNumber1+$pathNumber2);
     }
-    // $('.poMenu li').hover(function(){
-
-    // })
     // portfolio type
     var $poList=['.total','.copy','.htmlTest','.cssTest','.jqTest'];
     var $poMenuLi=$('.poMenu ul li');
@@ -110,25 +107,15 @@ $(document).ready(function(){
             $('.viewList').find($clickName).fadeIn();
         }
     })
-    // portfolio list scroll
-    $(function(){
-        $('.poList ul').slimScroll({
-            position: 'right',
-            color:'#00f',
-            railColor:'#fff',
-            wheelStep: 20,
-            railOpacity:0.3,
-            height: '100%',
-            railVisible: true,
-            alwaysVisible: true
-        });
-    })
     // portfolio list hover --> make cover
-    $('.poList > ul > li').hover(function(){
-        $(this).append('<div class="cover"><img src="images/portfolio/bg_recom.png" alt="expandimage"></div>')
+    $('.poList img').hover(function(){
+        // $(this).append('<div class="cover"><img src="images/portfolio/bg_recom.png" alt="expandimage"></div>')
+        $(this).css({'width':'105%','height':'105%'})
     },function(){
-        $('.cover').remove();
+        $(this).css({'width':'100%','height':'100%'})
     })
+    //polist 
+    console.log($(document).width())
     // fancy box
     $('.viewList li').click(function(){
         var bg_idx=-1;
