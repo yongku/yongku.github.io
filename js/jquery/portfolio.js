@@ -125,6 +125,8 @@ $(document).ready(function(){
     $('.viewList li').click(function(){
         var bg_idx=-1;
         bg_idx=bg_idx+10;
+        link=$(this).find('img').attr('alt');
+        $('.link').attr('href',link);
         $('.fancyBx').append('<div class="fancyImg"><img src="'+$(this).find('img').attr('src')+'"></div>');
         $('.fancyBg').css('z-index',bg_idx);
         $('.fancyBg').stop().animate({width:'100%',height:'100%',top:'0',left:'0'},1000);
