@@ -84,6 +84,10 @@ $(document).ready(function(){
             $('.tnbMenu').eq(3).append('<div class="tnbUnderbar" style="background:#0f0;"></div>');
         }
     })
+    // svg animation
+    $('.poMenu li').click(function(){
+            $(this).find('path').css('animation','pathani 7s cubic-bezier(.3,0.3,.1,.8)');
+    })
     // svg path number
     var $svgPathNumber=[];
     for(d=0;d<$('path').length;d++){
@@ -100,11 +104,17 @@ $(document).ready(function(){
         $(this).siblings().find('path').css({'fill':'#fff','stroke':'#fff'});
         var $clickIndex=$(this).index();
         var $clickName=$poList[$clickIndex];
-        if($clickName==='.total'){
-            $('.viewList li').fadeIn();
+        var $clickName2=$poList[$clickIndex+1];
+        if($(document).width()>1024){
+            if($clickName==='.total'){
+                $('.viewList li').fadeIn();
+            }else{
+                $('.viewList').find($clickName).siblings().fadeOut();
+                $('.viewList').find($clickName).fadeIn();
+            }
         }else{
-            $('.viewList').find($clickName).siblings().fadeOut();
-            $('.viewList').find($clickName).fadeIn();
+            $('.viewList').find($clickName2).siblings().fadeOut();
+            $('.viewList').find($clickName2).fadeIn();
         }
     })
     // portfolio list hover --> make cover

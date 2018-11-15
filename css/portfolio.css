@@ -225,9 +225,6 @@ path{
     stroke:#ff0;
     fill:#ff0;
 }
-.poMenu li:hover path{
-    animation:pathani 3s cubic-bezier(.3,0.3,.1,.8);
-}
 /* portfolio list */
 .poList{
     overflow:hidden;
